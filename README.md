@@ -19,7 +19,7 @@ learning about PHP Framework (Codeigniter 3)
 
 # Development Tool, Programming Languages and Frameworks
 
-### Tool
+### Tools
 
 1. Visual Code
 2. Sublime Text
@@ -41,11 +41,22 @@ learning about PHP Framework (Codeigniter 3)
 
 # Members
 
+### Frontend
+
+1. Mr.Wiraphat Sakdikul 1813110184 (IT)
+2. Mr.Krittayoch Sermwattanakul 60121004-0 (IT)
+
+### Backend
+
+1. Mr.Tanutchakorn Khaisang 1813110499 (IT)
+2. Mr.Pawornwat Tangwattapornchai 1813170030 (IT)
+
+### Database
+
 1. Mrs.Wannaporn Chokewissavakul 1813110166 (CE)
-2. Mr.Wiraphat Sakdikul 1813110184 (IT)
-3. Mr.Jiramed Jetawattana 1813110390 (IT)
-4. Mr.Tanutchakorn Khaisang 1813110499 (IT)
-5. Mr.Pawornwat Tangwattapornchai 1813170030 (IT)
-6. Mr.Krittayoch Sermwattanakul 60121004-0 (IT)
+
+### Coop
+
+1. Mr.Jiramed Jetawattana 1813110390 (IT)
 
 # Thank you for visiting
