@@ -26,8 +26,8 @@ class userCon extends CI_Controller
     private function check_login($auth, $p)
     {
         $mobile_condition = strlen($auth) == 10 && preg_match_all("/[0-9]/", $auth) == 10;
-        $email_condition = preg_match_all("/@/", $auth) == 1 && !preg_match("/\s|/", $auth);
-        $email_condition = $email_condition && !preg_match("/[!#$%]/", $auth);
+        $email_condition = preg_match_all("/@/", $auth) == 1;
+        // $email_condition = $email_condition && !preg_match("/[!]/", $auth);
         if ($mobile_condition) {
             $type = "mobile";
         } else if ($email_condition) {
