@@ -13,10 +13,10 @@ class userModel extends CI_Model
     public function index()
     {
     }
-    public function get_user_login()
+    public function get_user_login($authen_type)
     {
         $query = "
-        select email, mobile, password
+        select $authen_type, password
         from user";
         return $this->db->query($query)->result();
     }
