@@ -9,8 +9,8 @@
 
 <body>
     <form action="<?php echo base_url("userCon/login"); ?>" method="post">
-        <input type="text" name="auth">
-        <input type="text" name="p">
+        email/phone<input type="text" name="auth">
+        password<input type="text" name="p">
         <input type="submit" value="Login">
     </form>
 </body>
