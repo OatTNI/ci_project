@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    Page for testing.
+    Page for Testing.
 </body>
 
 </html>

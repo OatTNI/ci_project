@@ -15,12 +15,18 @@ class userCon extends CI_Controller
     {
         $this->load->view('loginRegisterView');
     }
+    public function register()
+    {
+    }
+    private function check_register()
+    {
+    }
     public function login()
     {
         if ($_POST["auth"] != "" && $_POST["p"] != "") {
             if ($user_id = $this->check_login($_POST["auth"], $_POST["p"])) {
                 $data["user"] = $this->userModel->get_specific_user($user_id);
-                $this->load->view('test', $data);
+                redirect("indexCon/index", $data);
             }
         }
     }
