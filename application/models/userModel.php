@@ -16,8 +16,16 @@ class userModel extends CI_Model
     public function get_user_login($authen_type)
     {
         $query = "
-        select $authen_type, password
+        select $authen_type, password,user_id
         from user";
+        return $this->db->query($query)->result();
+    }
+    public function get_specific_user($user_id)
+    {
+        $query = "
+        select *
+        from user
+        where user_id=$user_id";
         return $this->db->query($query)->result();
     }
 }
