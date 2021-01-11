@@ -8,5 +8,5 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/') ?>fontawesome-free-5.15.1/css/all.min.css">
     <style type = "text/css">
         body{font-family:"Kanit", sans-serif !important;}
-       
+       	.minitext{ font-size: 13px; }
     </style>

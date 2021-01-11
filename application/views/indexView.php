@@ -9,6 +9,7 @@
 
 <?php $this->load->view('layout/navbar') ?>
 <!-- แสดงรูปและหมวดหมู่ -->
+
 <div class="row mx-5 mt-3">
     <div class="col-sm-6 col-md-8">
         <!-- แสดงรูป -->

@@ -7,7 +7,7 @@
 
 <body style="background-color:#DBE2FD;">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
         <div class="container">
             <a class="navbar-brand" href="<?php echo base_url("indexCon/index"); ?>">
                 <i class="fas fa-shopping-basket">
