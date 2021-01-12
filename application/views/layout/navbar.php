@@ -16,18 +16,19 @@
         </form>
         <div class="navbar-nav mr-md-auto">
             <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i><span class='minitext'> ตะกร้าสินค้า</span></a></li>
-            
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-user"></i><span class='minitext'> เข้าสู่ระบบ</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="<?php echo base_url("userCon/index"); ?>">Login</a>
+            <?php if($lnstatus==0){?> 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user"></i><span class='minitext'> เข้าสู่ระบบ</span> </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+                        <a class="dropdown-item" href="<?php echo base_url("userCon/index"); ?>">Login</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    
+                    </div>
+                </li>
+            <?php } ?>
 
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Logout</a>
-                </div>
-            </li>
         </div>
     </div>
 </nav>

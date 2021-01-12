@@ -6,6 +6,6 @@ class indexCon extends CI_Controller
     public function index($user_data = "")
     {
         $data["user"] = $user_data;
-        $this->load->view('indexView', $data);
+		$this->load->view('indexView', $data);
     }
 }

@@ -30,7 +30,7 @@
                         <label for="auth">Email or Phone Number</label>                    
                         <input class="form-control mb-2" type="text" name="auth" id="auth" placeholder="Email / Phone Number">
                         <label for="p">password</label>   
-                        <input class="form-control" type="password" name="p" id="p">
+                        <input class="form-control" type="password" name="pwloginfield" id="pwloginfield">
                         <input class="btn btn-success btn-block my-3" type="submit" value="Login">
                     </form>
                 </div>
