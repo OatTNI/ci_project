@@ -26,11 +26,9 @@ class userCon extends CI_Controller
     }
     public function login()
     {
-        if ($_POST["auth"] != "" && $_POST["p"] != "") {
-            if ($user_id = $this->check_login($_POST["auth"], $_POST["p"])) {
-                foreach ($this->userModel->get_specific_user($user_id) as $row) {
-                    $data["user"] = $row;
-                }
+        if ($_POST["auth"] != "" && $_POST["pwloginfield"] != "") {
+            if ($user_id = $this->check_login($_POST["auth"], $_POST["pwloginfield"])) {
+                $data["user"] = $this->userModel->get_specific_user($user_id);
                 redirect("indexCon/index", $data);
             }
         }
