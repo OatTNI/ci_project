@@ -18,6 +18,9 @@ class userCon extends CI_Controller
     public function register()
     {
     }
+    private function check_password($password)
+    {
+    }
     private function check_register()
     {
     }
@@ -25,32 +28,45 @@ class userCon extends CI_Controller
     {
         if ($_POST["auth"] != "" && $_POST["p"] != "") {
             if ($user_id = $this->check_login($_POST["auth"], $_POST["p"])) {
-                $data["user"] = $this->userModel->get_specific_user($user_id);
+                foreach ($this->userModel->get_specific_user($user_id) as $row) {
+                    $data["user"] = $row;
+                }
                 redirect("indexCon/index", $data);
             }
         }
+    }
+    private function check_email($email)
+    {
+        // * email must be contained "@" only one
+        // * email must be not contained one of as follows: "!", "#","$", "%"
+        $email_condition = preg_match_all("/@/", $email) == 1 && !preg_match("/[!#$%]/", $email);
+        if ($email_condition) {
+            return true;
+        }
+        return false;
+    }
+    private function check_mobile($mobile)
+    {
+        // * mobile must be contained with 10 characters of number
+        // * length of mobile must be 10
+        // * mobile must be started with "0" and follow by "6", "8", "9"
+        $mobile_condition = strlen($mobile) == 10 && preg_match_all("/[0-9]/", $mobile) == 10;
+        $mobile_condition = $mobile_condition && preg_match("/0/", $mobile[0]) && preg_match("/[689]/", $mobile[1]);
+        if ($mobile_condition) {
+            return true;
+        }
+        return false;
     }
     private function check_login($auth, $p)
     {
         // * preventing for sql injection
         $injection = preg_match("/ or | and /i", $auth);
-
-        // * mobile must be contained with 10 characters of number
-        // * length of mobile must be 10
-        // * mobile must be started with "0" and follow by "6", "8", "9"
-        $mobile_condition = strlen($auth) == 10 && preg_match_all("/[0-9]/", $auth) == 10;
-        $mobile_condition = $mobile_condition && preg_match("/0/", $auth[0]) && preg_match("/[689]/", $auth[1]);
-
-        // * email must be contained "@" only one
-        // * email must be not contained one of as follows: "!", "#","$", "%"
-        $email_condition = preg_match_all("/@/", $auth) == 1;
-        $email_condition = $email_condition && !preg_match("/[!#$%]/", $auth);
         if ($injection) {
             return false;
         }
-        if ($mobile_condition) {
+        if ($this->check_mobile($auth)) {
             $type = "mobile";
-        } else if ($email_condition) {
+        } else if ($this->check_email($auth)) {
             $type = "email";
         } else {
             return false;
