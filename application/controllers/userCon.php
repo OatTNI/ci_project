@@ -67,7 +67,7 @@ class userCon extends CI_Controller
         // * length of mobile must be 10
         // * mobile must be started with "0" and follow by "6", "8", "9"
         // previous regex "/(?=.*^\d{10}$)(?=.*^06|08|09)/"
-        if (preg_match("/(^[06|08|09]+\d{8}$)/", $mobile)) {
+        if (preg_match("/(^0{1}[689]{1}\d{8}$)/", $mobile)) {
             return true;
         }
         return false;
