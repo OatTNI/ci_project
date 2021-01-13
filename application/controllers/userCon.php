@@ -20,6 +20,11 @@ class userCon extends CI_Controller
     }
     private function check_password($password)
     {
+        // * password's length must be more 8
+        if (preg_match("/^\w{8,}$/", $password)) {
+            return true;
+        }
+        return false;
     }
     private function check_register()
     {
@@ -27,8 +32,10 @@ class userCon extends CI_Controller
     public function login()
     {
         if ($_POST["auth"] != "" && $_POST["pwloginfield"] != "") {
-            if ($user_id = $this->check_login($_POST["auth"], $_POST["pwloginfield"])) {
-                $query = $this->userModel->get_specific_user($user_id);
+            $user = $this->preventing_injection($_POST["auth"]);
+            $password = $_POST["pwloginfield"];
+            if ($user = $this->check_login($user, $password)) {
+                $query = $this->userModel->get_specific_user($user);
                 foreach ($query as $row) {
                     $data["user"] = $row;
                 }
@@ -36,12 +43,20 @@ class userCon extends CI_Controller
             }
         }
     }
+    private function preventing_injection($data)
+    {
+        $data = stripslashes($data);
+        $data = trim($data, "\"");
+        $data = trim($data, "'");
+        $data = strip_tags($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
     private function check_email($email)
     {
         // * email must be contained "@" only one
-        // * email must be not contained one of as follows: "!", "#","$", "%"
-        $email_condition = preg_match_all("/@/", $email) == 1 && !preg_match("/[!#$%]/", $email);
-        if ($email_condition) {
+        // * word.word@word.word.com
+        if (preg_match("/^\w+[._]*[a-zA-Z]+@[^@]+[.]{1}[a-z]+$/", $email)) {
             return true;
         }
         return false;
@@ -51,9 +66,8 @@ class userCon extends CI_Controller
         // * mobile must be contained with 10 characters of number
         // * length of mobile must be 10
         // * mobile must be started with "0" and follow by "6", "8", "9"
-        $mobile_condition = strlen($mobile) == 10 && preg_match_all("/[0-9]/", $mobile) == 10;
-        $mobile_condition = $mobile_condition && preg_match("/0/", $mobile[0]) && preg_match("/[689]/", $mobile[1]);
-        if ($mobile_condition) {
+        // previous regex "/(?=.*^\d{10}$)(?=.*^06|08|09)/"
+        if (preg_match("/(^[06|08|09]+\d{8}$)/", $mobile)) {
             return true;
         }
         return false;
@@ -61,10 +75,6 @@ class userCon extends CI_Controller
     private function check_login($auth, $p)
     {
         // * preventing for sql injection
-        $injection = preg_match("/ or | and /i", $auth);
-        if ($injection) {
-            return false;
-        }
         if ($this->check_mobile($auth)) {
             $type = "mobile";
         } else if ($this->check_email($auth)) {
