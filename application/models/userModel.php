@@ -13,16 +13,29 @@ class userModel extends CI_Model
     public function index()
     {
     }
-    public function get_user_login($auth)
+    public function get_mobile()
     {
         $query = "
-        select password,user_id
-        from user
-        where email='$auth'
-        or mobile='$auth'";
+        select mobile
+        from user";
         return $this->db->query($query)->result();
     }
-    public function get_specific_user($user_id)
+    public function get_email()
+    {
+        $query = "
+        select email
+        from user";
+        return $this->db->query($query)->result();
+    }
+    public function get_user_by_login($type, $auth)
+    {
+        $query = "
+        select user_id,password
+        from user
+        where $type='$auth'";
+        return $this->db->query($query)->result();
+    }
+    public function get_user_by_id($user_id)
     {
         $query = "
         select *
