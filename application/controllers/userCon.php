@@ -17,6 +17,35 @@ class userCon extends CI_Controller
     }
     public function register()
     {
+        $fname = ($_POST["firstname"] != "") ? $_POST["firstname"] : "";
+        $lname = ($_POST["lastname"] != "") ? $_POST["lastname"] : "";
+        $email = ($_POST["emailfield"] != "") ? $_POST["emailfield"] : "";
+        $password = ($_POST["passwordfield"] != "") ? $_POST["passwordfield"] : "";
+        $rePassword = ($_POST["confirmpasswordfield"] != "") ? $_POST["confirmpasswordfield"] : "-1";
+        $phone = ($_POST["phonenumber"] != "") ? $_POST["phonenumber"] : "";
+        $addr = ($_POST["address"] != "") ? $_POST["address"] : "";
+        if ($password == $rePassword) {
+            $email = $this->preventing_injection($email);
+            $phone = $this->preventing_injection($phone);
+            if ($this->check_register($email, $phone, $password)) {
+                $password = sha1($password);
+                $this->userModel->add_user($fname, $lname, $email, $phone, $password, $addr);
+                redirect("indexCon/index");
+            }
+        }
+        return false;
+    }
+    private function check_duplicate($auth1, $auth2)
+    {
+        $query = $this->userModel->get_user_login($auth1);
+        foreach ($query as $row) {
+            return false;
+        }
+        $query = $this->userModel->get_user_login($auth2);
+        foreach ($query as $row) {
+            return false;
+        }
+        return true;
     }
     private function check_password($password)
     {
@@ -26,14 +55,20 @@ class userCon extends CI_Controller
         }
         return false;
     }
-    private function check_register()
+    private function check_register($email, $phone, $password)
     {
+        if ($this->check_email($email) && $this->check_mobile($phone) && $this->check_password($password)) {
+            if ($this->check_duplicate($email, $phone)) {
+                return true;
+            }
+        }
+        return false;
     }
     public function login()
     {
         if ($_POST["auth"] != "" && $_POST["pwloginfield"] != "") {
             $user = $this->preventing_injection($_POST["auth"]);
-            $password = $_POST["pwloginfield"];
+            $password = sha1($_POST["pwloginfield"]);
             if ($user = $this->check_login($user, $password)) {
                 $query = $this->userModel->get_specific_user($user);
                 foreach ($query as $row) {
@@ -74,17 +109,9 @@ class userCon extends CI_Controller
     }
     private function check_login($auth, $p)
     {
-        // * preventing for sql injection
-        if ($this->check_mobile($auth)) {
-            $type = "mobile";
-        } else if ($this->check_email($auth)) {
-            $type = "email";
-        } else {
-            return false;
-        }
-        $query = $this->userModel->get_user_login($type);
+        $query = $this->userModel->get_user_login($auth);
         foreach ($query as $row) {
-            if ($auth == ($type == "email" ? $row->email : $row->mobile) && $p == $row->password) {
+            if ($p == $row->password) {
                 return $row->user_id;
             }
         }
