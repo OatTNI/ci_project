@@ -36,7 +36,7 @@
             </div>
             <div class="col-md-6" style="background-color:white;">
                 <h1 class="my-3">Register</h1>
-                <form action="#" method="post" name="Registerform">
+                <form action="<?php echo base_url("userCon/register"); ?>" method="post" name="Registerform">
                     <table class="table table-borderless">
                         <tr>
                             <td><b>Firstname</b> <label style="color:red">*</label></td>
