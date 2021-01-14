@@ -15,6 +15,7 @@ class userCon extends CI_Controller
     }
     public function post_login()
     {
+        // test
         if ($_POST["auth"] != "" && $_POST["pwloginfield"] != "") {
             $auth = $this->preventing_injection($_POST["auth"]);
             $p = $_POST["pwloginfield"];
