@@ -26,7 +26,7 @@
         <div class="row  my-3">
             <div class="col-md-6" style="background-color:white; ">
                 <h1 class="my-3">Login</h1>
-                <form action="<?php echo base_url("userCon/login"); ?>" method="post" name="loginform">
+                <form action="<?php echo base_url("userCon/post_login"); ?>" method="post" name="loginform">
                     <label for="auth">Email or Phone Number</label>
                     <input class="form-control mb-2" type="text" name="auth" id="auth" placeholder="Email / Phone Number">
                     <label for="p">password</label>
