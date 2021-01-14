@@ -4,16 +4,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class userCon extends CI_Controller
 {
-
     public function __construct()
     {
         parent::__construct();
         $this->load->model('userModel');
     }
-
     public function index()
     {
         $this->load->view('loginRegisterView');
+    }
+    public function post_login()
+    {
+        if ($_POST["auth"] != "" && $_POST["pwloginfield"] != "") {
+            $auth = $this->preventing_injection($_POST["auth"]);
+            $p = $_POST["pwloginfield"];
+            $this->login($auth, $p);
+        }
     }
     public function register()
     {
@@ -24,63 +30,61 @@ class userCon extends CI_Controller
         $rePassword = ($_POST["confirmpasswordfield"] != "") ? $_POST["confirmpasswordfield"] : "-1";
         $phone = ($_POST["phonenumber"] != "") ? $_POST["phonenumber"] : "";
         $addr = ($_POST["address"] != "") ? $_POST["address"] : "";
-        if ($password == $rePassword) {
-            $email = $this->preventing_injection($email);
-            $phone = $this->preventing_injection($phone);
-            if ($this->check_register($email, $phone, $password)) {
-                $password = sha1($password);
-                $this->userModel->add_user($fname, $lname, $email, $phone, $password, $addr);
-                $this->login_process($email, $password);
+        $email = $this->preventing_injection($email);
+        $phone = $this->preventing_injection($phone);
+        if ($password == $rePassword && !$this->isDuplicate("email", $email) && !$this->isDuplicate("mobile", $phone)) {
+            if ($this->validate_register($email, $phone, $password)) {
+                $this->userModel->add_user($fname, $lname, $email, $phone, sha1($password), $addr);
+                $this->login($email, $password);
             }
         }
-        return false;
     }
-    private function check_duplicate($auth1, $auth2)
+    private function validate_register($email, $mobile, $p)
     {
-        $query = $this->userModel->get_user_login($auth1);
-        foreach ($query as $row) {
-            return false;
-        }
-        $query = $this->userModel->get_user_login($auth2);
-        foreach ($query as $row) {
-            return false;
-        }
-        return true;
-    }
-    private function check_password($password)
-    {
-        // * password's length must be more 8
-        if (preg_match("/^\w{8,}$/", $password)) {
-            return true;
-        }
-        return false;
-    }
-    private function check_register($email, $phone, $password)
-    {
-        if ($this->check_email($email) && $this->check_mobile($phone) && $this->check_password($password)) {
-            if ($this->check_duplicate($email, $phone)) {
+        if ($this->validate_email($email) && $this->validate_mobile($mobile) && $this->validate_password($p)) {
+            if (!$this->isDuplicate("email", $email) && !$this->isDuplicate("mobile", $mobile)) {
                 return true;
             }
         }
         return false;
     }
-    public function login()
+    private function login($auth, $p)
     {
-        if ($_POST["auth"] != "" && $_POST["pwloginfield"] != "") {
-            $user = $this->preventing_injection($_POST["auth"]);
-            $password = sha1($_POST["pwloginfield"]);
-            $this->login_process($user, $password);
+        $p = sha1($p);
+        if ($this->isDuplicate("email", $auth)) {
+            $type = "email";
+        } else if ($this->isDuplicate("mobile", $auth)) {
+            $type = "mobile";
+        } else {
+            $type = "";
         }
-    }
-    private function login_process($user, $password)
-    {
-        if ($user = $this->check_login($user, $password)) {
-            $query = $this->userModel->get_specific_user($user);
+        if ($type != "") {
+            $query = $this->userModel->get_user_by_login($type, $auth);
+            foreach ($query as $row) {
+                if ($p == $row->password) {
+                    $user_id = $row->user_id;
+                }
+            }
+            $query = $this->userModel->get_user_by_id($user_id);
             foreach ($query as $row) {
                 $data["user"] = $row;
             }
             redirect("indexCon/index", $data);
         }
+    }
+    private function isDuplicate($type, $data)
+    {
+        if ($type == "email") {
+            $query = $this->userModel->get_email();
+        } else if ($type == "mobile") {
+            $query = $this->userModel->get_mobile();
+        }
+        foreach ($query as $row) {
+            if ($data == ($type == "email" ? $row->email : $row->mobile)) {
+                return true;
+            }
+        }
+        return false;
     }
     private function preventing_injection($data)
     {
@@ -91,7 +95,7 @@ class userCon extends CI_Controller
         $data = htmlspecialchars($data);
         return $data;
     }
-    private function check_email($email)
+    private function validate_email($email)
     {
         // * email must be contained "@" only one
         // * word.word@word.word.com
@@ -100,7 +104,7 @@ class userCon extends CI_Controller
         }
         return false;
     }
-    private function check_mobile($mobile)
+    private function validate_mobile($mobile)
     {
         // * mobile must be contained with 10 characters of number
         // * length of mobile must be 10
@@ -111,13 +115,11 @@ class userCon extends CI_Controller
         }
         return false;
     }
-    private function check_login($auth, $p)
+    private function validate_password($password)
     {
-        $query = $this->userModel->get_user_login($auth);
-        foreach ($query as $row) {
-            if ($p == $row->password) {
-                return $row->user_id;
-            }
+        // * password's length must be more 8
+        if (preg_match("/^\w{8,}$/", $password)) {
+            return true;
         }
         return false;
     }
