@@ -30,7 +30,7 @@ class userCon extends CI_Controller
             if ($this->check_register($email, $phone, $password)) {
                 $password = sha1($password);
                 $this->userModel->add_user($fname, $lname, $email, $phone, $password, $addr);
-                redirect("indexCon/index");
+                $this->login_process($email, $password);
             }
         }
         return false;
@@ -69,13 +69,17 @@ class userCon extends CI_Controller
         if ($_POST["auth"] != "" && $_POST["pwloginfield"] != "") {
             $user = $this->preventing_injection($_POST["auth"]);
             $password = sha1($_POST["pwloginfield"]);
-            if ($user = $this->check_login($user, $password)) {
-                $query = $this->userModel->get_specific_user($user);
-                foreach ($query as $row) {
-                    $data["user"] = $row;
-                }
-                redirect("indexCon/index", $data);
+            $this->login_process($user, $password);
+        }
+    }
+    private function login_process($user, $password)
+    {
+        if ($user = $this->check_login($user, $password)) {
+            $query = $this->userModel->get_specific_user($user);
+            foreach ($query as $row) {
+                $data["user"] = $row;
             }
+            redirect("indexCon/index", $data);
         }
     }
     private function preventing_injection($data)
