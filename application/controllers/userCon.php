@@ -34,7 +34,7 @@ class userCon extends CI_Controller
         $phone = $this->preventing_injection($phone);
         if ($password == $rePassword && !$this->isDuplicate("email", $email) && !$this->isDuplicate("mobile", $phone)) {
             if ($this->validate_register($email, $phone, $password)) {
-                $this->userModel->add_user($fname, $lname, $email, $phone, sha1($password), $addr);
+                $this->userModel->add_user($fname, $lname, $email, $phone, hash("sha3-512", $password), $addr);
                 $this->login($email, $password);
             }
         }
@@ -50,7 +50,7 @@ class userCon extends CI_Controller
     }
     private function login($auth, $p)
     {
-        $p = sha1($p);
+        $p = hash("sha3-512", $p);
         if ($this->isDuplicate("email", $auth)) {
             $type = "email";
         } else if ($this->isDuplicate("mobile", $auth)) {
