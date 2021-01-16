@@ -2,22 +2,19 @@
     <div class="container">
         <div class="col-md-2 col-5"><a class="navbar-brand" href="<?php echo base_url("indexCon/index"); ?>">
             <i class="fas fa-shopping-basket"></i>เว็บขายของ</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1"  aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
         </div>  
         
 
-        <div class="col-md-10 ">
-            <div class="collapse navbar-collapse flex-column" id="navbarToggler1" >
+        <div class="col-md-10 col-5 ">
+            <div class="row"  >
             
-                <div class="col col-md-2 offset-md-10">
+                <div class="col-10 col-md-2 offset-md-10 offset-2">
                     <div class="navbar-nav"  >
                         <li class="nav-item"><span class='minitext'> เข้าสู่ระบบ </span> <i class="fas fa-user"></i> </a></li>
                         
                     </div>
                 </div>
-                <div class="col col-md-10 mr-auto">
+                <div class="col-12 col-md-10 mr-auto">
                     <div class="navbar-nav">
                         <form class=" my-auto d-inline w-100">
                             <div class="input-group">
@@ -27,7 +24,7 @@
                             </div>
 
                         </form>
-                        <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i><span class="minitext">ตะกร้า</span></a> </li>
                     </div>
                    
                 </div>
