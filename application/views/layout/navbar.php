@@ -1,16 +1,17 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <div class="col-md-2 col-5"><a class="navbar-brand" href="<?php echo base_url("indexCon/index"); ?>">
+        <div class="col-md-2"><a class="navbar-brand" href="<?php echo base_url("indexCon/index"); ?>">
             <i class="fas fa-shopping-basket"></i>เว็บขายของ</a>
         </div>  
         
 
-        <div class="col-md-10 col-5 ">
+        <div class="col-md-10 " id="header-pc">
             <div class="row"  >
             
-                <div class="col-10 col-md-2 offset-md-10 offset-2">
+                <div class="col-10 col-md-5 offset-md-8 offset-2">
                     <div class="navbar-nav"  >
-                        <li class="nav-item"><span class='minitext'> เข้าสู่ระบบ </span> <i class="fas fa-user"></i> </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span class='minitext'> ตะกร้าสินค้า </span><i class="fas fa-shopping-cart"></i></a> </li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span class='minitext'> เข้าสู่ระบบ </span> <i class="fas fa-user"></i></a></li>
                         
                     </div>
                 </div>
@@ -24,7 +25,7 @@
                             </div>
 
                         </form>
-                        <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i><span class="minitext">ตะกร้า</span></a> </li>
+                        
                     </div>
                    
                 </div>
