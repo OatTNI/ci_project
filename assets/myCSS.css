@@ -2,7 +2,21 @@
 body{
 	font-family:"Kanit", sans-serif;
 }
+
 .minitext{ 
 	font-size: 13px; 
 }
-#header-pc{display:none;}
+.colorgrd{
+    background: rgb(83,216,149);
+    background: linear-gradient(180deg, rgba(83,216,149,1) 0%, rgba(142,228,175,1) 35%, rgba(237,245,225,1) 100%);
+}
+.size{
+    height: 440px;
+}
+.sizeimgbig{
+    min-height: 880px;
+}
+.fornav{
+    background-color:#53d895;
+    font-weight: bold;
+}
