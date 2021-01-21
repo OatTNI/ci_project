@@ -88,13 +88,16 @@ class userCon extends CI_Controller
             }
             $query = $this->userModel->get_user_by_id($user_id);
             foreach ($query as $row) {
-                $user = $row;
                 $temp = array(
-                    "user_id" => $row->user_id
+                    "user_id" => $row->user_id,
+                    "fname" => $row->first_name,
+                    "lname" => $row->last_name,
+                    "email" => $row->email,
+                    "mobile" => $row->mobile
                 );
             }
             $this->session->set_userdata($temp);
-            redirect("indexCon/index", $user);
+            redirect("indexCon/index");
         }
     }
     private function isDuplicate($type, $data)
