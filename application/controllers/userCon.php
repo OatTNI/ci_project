@@ -21,6 +21,12 @@ class userCon extends CI_Controller
             $this->login($auth, $p);
         }
     }
+    private function logout()
+    {
+        $temps = array('user_id', "fname", "lname", "email", "mobile");
+        $this->session->unset_userdata($temps);
+        redirect("indexCon/index");
+    }
     private function editData()
     {
         $user_id = $this->session->userdata("user_id");
