@@ -6,23 +6,8 @@
 </head>
 
 <body style="background-color:#DBE2FD;">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <div class="container">
-            <a class="navbar-brand" href="<?php echo base_url("indexCon/index"); ?>">
-                <i class="fas fa-shopping-basket">
-                </i>
-                เว็บขายของ
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <span>เข้าสู่ระบบ</span>
-
-                </div>
-
-            </div>
-    </nav>
-    <div class="container mt-md-5">
+  <?php $this->load->view('layout/navbar'); ?>
+    <div class="container" style="margin-top: 200px;">
         <div class="row  my-3">
             <div class="col-md-6" style="background-color:white; ">
                 <h1 class="my-3">Login</h1>
@@ -81,8 +66,12 @@
 
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <div id="plant" class="footer layout_padding">
+        <div class="container">
+            <p>This Website As part of the subjects ITE-416, ITE-417 <a href="https://www.tni.ac.th/home/"> Thai-Nichi Institute of Technology.</a></p>
+        </div>
+    </div>
+   <?php $this->load->view("layout/mainnavJS");?>
 </body>
 
 </html>
