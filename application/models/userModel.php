@@ -13,6 +13,26 @@ class userModel extends CI_Model
     public function index()
     {
     }
+    public function update_password($user_id, $password)
+    {
+        $query = "
+        update user
+        set password='$password'
+        where user_id=$user_id";
+        $this->db->query($query);
+    }
+    public function update_row($user_id, $fname, $lname, $email, $phone, $addr)
+    {
+        $query = "
+        update user
+        set first_name='$fname',
+        last_name='$lname',
+        email='$email',
+        mobile='$phone',
+        address='$addr'
+        where user_id=$user_id";
+        $this->db->query($query);
+    }
     public function get_mobile()
     {
         $query = "

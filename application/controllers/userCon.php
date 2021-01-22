@@ -21,32 +21,59 @@ class userCon extends CI_Controller
             $this->login($auth, $p);
         }
     }
-    public function register()
+    private function logout()
     {
-        $fname = ($_POST["firstname"] != "") ? $_POST["firstname"] : "";
-        $lname = ($_POST["lastname"] != "") ? $_POST["lastname"] : "";
-        $email = ($_POST["emailfield"] != "") ? $_POST["emailfield"] : "";
-        $password = ($_POST["passwordfield"] != "") ? $_POST["passwordfield"] : "";
-        $rePassword = ($_POST["confirmpasswordfield"] != "") ? $_POST["confirmpasswordfield"] : "-1";
-        $phone = ($_POST["phonenumber"] != "") ? $_POST["phonenumber"] : "";
-        $addr = ($_POST["address"] != "") ? $_POST["address"] : "";
+        $temps = array('user_id', "fname", "lname", "email", "mobile");
+        $this->session->unset_userdata($temps);
+        redirect("indexCon/index");
+    }
+    private function editData()
+    {
+        $user_id = $this->session->userdata("user_id");
+        $fname = $_POST["firstname"];
+        $lname = $_POST["lastname"];
+        $email = $_POST["emailfield"];
+        $phone = $_POST["phonenumber"];
+        $addr = $_POST["address"];
         $email = $this->preventing_injection($email);
         $phone = $this->preventing_injection($phone);
-        if ($password == $rePassword && !$this->isDuplicate("email", $email) && !$this->isDuplicate("mobile", $phone)) {
-            if ($this->validate_register($email, $phone, $password)) {
-                $this->userModel->add_user($fname, $lname, $email, $phone, hash("sha3-512", $password), $addr);
-                $this->login($email, $password);
+
+        if ($this->validate_email($email) && $this->validate_mobile($phone)) {
+            if (!$this->isDuplicate("email", $email) && !$this->isDuplicate("mobile", $phone)) {
+                $this->userModel->update_row($user_id, $fname, $lname, $email, $phone, $addr);
             }
         }
     }
-    private function validate_register($email, $mobile, $p)
+    private function editPassword()
     {
-        if ($this->validate_email($email) && $this->validate_mobile($mobile) && $this->validate_password($p)) {
-            if (!$this->isDuplicate("email", $email) && !$this->isDuplicate("mobile", $mobile)) {
-                return true;
+        $user_id = $this->session->userdata("user_id");
+        $password = $_POST["password"];
+        $re_password = $_POST["re_password"];
+        if ($password == $re_password && $password != "") {
+            if ($this->validate_password) {
+                $this->userModel->update_password($user_id, hash("sha3-512", $password));
             }
         }
-        return false;
+    }
+    public function register()
+    {
+        $fname = $_POST["firstname"];
+        $lname = $_POST["lastname"];
+        $email = $_POST["emailfield"];
+        $password = $_POST["passwordfield"];
+        $rePassword = $_POST["confirmpasswordfield"];
+        $phone = $_POST["phonenumber"];
+        $addr = $_POST["address"];
+        $email = $this->preventing_injection($email);
+        $phone = $this->preventing_injection($phone);
+        if ($password == $rePassword && $password != "") {
+            if ($this->validate_email($email) && $this->validate_mobile($phone) && $this->validate_password($password)) {
+                if (!$this->isDuplicate("email", $email) && !$this->isDuplicate("mobile", $phone)) {
+                    $this->userModel->add_user($fname, $lname, $email, $phone, hash("sha3-512", $password), $addr);
+                    $this->login($email, $password);
+                }
+            }
+        }
     }
     private function login($auth, $p)
     {
@@ -67,9 +94,16 @@ class userCon extends CI_Controller
             }
             $query = $this->userModel->get_user_by_id($user_id);
             foreach ($query as $row) {
-                $user = $row;
+                $temp = array(
+                    "user_id" => $row->user_id,
+                    "fname" => $row->first_name,
+                    "lname" => $row->last_name,
+                    "email" => $row->email,
+                    "mobile" => $row->mobile
+                );
             }
-            redirect("indexCon/index", $user);
+            $this->session->set_userdata($temp);
+            redirect("indexCon/index");
         }
     }
     private function isDuplicate($type, $data)
@@ -109,7 +143,6 @@ class userCon extends CI_Controller
         // * mobile must be contained with 10 characters of number
         // * length of mobile must be 10
         // * mobile must be started with "0" and follow by "6", "8", "9"
-        // previous regex "/(?=.*^\d{10}$)(?=.*^06|08|09)/"
         if (preg_match("/(^0{1}[689]{1}\d{8}$)/", $mobile)) {
             return true;
         }
