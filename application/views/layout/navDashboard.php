@@ -1,5 +1,3 @@
- <!-- Page Wrapper -->
-
         <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background: rgb(83,216,149);" >
 
@@ -19,7 +17,7 @@
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-user"></i>
                     <span>Username</span></a>
-            </li>
+            </li>-
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -39,8 +37,9 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <a class="collapse-item" href="#">My Information</a>
+                        <a class="collapse-item" href="#">Address</a>
+                        <a class="collapse-item" href="#">Change Password</a>
                     </div>
                 </div>
             </li>
