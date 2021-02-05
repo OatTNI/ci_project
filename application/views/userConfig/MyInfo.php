@@ -26,7 +26,7 @@
                     </td>
   	            </tr>
   	       	</table>
-  			<input class="btn btn-success btn-block my-3" type="submit" value="Change Password">
+  			<input class="btn btn-success btn-block my-3" type="submit" value="submit">
   	    </form>
   </div>
 </div>

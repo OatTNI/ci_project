@@ -57,37 +57,3 @@
         </div>
         <!-- end header inner -->
     </header>
-<!-- <nav class="navbar sticky-top navbar-expand-md fornav navbar-light bg-light">
-    <div class="container pt-3 px-4 rounded">
-        <div class="d-flex flex-column align-items-start w-100">
-            <div class="input-group">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand ml-lg-2 ml-3" href="#"><i class="fas fa-shopping-basket"></i> เว็บขายของ</a>
-                <input class="form-control mr-2 rounded" type="Search" placeholder="Search" aria-label="Search">
-                <button class="btn" type="submit" style="background-color:#05386B"><i class="fas fa-search text-light"></i></button>
-            </div>
-            <div class="collapse navbar-collapse ml-lg-0 ml-3" id="navbarCollapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php //echo base_url("indexCon/index"); ?>">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Product</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> My Cart</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> My Account</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
- -->
