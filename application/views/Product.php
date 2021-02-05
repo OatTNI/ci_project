@@ -10,7 +10,7 @@
     <?php $this->load->view('layout/navbar'); ?>
     <!-- End header -->
 
-    <div class="section ">
+    <div class="section">
         <div class="clothes_main section ">
             <div class="container px-2">
                 <div class="card brodersize">

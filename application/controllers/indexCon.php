@@ -5,7 +5,7 @@ class indexCon extends CI_Controller
 {
     public function index($user_data = "")
     {
-        $data['banner'] = '';
+        
         $data["user"] = $user_data;
         $this->load->view('indexView', $data);
     }

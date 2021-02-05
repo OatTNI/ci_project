@@ -6,7 +6,7 @@
     <!-- header -->
     <header class="section">
         <!-- header inner -->
-        <div class="header <?=$banner?>">
+        <div class="header banner-main">
             <!-- hiden Nav -->
             <div id="mySidenav" class="sidenav">
                 <a>
@@ -40,12 +40,12 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                        <li> <a href="<?php echo base_url("indexCon/index");?>">Home</a> </li>
-                                        <li> <a href="#">Shop</a></li>
-                                        <li> <a href="#">About</a></li>
-                                        <li> <a href="#" onclick="openNav()">Category</a></li>
-                                        <li> <a href="#">Contact Us</a></li>
-                                        <li> <a href="<?php echo base_url("myAccount/index");?>"><i class="fas fa-user-circle"></i> My Account</a></li>
+                                        <li> <a class="text-dark" href="<?php echo base_url("indexCon/index");?>">Home</a> </li>
+                                        <li> <a class="text-dark" href="#">Shop</a></li>
+                                        <li> <a class="text-dark" href="#">About</a></li>
+                                        <li> <a class="text-dark" href="#" onclick="openNav()">Category</a></li>
+                                        <li> <a class="text-dark" href="#">Contact Us</a></li>
+                                        <li> <a class="text-dark" href="<?php echo base_url("myAccount/index");?>"><i class="fas fa-user-circle"></i> My Account</a></li>
                                     </ul>
                                 </nav>
                             </div>
