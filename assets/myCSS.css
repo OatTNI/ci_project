@@ -8,3 +8,12 @@ body{
 .minitext{ 
 	font-size: 13px; 
 }
+.test1{
+	border-radius: 10px; 
+}
+.test1:hover{
+	background: #FFFFFF;
+
+}
+.test1:
+
