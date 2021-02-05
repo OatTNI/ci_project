@@ -8,6 +8,7 @@
     <title>KAAIKONG</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/bootstrap.min.css">
+    <link href="<?php echo base_url("assets/");?>css/sb-admin-2.min.css" rel="stylesheet">
     <!-- style css -->
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/style.css">
     <!-- Responsive-->
@@ -15,6 +16,7 @@
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>fontawesome-free-5.15.1/css/all.min.css">
+
     <!-- owl stylesheets -->
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">

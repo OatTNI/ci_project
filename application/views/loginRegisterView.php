@@ -24,7 +24,7 @@
                 <form action="<?php echo base_url("userCon/register"); ?>" method="post" name="Registerform">
                     <table class="table table-borderless">
                         <tr>
-                            <td><b>Firstname</b> <label style="color:red">*</label></td>
+                            <td><b>Name</b> <label style="color:red">*</label></td>
                             <td><input class="form-control mb-3" type="text" name="firstname" placeholder="Enter Firstname"></td>
                             <td><input class="form-control mb-3" type="text" name="lastname" placeholder="Enter Lastname"></td>
                         </tr>
