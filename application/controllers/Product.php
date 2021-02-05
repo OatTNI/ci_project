@@ -3,7 +3,7 @@
 class Product extends CI_Controller{
 
     public function index(){
-        
-        $this->load->view('Product');
+        $data['banner']='banner-main';
+        $this->load->view('Product',$data);
     }
 }

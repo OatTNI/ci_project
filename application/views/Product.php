@@ -10,16 +10,16 @@
     <?php $this->load->view('layout/navbar'); ?>
     <!-- End header -->
 
-    <div class="section">
+    <div class="section ">
         <div class="clothes_main section ">
             <div class="container px-2">
                 <div class="card brodersize">
-                <div class="row">
-                    <div class="col-xl-4">
-                    <a class="btn btnanSize btn-back ml-2 text-light" href="#" role="button"><i class="fas fa-backspace"></i> Back</a>
-                                
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <a class="btn btnanSize btn-back ml-2 text-light" onclick="history.go(-1);" role="button"><i class="fas fa-backspace"></i> Back</a>
+
+                        </div>
                     </div>
-                </div>
                     <div class="card-body row">
                         <!-- PIC -->
                         <div class=" col-xl-6 col-sm-12 border-bottom brodersize d-flex justify-content-center">
@@ -93,93 +93,14 @@
             </div>
         </div>
     </div>
+
     <!-- Address And footer start -->
-    <div class="Address layout_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="titlepage">
-                        <div class="main">
-                            <h1 class="address_text text-dark">Contect</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="address_2">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-4">
-                        <div class="site_info">
-                            <span class="info_icon"><img src="images/map-icon.png" /></span>
-                            <span class="text-dark" style="margin-top: 10px;">泰日工業大学 <br>Thai-Nichi Institute of Technology</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4">
-                        <div class="site_info">
-                            <span class="info_icon">
-                                <h4><i class="fas fa-address-card text-primary"></i></h4>
-                            </span>
-                            <span class="text-light" style="margin-top: 15px;">
-                                <h1>
-                                    <a href="https://www.tni.ac.th/home/"><i class="fas fa-university text-primary"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-square text-primary"></i></a>
-                                </h1>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4">
-                        <div class="site_info">
-                            <span class="info_icon">
-                                <h4><i class="fas fa-user-friends text-primary"></i></h4>
-                            </span>
-                            <span class="text-dark" style="margin-top: 21px;">TNI Student</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="menu_main">
-            <div class="menu_text">
-                <ul>
-                    <li> <a href="#" class="text-dark">Home</a> </li>
-                    <li> <a href="#" class="text-dark">Shop</a></li>
-                    <li> <a href="#" class="text-dark">About</a></li>
-                    <li> <a href="#" class="text-dark" onclick="openNav()">Category</a></li>
-                    <li> <a href="#" class="text-dark">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div id="plant" class="footer layout_padding">
-        <div class="container">
-            <p>This Website As part of the subjects ITE-416,ITE-417 <a href="https://www.tni.ac.th/home/"> Thai-Nichi Institute of Technology.</a></p>
-        </div>
-    </div>
-    <!-- Address And footer End -->
-    <!-- Javascript files-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.0.0.min.js"></script>
-    <script src="js/plugin.js"></script>
-    <!-- sidebar -->
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/custom.js"></script>
-    <!-- javascript -->
-    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <?php $this->load->view("layout/mainfooter"); ?>
+    <?php $this->load->view("layout/mainnavJS"); ?>
+
     <script>
         $(document).ready(function() {
-            $(".fancybox").fancybox({
-                openEffect: "none",
-                closeEffect: "none"
-            });
 
-            $(".zoom").hover(function() {
-
-                $(this).addClass('transition');
-            }, function() {
-
-                $(this).removeClass('transition');
-            });
             $(".tb").hover(function() {
 
                 $(".tb").removeClass("tb-active");
@@ -206,32 +127,21 @@
                 });
             });
 
+            function increaseValue() {
+                var value = parseInt(document.getElementById('number').value, 10);
+                value = isNaN(value) ? 0 : value;
+                value++;
+                document.getElementById('number').value = value;
+            }
+
+            function decreaseValue() {
+                var value = parseInt(document.getElementById('number').value, 10);
+                value = isNaN(value) ? 0 : value;
+                value < 1 ? value = 1 : '';
+                value--;
+                document.getElementById('number').value = value;
+            }
         });
-
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        };
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        };
-
-        function increaseValue() {
-            var value = parseInt(document.getElementById('number').value, 10);
-            value = isNaN(value) ? 0 : value;
-            value++;
-            document.getElementById('number').value = value;
-        }
-
-        function decreaseValue() {
-            var value = parseInt(document.getElementById('number').value, 10);
-            value = isNaN(value) ? 0 : value;
-            value < 1 ? value = 1 : '';
-            value--;
-            document.getElementById('number').value = value;
-        }
     </script>
 
 </body>

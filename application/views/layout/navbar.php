@@ -6,7 +6,7 @@
     <!-- header -->
     <header class="section">
         <!-- header inner -->
-        <div class="header">
+        <div class="header <?=$banner?>">
             <!-- hiden Nav -->
             <div id="mySidenav" class="sidenav">
                 <a>

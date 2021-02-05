@@ -13,6 +13,7 @@ class userCon extends CI_Controller
     { 
         //comment for dev userView 
         //$this->load->view('loginRegisterView');
+        $data['banner']='';
         $this->load->view('userView');
     }
     public function post_login()

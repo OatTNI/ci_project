@@ -5,6 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
 
 /*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
  2) font-family: 'Poppins', sans-serif;
@@ -1654,7 +1655,7 @@ input[type="radio"] .styled:checked+label::after {
 .clothes_main {
     width: 100%;
     float: left;
-    background-color: #081b30;
+    background-color: #EDF5E1;
     height: auto;
     padding: 60px 0px;
 }
@@ -2568,4 +2569,134 @@ button.btn.btn-primary:focus {
 #main {
     transition: margin-left .5s;
     padding: 16px;
+}
+.value-button {
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 0;
+    background: #eee;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.value-button:hover {
+    cursor: pointer;
+}
+form #decrease {
+    margin-right: -4px;
+    border-radius: 8px 0 0 8px;
+}
+form #increase {
+    margin-left: -4px;
+    border-radius: 0 8px 8px 0;
+}
+form #input-wrap {
+    margin: 0px;
+    padding: 0px;
+}
+input#number {
+    text-align: center;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.brodersize {
+    border-width: 3px !important;
+}
+.btnanSize {
+    max-width: 500px;
+}
+body {
+    font-family: "Kanit", sans-serif;
+    background: rgb(83, 216, 149);
+    background: linear-gradient(180deg, rgba(83, 216, 149, 1) 0%, rgba(142, 228, 175, 1) 35%, rgba(237, 245, 225, 1) 100%);
+}
+.minitext {
+    font-size: 13px;
+}
+body {
+    background-color: #6200EA;
+    color: #000;
+    overflow-x: hidden
+}
+.card {
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+.marginLR {
+    margin-left: 175px;
+    margin-right: 175px;
+}
+fieldset.active {
+    display: block !important
+}
+fieldset {
+    display: none
+}
+.pic0 {
+    width: 400px;
+    height: 500px;
+    margin-left: 85px;
+    margin-right: auto;
+    display: block
+}
+.product-pic {
+    padding-left: auto;
+    padding-right: auto;
+    width: 100%
+}
+.thumbnails {
+    position: absolute
+}
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+.tb {
+    width: 62px;
+    height: 62px;
+    border: 1px solid grey;
+    margin: 2px;
+    opacity: 0.4;
+    cursor: pointer
+}
+.tb-active {
+    opacity: 1
+}
+.thumbnail-img {
+    width: 60px;
+    height: 60px
+}
+@media screen and (max-width: 768px) {
+    .pic0 {
+        width: 250px;
+        height: 350px
+    }
+}
+.btn-back {
+    background: #e40e0e;
+    border: indianred;
+    max-width: 170px;
+    width: 100%;
+    margin-right: 10px;
+    border-radius: 25px;
 }
