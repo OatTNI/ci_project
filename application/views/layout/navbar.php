@@ -45,7 +45,7 @@
                                         <li> <a href="#">About</a></li>
                                         <li> <a href="#" onclick="openNav()">Category</a></li>
                                         <li> <a href="#">Contact Us</a></li>
-                                        <li> <a href="<?php echo base_url("userCon/index");?>"><i class="fas fa-user-circle"></i> My Account</a></li>
+                                        <li> <a href="<?php echo base_url("myAccount/index");?>"><i class="fas fa-user-circle"></i> My Account</a></li>
                                     </ul>
                                 </nav>
                             </div>

@@ -12,8 +12,8 @@ class userCon extends CI_Controller
     public function index()
     { 
         //comment for dev userView 
-        //$this->load->view('loginRegisterView');
-        $this->load->view('userView');
+        $this->load->view('loginRegisterView');
+        //$this->load->view('userView');
     }
     public function post_login()
     {

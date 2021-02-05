@@ -31,7 +31,7 @@
                </div>
                <div class="col-md-9 col-sm-8 col-8 rounded-right" style="background: gray;">
                    <!--<?php $this->load->view("userConfig/changePassword");?>-->
-                   <?php $this->load->view("userConfig/MyInfo");?>
+                   <?php $this->load->view($content);?>
 
                </div>
            </div>
