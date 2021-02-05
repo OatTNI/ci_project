@@ -4,7 +4,10 @@
 	{
 	    public function index()
 	    {
-	        $data["content"] = "userConfig/MyInfo";
+	       /* $data["content"] = "userConfig/MyInfo";
+	        $this->load->view('userView', $data);*/
+
+	        $data["content"] = "userConfig/userHistory";
 	        $this->load->view('userView', $data);
 	    }
 	    public function history(){
@@ -12,7 +15,7 @@
 	        $this->load->view('userView', $data);
 	    }
 	    public function myCart(){
-	    	
+
 	    }
 	}
 
