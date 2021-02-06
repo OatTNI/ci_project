@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>ขายของ</title>
     <?php $this->load->view('layout/header-css'); ?>
@@ -8,8 +9,8 @@
 <body class="main-layout">
     <?php $this->load->view('layout/navbar'); ?>
     <!-- end header -->
-    <section>
-        <div id="main_slider" class="section carousel slide banner-main" data-ride="carousel">
+    <div>
+        <div id="main_slider" class="section carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#main_slider" data-slide-to="0" class="active"></li>
                 <li data-target="#main_slider" data-slide-to="1"></li>
@@ -80,7 +81,7 @@
                 <i class='fa fa-angle-right'></i>
             </a>
         </div>
-    </section>
+    </div>
 
     <div class="Address layout_padding">
         <div class="container">
@@ -139,11 +140,12 @@
     </div>
     </div>
     <!-- footer -->
-<div id="plant" class="footer layout_padding">
+    <div id="plant" class="footer layout_padding">
         <div class="container">
             <p>This Website As part of the subjects ITE-416, ITE-417 <a href="https://www.tni.ac.th/home/"> Thai-Nichi Institute of Technology.</a></p>
         </div>
     </div>
-    <?php $this->load->view("layout/mainnavJS");?>
-  </body>
+    <?php $this->load->view("layout/mainnavJS"); ?>
+</body>
+
 </html>

@@ -8,7 +8,7 @@
 
 <body class="main-layout">
     <?php $this->load->view('layout/navbar'); ?>
-    <div class="section clothes_main section ">
+    <div class="section clothes_main section">
         <div class="card brodersize mx-5">
         </div>
     </div>

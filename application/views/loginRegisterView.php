@@ -8,7 +8,7 @@
 
 <body class="main-layout" style="background-color:#DBE2FD;">
     <?php $this->load->view('layout/navbar'); ?>
-    <div class="container" style="margin-top: 200px;">
+    <div class="container">
         <div class="row  my-3">
             <div class="col-md-6" style="background-color:white; ">
                 <h1 class="my-3">Login</h1>
