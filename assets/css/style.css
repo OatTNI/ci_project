@@ -2722,13 +2722,13 @@ button.btn.btn-primary:focus {
 #main_slider a.carousel-control-prev {
     position: absolute;
     left: 50px;
-    top: 40%;
+    top: 50%;
 }
 
 #main_slider a.carousel-control-next {
     position: absolute;
     left: 50px;
-    top: 50%;
+    top: 65%;
 }
 
 #main_slider .carousel-control-prev:hover,

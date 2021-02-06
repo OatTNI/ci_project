@@ -9,7 +9,17 @@
 <body class="main-layout">
     <?php $this->load->view('layout/navbar'); ?>
     <div class="section clothes_main section">
-        <div class="card brodersize mx-5">
+        <div class="row mx-3">
+            <div class="col-xl-2 card px-1">
+                <div class="card-body">
+
+                </div>
+            </div>
+            <div class="col-xl-9 card px-1">
+                <div class="card-body">
+
+                </div>
+            </div>
         </div>
     </div>
     <?php $this->load->view("layout/mainfooter"); ?>

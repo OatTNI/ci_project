@@ -11,25 +11,20 @@
     <!-- end header -->
     <div class="clothes_main section">
         <div class=" mx-5 mt-2">
-            <div id="main_slider" class=" section carousel slide banner-main brodersize " data-ride="carousel">
+            <div id="main_slider" class=" section carousel slide banner-main rounded " data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#main_slider" data-slide-to="0" class="active"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <!-- sale -->
+                    <!-- Go to shop -->
                     <div class="carousel-item active">
                         <div class="container">
                             <div class="row marginii">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                    <div class="carousel-caption ">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <div class="carousel-caption">
                                         <h1>Welcome to <strong>KAAI KONG</strong></h1>
                                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                                        <a class="btn btn-lg btn-primary ml-2" href="#"><i class="fas fa-search"></i><span class=""> Shop!   </span></a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                    <div class="img-box">
-                                        <figure><i class="fas fa-shopping-bag" style="min-width: 500px; min-height:500px;"></i></figure>
+                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/index");?>"><i class="fas fa-search"></i><span class=""> Shop! </span></a>
                                     </div>
                                 </div>
                             </div>
@@ -37,7 +32,8 @@
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-                    <i class='fa fa-angle-left'></i></a>
+                    <i class='fa fa-angle-left'></i>
+                </a>
                 <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
                     <i class='fa fa-angle-right'></i>
                 </a>
