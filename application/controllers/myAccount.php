@@ -4,11 +4,10 @@
 	{
 	    public function index()
 	    {
-	       /* $data["content"] = "userConfig/MyInfo";
-	        $this->load->view('userView', $data);*/
-
-	        $data["content"] = "userConfig/userHistory";
+	        $data["content"] = "userConfig/MyInfo";
 	        $this->load->view('userView', $data);
+
+	        
 	    }
 	    public function history(){
 	    	$data["content"] = "userConfig/userHistory";

@@ -6,10 +6,10 @@
   	    <form action="#?>" method="post" name="ChangePassword">
   	        <table class="table table-striped"> 
   	        	<tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>k</td>
+                <td>k</td>
+                <td>k</td>
+                <td>k</td>
               </tr>	            
   	       	</table>
   			
