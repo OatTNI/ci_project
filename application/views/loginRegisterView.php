@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <title>Account</title>
+    <title>My Account</title>
     <?php $this->load->view('layout/header-css'); ?>
 </head>
 
-<body class="main-layout" style="background-color:#DBE2FD;">
+<body style="background-color:#DBE2FD;">
     <?php $this->load->view('layout/navbar'); ?>
-    <div class="container">
+    <div class="container" style="margin-top: 200px;">
         <div class="row  my-3">
             <div class="col-md-6" style="background-color:white; ">
                 <h1 class="my-3">Login</h1>

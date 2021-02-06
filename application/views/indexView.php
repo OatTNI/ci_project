@@ -9,77 +9,39 @@
 <body class="main-layout">
     <?php $this->load->view('layout/navbar'); ?>
     <!-- end header -->
-    <div>
-        <div id="main_slider" class="section carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#main_slider" data-slide-to="0" class="active"></li>
-                <li data-target="#main_slider" data-slide-to="1"></li>
-                <li data-target="#main_slider" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <!-- sale -->
-                <div class="carousel-item active">
-                    <div class="container">
-                        <div class="row marginii">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <div class="carousel-caption ">
-                                    <h1>Welcome to <strong>KAAI KONG</strong></h1>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                                    <a class="btn btn-lg btn-primary ml-2" href="#"><i class="fas fa-search"></i><span class=""> Sale </span></a>
+    <div class="clothes_main section">
+        <div class=" mx-5 mt-2">
+            <div id="main_slider" class=" section carousel slide banner-main brodersize " data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#main_slider" data-slide-to="0" class="active"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <!-- sale -->
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <div class="row marginii">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="carousel-caption ">
+                                        <h1>Welcome to <strong>KAAI KONG</strong></h1>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                                        <a class="btn btn-lg btn-primary ml-2" href="#"><i class="fas fa-search"></i><span class=""> Shop!   </span></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <div class="img-box">
-                                    <figure><img src="https://www.pigeon-chat.co.uk/wp-content/uploads/2020/05/for-sale-sticker.png" alt="img" style="width: 500px; height:500px;" /></figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- New -->
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row marginii">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <div class="carousel-caption ">
-                                    <h1>Welcome to <strong>KAAI KONG</strong></h1>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                                    <a class="btn btn-lg btn-primary ml-2" href="#"><i class="fas fa-search"></i><span class=""> New </span></a>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <div class="img-box">
-                                    <figure><img src="https://th.bing.com/th/id/R4d6f4a5c05102d43451fe306823ce60d?rik=GNZR7SLaLgDCKQ&riu=http%3a%2f%2fwww.innercirclebjj.com%2fimages%2f16.png&ehk=jfvFRFDZWcGj8a%2bc8dJfPRzSOuqVatacv5Y4tkFyXb4%3d&risl=&pid=ImgRaw" alt="img" style="width: 500px; height:500px;" /></figure>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="img-box">
+                                        <figure><i class="fas fa-shopping-bag" style="min-width: 500px; min-height:500px;"></i></figure>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Recent -->
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row marginii">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <div class="carousel-caption ">
-                                    <h1>Welcome to <strong>KAAI KONG</strong></h1>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                                    <a class="btn btn-lg btn-primary ml-2" href="#"><i class="fas fa-search"></i><span class=""> Best Price </span></a>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <div class="img-box">
-                                    <figure><img src="https://th.bing.com/th/id/R40ca036b2e22b52b1eae7167585c0f3a?rik=KDZMMdkVX%2bTPGg&riu=http%3a%2f%2fwww.onlygfx.com%2fwp-content%2fuploads%2f2017%2f03%2fbest-price-sticker.png&ehk=5gyjJT7LFai7fxa%2blaHx%2bxtE1ZaF%2bz75mHXEzHY0eeM%3d&risl=&pid=ImgRaw" alt="img" style="width: 500px; height:500px;" /></figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                    <i class='fa fa-angle-left'></i></a>
+                <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                    <i class='fa fa-angle-right'></i>
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-                <i class='fa fa-angle-left'></i></a>
-            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-                <i class='fa fa-angle-right'></i>
-            </a>
         </div>
     </div>
 

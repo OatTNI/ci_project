@@ -1759,7 +1759,7 @@ input[type="radio"] .styled:checked+label::after {
     float: left;
     background-color: #EDF5E1;
     height: auto;
-    padding: 60px 0px;
+    padding: 0px 0px;
 }
 
 .plants .plants-box {
