@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <title>Product Name</title>
     <?php $this->load->view('layout/header-css'); ?>
 </head>
 

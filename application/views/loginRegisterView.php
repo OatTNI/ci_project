@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
+    <title>Account</title>
     <?php $this->load->view('layout/header-css'); ?>
 </head>
 
-<body style="background-color:#DBE2FD;">
-  <?php $this->load->view('layout/navbar'); ?>
+<body class="main-layout" style="background-color:#DBE2FD;">
+    <?php $this->load->view('layout/navbar'); ?>
     <div class="container" style="margin-top: 200px;">
         <div class="row  my-3">
             <div class="col-md-6" style="background-color:white; ">
@@ -71,7 +72,7 @@
             <p>This Website As part of the subjects ITE-416, ITE-417 <a href="https://www.tni.ac.th/home/"> Thai-Nichi Institute of Technology.</a></p>
         </div>
     </div>
-   <?php $this->load->view("layout/mainnavJS");?>
+    <?php $this->load->view("layout/mainnavJS"); ?>
 </body>
 
 </html>

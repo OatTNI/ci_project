@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>ขายของ</title>
     <?php $this->load->view('layout/header-css'); ?>
 </head>
 
