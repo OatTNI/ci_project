@@ -6,14 +6,18 @@
 	    {
 	        $data["content"] = "userConfig/MyInfo";
 	        $this->load->view('userView', $data);
-
-	        
 	    }
-	    public function history(){
+	    public function History(){
 	    	$data["content"] = "userConfig/userHistory";
 	        $this->load->view('userView', $data);
 	    }
 	    public function myCart(){
-
+	    	$data["content"] = "userConfig/cartView";
+	        $this->load->view('userView', $data);
 	    }
+	   	public function changePassword(){
+	   		$data["content"] = "userConfig/changePassword";
+	        $this->load->view('userView', $data);
+
+	   	}
 	}

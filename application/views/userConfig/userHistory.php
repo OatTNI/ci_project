@@ -3,7 +3,7 @@
    	<h1>History</h1>
   </div>
   <div class="card-body">
-  	    <form action="#?>" method="post" name="ChangePassword">
+  	    <form action="#" method="post" name="ChangePassword">
   	        <table class="table table-striped"> 
   	        	<tr>
                 <td>k</td>

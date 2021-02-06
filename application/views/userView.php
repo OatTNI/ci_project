@@ -18,17 +18,21 @@
               Config
             </li>
             <div class="dropdown-divider"></div>
+
             <li class="nav-item test1">
-              <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> Username</a> <!-- variable of username!!!-->
+              <a class="nav-link" href="<?php echo base_url('myAccount/index'); ?>"><i class="fas fa-user-circle"></i> Username</a> <!-- variable of username!!!-->
 
             </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#">History</a>
+            <li class="nav-item test1" id="navbtm">
+              <a class="nav-link" href="<?php echo base_url('myAccount/changePassword'); ?>"><i class="fas fa-key"></i> Change Password</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">My Cart</a>
+            <li class="nav-item test1">
+              <a class="nav-link" href="<?php echo base_url('myAccount/History'); ?>"><i class="fas fa-history"></i> History</a>
             </li>
+            <li class="nav-item test1">
+              <a class="nav-link" href="<?php echo base_url('myAccount/myCart'); ?>"><i class="fas fa-shopping-cart"></i> My Cart</a>
+            </li>
+            
           </ul>
 
         </div>

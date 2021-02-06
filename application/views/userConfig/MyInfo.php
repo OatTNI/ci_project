@@ -1,6 +1,6 @@
 <div class="card my-2">
   <div class="card-header">
-   	<h1>My Information</h1>
+   	<h1>My Information </h1>
   </div>
   <div class="card-body">
   	    <form action="#" method="post" name="ChangePassword">
@@ -26,7 +26,9 @@
                     </td>
   	            </tr>
   	       	</table>
+
   			<input class="btn btn-success btn-block my-3" type="submit" value="submit">
   	    </form>
+
   </div>
 </div>
