@@ -10,6 +10,7 @@
     <script src="<?php echo base_url('assets/') ?>js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="<?php echo base_url('assets/') ?>js/custom.js"></script>
     <!-- javascript -->
+    <script src="<?php echo base_url('assets/'); ?>js/bootstrap-input-spinner.js"></script>
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     <script>
         $(document).ready(function() {
