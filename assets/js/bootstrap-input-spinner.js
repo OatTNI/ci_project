@@ -35,7 +35,7 @@
             incrementButton: "<strong>&plus;</strong>", // ..
             groupClass: "", // css class of the resulting input-group
             buttonsClass: "btn-outline-secondary",
-            buttonsWidth: "2.5rem",
+            buttonsWidth: "1rem",
             textAlign: "center", // alignment of the entered number
             autoDelay: 500, // ms threshold before auto value change
             autoInterval: 50, // speed of auto value change
