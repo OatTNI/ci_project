@@ -8,10 +8,12 @@ class userCon extends CI_Controller
     {
         parent::__construct();
         $this->load->model('userModel');
+        $this->load->model('Shopping_Cart_model');
     }
     public function index()
     { 
         //comment for dev userView 
+        $data['category'] = $this->Shopping_Cart_model->getCategory();
         $this->load->view('loginRegisterView');
         //$this->load->view('userView');
     }
