@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-5">
             <h2 class="card-title">
-                <?=$Product->{'category_name'}?>
+                <?=$Product[0]->{'category_name'}?>
             </h2>
         </div>
         <div class="col-7 text-right">
