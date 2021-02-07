@@ -27,11 +27,7 @@
                 <h3>จำนวนชิ้น</h3>
             </div>
             <div class="col-6">
-                <form>
-                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                    <input type="number" id="number" value="1" max="20" />
-                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                </form>
+                <input type="number" value="1" min="1" max="100" step="1">
             </div>
         </div>
         <div class="row p-3 mb-5">
@@ -55,56 +51,6 @@
         <p class="text-justify">รายละเอียดสินค้า : <?= $Product->{'description'} ?></p>
     </div>
 </div>
-
-<!-- Address And footer start -->
-
-<?php $this->load->view("layout/mainJS"); ?>
-
-<script>
-    $(document).ready(function() {
-
-        $(".tb").hover(function() {
-
-            $(".tb").removeClass("tb-active");
-            $(this).addClass("tb-active");
-
-            current_fs = $(".active");
-
-            next_fs = $(this).attr('id');
-            next_fs = "#" + next_fs + "1";
-
-            $("fieldset").removeClass("active");
-            $(next_fs).addClass("active");
-
-            current_fs.animate({}, {
-                step: function() {
-                    current_fs.css({
-                        'display': 'none',
-                        'position': 'relative'
-                    });
-                    next_fs.css({
-                        'display': 'block'
-                    });
-                }
-            });
-        });
-    });
-
-    function increaseValue() {
-        var value = parseInt(document.getElementById('number').value, 10);
-        value = isNaN(value) ? 0 : value;
-        value++;
-        document.getElementById('number').value = value;
-    }
-
-    function decreaseValue() {
-        var value = parseInt(document.getElementById('number').value, 10);
-        value = isNaN(value) ? 0 : value;
-        value < 1 ? value = 1 : '';
-        value--;
-        document.getElementById('number').value = value;
-    }
-</script>
 
 </body>
 
