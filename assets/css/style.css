@@ -1668,7 +1668,7 @@ input[type="radio"] .styled:checked+label::after {
 /*--------------------------------------------------------------------- layout new css ---------------------------------------------------------------------*/
 
 .marginii {
-    margin: 154px 0px 100px 0px;
+    margin: 0px 0px 100px 0px;
 }
 
 .carousel-indicators li {
@@ -2722,13 +2722,13 @@ button.btn.btn-primary:focus {
 #main_slider a.carousel-control-prev {
     position: absolute;
     left: 50px;
-    top: 50%;
+    top: 35%;
 }
 
 #main_slider a.carousel-control-next {
     position: absolute;
     left: 50px;
-    top: 65%;
+    top: 55%;
 }
 
 #main_slider .carousel-control-prev:hover,

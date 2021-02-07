@@ -11,11 +11,13 @@
     <!-- end header -->
     <div class="clothes_main section">
         <div class=" mx-5 mt-2">
-            <div id="main_slider" class=" section carousel slide banner-main rounded " data-ride="carousel">
+            <div id="main_slider" class="carousel slide section banner-main rounded " data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#main_slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#main_slider" data-slide-to="1"></li>
+                    <li data-target="#main_slider" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner bg-white pt-5 rounded">
                     <!-- Go to shop -->
                     <div class="carousel-item active">
                         <div class="container">
@@ -23,8 +25,45 @@
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <div class="carousel-caption">
                                         <h1>Welcome to <strong>KAAI KONG</strong></h1>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/index");?>"><i class="fas fa-search"></i><span class=""> Shop! </span></a>
+                                        <p class="text-dark">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/index"); ?>"><i class="fas fa-search"></i><span class=""> Shop! </span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- สินค้าสองชิ้นมาจากการสุ่ม -->
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="row marginii">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="carousel-caption">
+                                        <h1>ใส่ชื่อ <strong>ในนี้</strong></h1>
+                                        <p class="text-dark">รายละเอียดสินค้าเอามาจาก Database</p>
+                                        <a class="btn btn-lg btn-primary ml-2" href="#"><i class="fas fa-caret-right"></i><span class=""> Go! </span></a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-center justify-content-center">
+                                    <div class="img-box">
+                                        <img src="https://th.bing.com/th/id/R4d6f4a5c05102d43451fe306823ce60d?rik=GNZR7SLaLgDCKQ&riu=http%3a%2f%2fwww.innercirclebjj.com%2fimages%2f16.png&ehk=jfvFRFDZWcGj8a%2bc8dJfPRzSOuqVatacv5Y4tkFyXb4%3d&risl=&pid=ImgRaw" alt="img" style="max-width: 280px; max-height :280px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="row marginii">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="carousel-caption">
+                                        <h1>ใส่ชื่อ <strong>ในนี้</strong></h1>
+                                        <p class="text-dark">รายละเอียดสินค้าเอามาจาก Database</p>
+                                        <a class="btn btn-lg btn-primary ml-2" href="#"><i class="fas fa-caret-right"></i><span class=""> Go! </span></a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-center justify-content-center">
+                                    <div class="img-box">
+                                        <img src="https://th.bing.com/th/id/R4d6f4a5c05102d43451fe306823ce60d?rik=GNZR7SLaLgDCKQ&riu=http%3a%2f%2fwww.innercirclebjj.com%2fimages%2f16.png&ehk=jfvFRFDZWcGj8a%2bc8dJfPRzSOuqVatacv5Y4tkFyXb4%3d&risl=&pid=ImgRaw" alt="img" style="max-width: 280px; max-height :280px;" />
                                     </div>
                                 </div>
                             </div>
