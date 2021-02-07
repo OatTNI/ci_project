@@ -12,9 +12,9 @@
                 <a>
                     <h1 class="text-light">Category</h1>
                 </a>
-                <a href="#">IT</a>
-                <a href="#">Clothing</a>
-                <a href="#">Book</a>
+                <?php foreach ($category as $c) { ?>
+                <a href="<?=base_url("Shop/index/$c->category_id")?>"><?= $c->category_name ?></a>
+                <?php } ?>
                 <a href="javascript:void(0)" onclick="closeNav()"><i class="fas fa-times-circle"></i></a>
             </div>
             <div class="container">
