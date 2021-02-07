@@ -97,7 +97,7 @@
 
     <!-- Address And footer start -->
     <?php $this->load->view("layout/mainfooter"); ?>
-    <?php $this->load->view("layout/mainnavJS"); ?>
+    <?php $this->load->view("layout/mainJS"); ?>
 
     <script>
         $(document).ready(function() {

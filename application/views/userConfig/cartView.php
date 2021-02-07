@@ -5,12 +5,23 @@
   <div class="card-body">
   	    <form action="#" method="post" name="ChangePassword">
   	        <table class="table table-striped"> 
-  	        	<tr>
-                <td>k</td>
-                <td>k</td>
-                <td>k</td>
-                <td>k</td>
-              </tr>	            
+  	        	<!--Header-->
+              <tr>
+                <th>รูปสินค้า</th>
+                <th>ชื่อสินค้า</th>
+                <th>จำนวน</th>
+                <th>ราคารวม</th>
+                <th></th>
+              </tr>	     
+              <!--Content-->
+              <tr>
+                <td>รูปสินค้า</td>
+                <td>ชื่อสินค้า</td>
+                <td>จำนวน</td>
+                <td>ราคารวม</td>
+                <td><a href="#" class="btn btn-danger" style="width: 50px;">ลบ</a></td>
+              </tr>   
+
   	       	</table>
   			
   	    </form>

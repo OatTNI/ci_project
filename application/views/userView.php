@@ -46,7 +46,7 @@
   </div>
 
   <?php $this->load->view("layout/mainfooter"); ?>
-  <?php $this->load->view("layout/mainnavJS"); ?>
+  <?php $this->load->view("layout/mainJS"); ?>
 
 </body>
 

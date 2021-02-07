@@ -142,7 +142,7 @@
             <p>This Website As part of the subjects ITE-416, ITE-417 <a href="https://www.tni.ac.th/home/"> Thai-Nichi Institute of Technology.</a></p>
         </div>
     </div>
-    <?php $this->load->view("layout/mainnavJS"); ?>
+    <?php $this->load->view("layout/mainJS"); ?>
 </body>
 
 </html>
