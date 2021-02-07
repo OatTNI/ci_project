@@ -23,14 +23,13 @@ class Shopping_Cart_model extends CI_Model
 		return $query->row(0);
 	}
 
-	public function getProductsbyCategory($cname)
+	public function getProductsbyCategory($cid)
 	{
 		$this->db->select('*');
 		$this->db->from('product');
 		$this->db->join('category', 'product.category_id = category.category_id');
-		$this->db->where('category_name', $cname);
+		$this->db->where('product.category_id', $cid);
 		$query = $this->db->get();
-
 		return $query->result();
 	}
 
