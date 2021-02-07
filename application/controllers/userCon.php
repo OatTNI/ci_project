@@ -14,7 +14,7 @@ class userCon extends CI_Controller
     { 
         //comment for dev userView 
         $data['category'] = $this->Shopping_Cart_model->getCategory();
-        $this->load->view('loginRegisterView');
+        $this->load->view('loginRegisterView',$data);
         //$this->load->view('userView');
     }
     public function post_login()

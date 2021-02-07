@@ -14,4 +14,5 @@ class indexCon extends CI_Controller
         $data["user"] = $user_data;
         $this->load->view('indexView', $data);
     }
+    
 }
