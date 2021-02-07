@@ -17,6 +17,7 @@ class Shopping_Cart_model extends CI_Model
 
 	public function getaProduct($pid)
 	{
+		$this->db->join('category', 'product.category_id = category.category_id');
 		$this->db->where('product_id', $pid);
 		$query = $this->db->get('product');
 
