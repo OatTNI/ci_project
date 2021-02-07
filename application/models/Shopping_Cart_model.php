@@ -1,10 +1,11 @@
 <?php
 
-class Shopping_Cart_model extends CI_Model {
+class Shopping_Cart_model extends CI_Model
+{
 
 	public function __construct()
 	{
-
+		parent::__construct();
 	}
 
 	public function getProducts()
@@ -33,4 +34,12 @@ class Shopping_Cart_model extends CI_Model {
 		return $query->result();
 	}
 
+	public function getCategory()
+	{
+		$this->db->select('*');
+		$this->db->from('category');
+		$query = $this->db->get();
+
+		return $query->result();
+	}
 }
