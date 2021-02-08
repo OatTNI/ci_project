@@ -12,6 +12,7 @@ class Shop extends CI_Controller
     public function index()
     {
         $data['category'] = $this->Shopping_Cart_model->getCategory();
+        $data['Product'] = $this->Shopping_Cart_model->getProducts();
         $data['content'] = 'Shop/ShopMain';
         $this->load->view('Shop', $data);
     }

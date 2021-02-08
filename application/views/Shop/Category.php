@@ -9,11 +9,11 @@
             Pagegination
         </div>
     </div>
-    <div class="row no-gutters">
+    <div class="card-body row no-gutters">
         <?php foreach ($Product as $P) { ?>
-            <div class="col-3">
-                <div class="card rounded-0">
-                    <img class="card-img-top img-fluid" src="<?= $P->img ?>" alt="Card image cap Responsive image" style="width: 175px; height:175px;">
+            <div class="col-xl-3 col-lg-3 col-ms-12">
+                <div class="rounded-0 border text-center">
+                    <img class="card-img-top p-2 img-fluid" src="<?= $P->img ?>" alt="Card image cap Responsive image" style="width: 175px; height:175px;">
                     <div class="card-body">
                         <h5 class="card-title text-truncate"><strong><?= $P->product_name ?></strong></h5>
                         <p class="card-text text-truncate"><?= $P->description ?></p>
