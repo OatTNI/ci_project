@@ -10,9 +10,9 @@ class indexCon extends CI_Controller
     }
     public function index($user_data = "")
     {
-        $data['category'] = $this->Shopping_Cart_model->getCategory();   
+        $data['category'] = $this->Shopping_Cart_model->getCategory();
+        $data['Pre'] = $this->Shopping_Cart_model->getProducts();
         $data["user"] = $user_data;
         $this->load->view('indexView', $data);
     }
-    
 }

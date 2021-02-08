@@ -38,14 +38,14 @@
                             <div class="row marginii">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                     <div class="carousel-caption">
-                                        <h1>1 ใส่ชื่อ <strong>ในนี้</strong></h1>
-                                        <p class="text-dark">รายละเอียดสินค้าเอามาจาก Database</p>
-                                        <a class="btn btn-lg btn-primary ml-2" href="#"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
+                                        <h1><strong><?=$Pre[1]->{'product_name'}?></strong></h1>
+                                        <p class="text-dark"><?=$Pre[1]->{'description'}?></p>
+                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/ShowOneProduct/");?><?=$Pre[1]->product_id?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-end justify-content-center">
                                     <div class="img-box">
-                                        <img src="https://th.bing.com/th/id/R4d6f4a5c05102d43451fe306823ce60d?rik=GNZR7SLaLgDCKQ&riu=http%3a%2f%2fwww.innercirclebjj.com%2fimages%2f16.png&ehk=jfvFRFDZWcGj8a%2bc8dJfPRzSOuqVatacv5Y4tkFyXb4%3d&risl=&pid=ImgRaw" alt="img" style="max-width: 280px; max-height :280px;" />
+                                        <img src="<?=$Pre[1]->{'img'}?>" alt="img" style="max-width: 280px; max-height :280px;" />
                                     </div>
                                 </div>
                             </div>
@@ -56,14 +56,14 @@
                             <div class="row marginii">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                     <div class="carousel-caption">
-                                        <h1>2 ใส่ชื่อ <strong>ในนี้</strong></h1>
-                                        <p class="text-dark">รายละเอียดสินค้าเอามาจาก Database</p>
-                                        <a class="btn btn-lg btn-primary ml-2" href="#"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
+                                        <h1><strong><?=$Pre[0]->{'product_name'}?></strong></h1>
+                                        <p class="text-dark"><?=$Pre[0]->{'description'}?></p>
+                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/ShowOneProduct/");?><?=$Pre[0]->product_id?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-end justify-content-center">
                                     <div class="img-box">
-                                        <img src="https://th.bing.com/th/id/R4d6f4a5c05102d43451fe306823ce60d?rik=GNZR7SLaLgDCKQ&riu=http%3a%2f%2fwww.innercirclebjj.com%2fimages%2f16.png&ehk=jfvFRFDZWcGj8a%2bc8dJfPRzSOuqVatacv5Y4tkFyXb4%3d&risl=&pid=ImgRaw" alt="img" style="max-width: 280px; max-height :280px;" />
+                                        <img src="<?=$Pre[0]->{'img'}?>" alt="img" style="max-width: 280px; max-height :280px;" />
                                     </div>
                                 </div>
                             </div>

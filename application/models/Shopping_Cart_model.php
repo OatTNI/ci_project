@@ -20,7 +20,7 @@ class Shopping_Cart_model extends CI_Model
 		$this->db->join('category', 'product.category_id = category.category_id');
 		$this->db->where('product_id', $pid);
 		$query = $this->db->get('product');
-
+		
 		return $query->row(0);
 	}
 
