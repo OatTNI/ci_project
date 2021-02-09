@@ -48,7 +48,6 @@
                                  <ul class="menu-area-main">
                                      <li> <a class="text-dark" href="<?php echo base_url("indexCon/index"); ?>">Home</a> </li>
                                      <li> <a class="text-dark" href="<?php echo base_url("Shop/index"); ?>">Shop</a></li>
-                                     <li> <a class="text-dark" href="#">About</a></li>
                                      <li> <a class="text-dark" href="#" onclick="openNav()">Category</a></li>
                                      <li> <a class="text-dark" href="<?php echo base_url("userCon/index"); ?>">Login</a></li>
                                      <li> <a class="text-dark" href="<?php echo base_url("myAccount/index"); ?>"><i class="fas fa-user-circle"></i> My Account</a></li>
