@@ -29,4 +29,9 @@
 	        $this->load->view('userView', $data);
 
 	   	}
+	   	public function checkOut(){
+	   		$data['category'] = $this->Shopping_Cart_model->getCategory();
+	   		$data["content"] = "userConfig/checkOut";
+	        $this->load->view('userView', $data);
+	   	}
 	}

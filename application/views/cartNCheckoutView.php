@@ -11,9 +11,8 @@
   <!-- end header -->
   <div class="clothes_main section">
     <div class="container mb-3">
-      <div class="row" style="background: white; border-radius: 10px; padding: 10px;">        
-          <?php $this->load->view("userConfig/cartLayout"); ?>       
-      </div>
+      <?php $this->load->view($content); ?>  
+      
     </div>
   </div>
 

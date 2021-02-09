@@ -80,7 +80,12 @@ class userCon extends CI_Controller
         }
     }public function MyCart(){
         $data['category'] = $this->Shopping_Cart_model->getCategory();
-        $this->load->view('MyCartView',$data);
+        $data['content'] = "userConfig/cartLayout";
+        $this->load->view('cartNCheckoutView',$data);
+    }public function CheckOut(){
+        $data['category'] = $this->Shopping_Cart_model->getCategory();
+        $data['content'] = "userConfig/checkOut";
+        $this->load->view('cartNCheckoutView',$data);
     }
     private function login($auth, $p)
     {

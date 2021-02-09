@@ -3,7 +3,7 @@
    	<h1>My Cart</h1>
   </div>
   <div class="card-body">
-  	    <form action="#" method="post" name="CartForm">
+  	    <form action="<?php echo base_url("userCon/checkOut");?>" method="post" name="CartForm">
   	        <table class="table table-striped"> 
   	        	<!--Header-->
               <tr>
@@ -23,10 +23,11 @@
               </tr>   
 
   	       	</table>
+            
             <div style="float:right;">
               <button class="btn btn-warning">ล้าง</button>
               <button class="btn btn-danger">ปิด</button>
-              <button class="btn btn-success">Check Out!!</button>
+              <button class="btn btn-success" >Check Out!!</button>
 
             </div>
   			
