@@ -4,9 +4,14 @@
     </div> -->
  <!-- end loader -->
  <!-- header -->
- <header class="section">
+ <div class="loader_bg" style="background-color:wihte;">
+     <div class="loader"><img src="<?php echo base_url('assets/') ?>images/loading.gif" alt="#" style="width: 10%; height:auto;"></div>
+ </div>
+ <header class="section bg-dark">
      <!-- header inner -->
      <div class="header banner-main">
+         <!-- loader  -->
+         <!-- end loader -->
          <!-- hiden Nav -->
          <div id="mySidenav" class="sidenav">
              <a>
