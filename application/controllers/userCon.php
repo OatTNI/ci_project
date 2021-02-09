@@ -78,6 +78,9 @@ class userCon extends CI_Controller
                 }
             }
         }
+    }public function MyCart(){
+        $data['category'] = $this->Shopping_Cart_model->getCategory();
+        $this->load->view('MyCartView',$data);
     }
     private function login($auth, $p)
     {

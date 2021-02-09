@@ -20,7 +20,7 @@
 	    }
 	    public function myCart(){
 			$data['category'] = $this->Shopping_Cart_model->getCategory();
-	    	$data["content"] = "userConfig/cartView";
+	    	$data["content"] = "userConfig/cartLayout";
 	        $this->load->view('userView', $data);
 	    }
 	   	public function changePassword(){

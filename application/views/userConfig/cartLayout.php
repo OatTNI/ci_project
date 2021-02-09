@@ -3,7 +3,7 @@
    	<h1>My Cart</h1>
   </div>
   <div class="card-body">
-  	    <form action="#" method="post" name="ChangePassword">
+  	    <form action="#" method="post" name="CartForm">
   	        <table class="table table-striped"> 
   	        	<!--Header-->
               <tr>
