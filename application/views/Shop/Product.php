@@ -7,7 +7,20 @@
     <!-- PIC -->
     <div class=" col-xl-6 col-sm-12 border-bottom brodersize d-flex justify-content-center">
         <div style="margin-top: 50px;">
-            <img class="product-pic" alt="" src="<?= $Product->{'img'} ?>" style="width: 500px; height:400px;">
+            <div class="d-flex flex-column thumbnails">
+                <?php $i = 1;
+                foreach ($Proimg as $P) { ?>
+                    <div id="f<?php echo $i ?>" class="tb <?= ($i == 1 ? "tb-active" : ""); ?>"> <img class="thumbnail-img fit-image" src="<?= $P->{'image_url'} ?>"> </div>
+                <?php $i++;
+                } ?>
+            </div>
+            <?php $i = 1;
+            foreach ($Proimg as $P) { ?>
+                <fieldset id="f<?php echo $i ?>1" class="<?= ($i == 1 ? "active" : ""); ?>">
+                    <div class="product-pic"> <img class="pic0" src="<?= $P->{'image_url'} ?>" style="width: 500px; height:400px;"> </div>
+                </fieldset>
+            <?php $i++;
+            } ?>
         </div>
     </div>
     <div class="col-xl-6 col-sm-12 border-bottom brodersize">
@@ -40,7 +53,7 @@
                 <h4>ผู้ผลิต : <?= $Product->{'vendor'} ?></h4>
             </div>
             <div class="col-xl-12 col-sm-6 mt-2">
-                <h4>หมวดหมู่ : <?= $Product->{'category_name'} ?></h4>
+                <h4>หมวดหมู่ : <?= $category->{'category_name'} ?></h4>
             </div>
         </div>
     </div>

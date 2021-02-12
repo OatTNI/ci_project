@@ -10,7 +10,7 @@
     <?php $this->load->view('layout/navbar'); ?>
     <!-- end header -->
     <div class="clothes_main section">
-        <div class=" mx-5 mt-2">
+        <div class="mx-5 mt-2">
             <div id="main_slider" class="carousel slide section banner-main rounded " data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#main_slider" data-slide-to="0" class="active"></li>
@@ -38,14 +38,14 @@
                             <div class="row marginii">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                     <div class="carousel-caption">
-                                        <h1><strong><?=$Pre[1]->{'product_name'}?></strong></h1>
-                                        <p class="text-dark"><?=$Pre[1]->{'description'}?></p>
-                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/ShowOneProduct/");?><?=$Pre[1]->product_id?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
+                                        <h1><strong><?= $Pre[1]->{'product_name'} ?></strong></h1>
+                                        <p class="text-dark"><?= $Pre[1]->{'description'} ?></p>
+                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/Product/"); ?><?= $Pre[1]->product_id ?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-end justify-content-center">
                                     <div class="img-box">
-                                        <img src="<?=$Pre[1]->{'img'}?>" alt="img" style="max-width: 280px; max-height :280px;" />
+                                        <img src="<?= $Pre[1]->{'img'} ?>" alt="img" style="max-width: 280px; max-height :280px;" />
                                     </div>
                                 </div>
                             </div>
@@ -56,14 +56,14 @@
                             <div class="row marginii">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                     <div class="carousel-caption">
-                                        <h1><strong><?=$Pre[0]->{'product_name'}?></strong></h1>
-                                        <p class="text-dark"><?=$Pre[0]->{'description'}?></p>
-                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/ShowOneProduct/");?><?=$Pre[0]->product_id?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
+                                        <h1><strong><?= $Pre[0]->{'product_name'} ?></strong></h1>
+                                        <p class="text-dark"><?= $Pre[0]->{'description'} ?></p>
+                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/Product/"); ?><?= $Pre[0]->product_id ?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-end justify-content-center">
                                     <div class="img-box">
-                                        <img src="<?=$Pre[0]->{'img'}?>" alt="img" style="max-width: 280px; max-height :280px;" />
+                                        <img src="<?= $Pre[0]->{'img'} ?>" alt="img" style="max-width: 280px; max-height :280px;" />
                                     </div>
                                 </div>
                             </div>
