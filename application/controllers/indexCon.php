@@ -6,12 +6,14 @@ class indexCon extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Shopping_Cart_model');
+        $this->load->model('Product_model');
+        // $this->load->model('Category_model');
     }
+    
     public function index($user_data = "")
     {
-        $data['category'] = $this->Shopping_Cart_model->getCategory();
-        $data['Pre'] = $this->Shopping_Cart_model->getProducts();
+        $data["Pre"] = $this->Product_model->getProducts();
+        // $data["category"] = $this->Category_model->getCategories();
         $data["user"] = $user_data;
         $this->load->view('indexView', $data);
     }

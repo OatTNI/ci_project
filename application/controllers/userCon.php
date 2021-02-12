@@ -8,13 +8,12 @@ class userCon extends CI_Controller
     {
         parent::__construct();
         $this->load->model('userModel');
-        $this->load->model('Shopping_Cart_model');
+        
     }
     public function index()
     { 
         //comment for dev userView 
-        $data['category'] = $this->Shopping_Cart_model->getCategory();
-        $this->load->view('loginRegisterView',$data);
+        $this->load->view('loginRegisterView');
         //$this->load->view('userView');
     }
     public function post_login()
@@ -79,11 +78,11 @@ class userCon extends CI_Controller
             }
         }
     }public function MyCart(){
-        $data['category'] = $this->Shopping_Cart_model->getCategory();
+
         $data['content'] = "userConfig/cartLayout";
         $this->load->view('cartNCheckoutView',$data);
     }public function CheckOut(){
-        $data['category'] = $this->Shopping_Cart_model->getCategory();
+
         $data['content'] = "userConfig/checkOut";
         $this->load->view('cartNCheckoutView',$data);
     }
