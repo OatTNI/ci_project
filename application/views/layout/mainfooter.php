@@ -46,7 +46,6 @@
                 <ul>
                     <li> <a href="<?php echo base_url("indexCon/index"); ?>" class="text-dark">Home</a> </li>
                     <li> <a href="<?php echo base_url("Shop/index"); ?>" class="text-dark">Shop</a></li>
-                    <li> <a href="#" class="text-dark">About</a></li>
                     <li> <a href="#" onclick="openNav()" class="text-dark">Category</a></li>
                     <li> <a class="text-dark" href="<?php echo base_url("userCon/index"); ?>">Login</a></li>
                 </ul>

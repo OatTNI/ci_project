@@ -1,3 +1,4 @@
+<?php $category = $this->session->userdata('category'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +9,10 @@
 
 <body class="main-layout">
     <?php $this->load->view('layout/navbar'); ?>
+
     <div class="section clothes_main section">
         <div class="container">
+            
             <div class="row no-gutters">
                 <div class="col-xl-2 card rounded-0">
                     <div class="card-body">
@@ -19,7 +22,7 @@
                             </h2>
                             <?php foreach ($category as $c) { ?>
                                 <div class="col-12 my-2">
-                                    <a href="<?= base_url("Shop/ShowProduct/$c->category_id") ?>"><?= $c->category_name ?></a>
+                                    <a href="<?= base_url("Shop/Products/$c->category_id") ?>"><?= $c->category_name ?></a>
                                 </div>
                             <?php } ?>
                             <div class="col-12 my-2">
