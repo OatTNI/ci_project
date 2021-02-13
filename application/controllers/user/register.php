@@ -142,7 +142,7 @@ class register extends CI_Controller {
     }
 
 /*
-* What: use to check Duplicate phone number in user talbe
+* What: use to check Duplicate phone number in user table
 * Author: oat
 * return: boolean
 */
