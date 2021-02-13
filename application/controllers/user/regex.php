@@ -16,6 +16,6 @@ function regex_phone(){
 * return: string of regex
 */
 function regex_password(){
-    $pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$])[a-zA-Z\d!@#$]{8,}$/";
+    $pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$])[a-zA-Z\d!@#$*&^%]{8,}$/";
     return $pattern;
 }
