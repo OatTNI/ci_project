@@ -9,6 +9,8 @@ class register extends CI_Controller {
         parent::__construct();
         //Do your magic here
         $this->load->model("userModel");
+        require("regex.php");
+        require("security.php");
     }
 
 
@@ -23,16 +25,17 @@ class register extends CI_Controller {
         $this->set_all_rules();
 
         if($this->form_validation->run()==FALSE){
-            $error="";
             $this->load->view("loginRegisterView");
         }
         else{
             $add_user=$this->add_user();
             if($add_user){
-                $this->load->view();
+                $this->session->set_userdata([
+                    "user_id"=>$add_user
+                ]);
+                $this->load->view("loginRegisterView");
             }else{
-                $error="your email or phone number is Duplicated";
-                $this->load->view("loginRegisterView",$error);
+                $this->load->view("loginRegisterView");
             }
         }
     }
@@ -43,44 +46,69 @@ class register extends CI_Controller {
 * return: return nothing
 */
     private function set_all_rules(){
-// ! firstname
-        $temp=array(
-            "required"=>"your %s must be provided"
-        );
-        $this->form_validation->set_rules('firstname', 'Firstname', 'required',$temp);
-
-// ! lastname
-        $temp=array(
-            "required"=>"your %s must be provided"
-        );
-        $this->form_validation->set_rules('lastname', 'Lastname', 'required',$temp);
-
-// ! email
-        $temp=array(
-            "required"=>"your %s must be provided"
-        );
-        $this->form_validation->set_rules('emailfield', 'Email', 'required',$temp);
-
-// ! password
-        $temp=array(
-            "required"=>"your %s must be provided"
-        );
-        $this->form_validation->set_rules('passwordfield', 'Password', 'required',$temp);
-
-// ! password confirmation
-        $temp=array(
-            "required"=>"your %s must be provided",
-            "matches[passwordfield]"=>"your %s must be same with password"
-        );
-        $this->form_validation->set_rules('confirmpasswordfield', 'Password Confirmation', 'required|matches[passwordfield]',$temp);
-
-// ! phone number
-        $temp=array(
-            "required"=>"your %s must be provided",
-        );
-        $this->form_validation->set_rules('phonenumber', 'Phone Number', 'required',$temp);
-
-        // $this->form_validation->set_rules('address', 'Username', 'required',$temp);
+        $regex_phone=regex_phone();
+        $regex_password=regex_password();
+        $config =
+        [
+            [
+                // ! firstname
+                "field"=>"firstname",
+                "label"=>"Firstname",
+                "rules"=>"required|alpha",
+                "errors"=>[
+                    "required"=>"your %s must be provided"
+                ]
+            ],
+            [
+                // ! lastname
+                "field"=>"lastname",
+                "label"=>"Lastname",
+                "rules"=>"required|alpha",
+                "errors"=>[
+                    "required"=>"your %s must be provided"
+                ]
+            ],
+            [
+                // ! email
+                "field"=>"emailfield",
+                "label"=>"Email",
+                "rules"=>"required|valid_email",
+                "errors"=>[
+                    "required"=>"your %s must be provided"
+                ]
+            ],
+            [
+                // ! password and need regex
+                "field"=>"passwordfield",
+                "label"=>"Password",
+                "rules"=>"required|min_length[8]|regex_match[{$regex_password}]",
+                "errors"=>[
+                    "required"=>"your %s must be provided",
+                    "regex_match"=>"%s must contain upper-lower-special character and numberic"
+                ]
+            ],
+            [
+                // ! Password confirmation
+                "field"=>"confirmpasswordfield",
+                "label"=>"Password Confirmation",
+                "rules"=>"required|matches[passwordfield]",
+                "errors"=>[
+                    "required"=>"your %s must be provided",
+                    "matches"=>"your %s must be same with password"
+                ]
+            ],
+            [
+                // ! phone number and need regex
+                "field"=>"phonenumber",
+                "label"=>"Phone Number",
+                "rules"=>"required|numeric|exact_length[10]|regex_match[{$regex_phone}]",
+                "errors"=>[
+                    "required"=>"your %s must be provided",
+                    "regex_match"=>"your %s must contain only 10 digit and start with 06, 08, 09"
+                ]
+            ],
+        ];
+        $this->form_validation->set_rules($config);
     }
 
 /*
@@ -88,29 +116,38 @@ class register extends CI_Controller {
 * Author: oat
 * return: return all post data
 */
-    private function get_all_post(){
+    private function get_all_post_data(){
         $fname=$this->input->post("firstname");
         $lname=$this->input->post("lastname");
         $email=$this->input->post("emailfield");
         $pwd=$this->input->post("passwordfield");
         $phone=$this->input->post("phonenumber");
         $addr=$this->input->post("address");
-        return array($fname,$lname,$email,$phone,$pwd,$addr);
+        return [$fname,$lname,$email,$phone,$pwd,$addr];
     }
 
 /*
 * What: add a user to database in user table
 * Author: oat
-* return: boolean, return true if add user successfully
+* return: false, return user_id if add user successfully
 */
     private function add_user(){
-        // ! 0 firstname
-        // ! 1 lastname
-        // ! 2 email
-        // ! 3 phone
-        // ! 4 password
-        // ! 5 address
-        $temp=$this->get_all_post();
+        /*
+        ! 0 firstname
+        ! 1 lastname
+        ! 2 email
+        ! 3 phone
+        ! 4 password
+        ! 5 address
+        */
+        $temp=$this->get_all_post_data();
+
+        $temp[0]=sql_prevention($temp[0]);
+        $temp[1]=sql_prevention($temp[1]);
+        $temp[2]=sql_prevention($temp[2]);
+        $temp[3]=sql_prevention($temp[3]);
+        $temp[4]=sql_prevention($temp[4]);
+        $temp[5]=sql_prevention($temp[5]);
 
         if(!$this->isDuplicateEmail($temp[2])&&!$this->isDuplicatePhone($temp[3])){
             $options=[
@@ -118,7 +155,10 @@ class register extends CI_Controller {
             ];
             $temp[4]=password_hash($temp[4],PASSWORD_BCRYPT,$options);
             $this->userModel->add_user($temp[0],$temp[1],$temp[2],$temp[3],$temp[4],$temp[5]);
-            return true;
+            $temp=$this->userModel->get_user_by_id($temp[2]);
+            foreach($temp as $row){
+                return $row->user_id;
+            }
         }
         else{
             return false;
