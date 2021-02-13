@@ -71,4 +71,11 @@ class userModel extends CI_Model
         ";
         $this->db->query($query);
     }
+    public function get_user_id($email){
+        $query="
+        select user_id
+        from user
+        where email='$email'";
+        $this->db->query($query);
+    }
 }
