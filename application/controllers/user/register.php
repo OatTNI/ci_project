@@ -25,17 +25,18 @@ class register extends CI_Controller {
         $this->set_all_rules();
 
         if($this->form_validation->run()==FALSE){
-            $this->load->view("loginRegisterView");
+            $this->load->view('loginRegisterView');
         }
         else{
             $add_user=$this->add_user();
-            if($add_user){
+            if($add_user!=false){
                 $this->session->set_userdata([
                     "user_id"=>$add_user
                 ]);
-                $this->load->view("loginRegisterView");
+                redirect("home/account");
             }else{
-                $this->load->view("loginRegisterView");
+                $error="your email or phone number is Duplicated";
+                $this->load->view('loginRegisterView',$error);
             }
         }
     }
@@ -155,7 +156,7 @@ class register extends CI_Controller {
             ];
             $temp[4]=password_hash($temp[4],PASSWORD_BCRYPT,$options);
             $this->userModel->add_user($temp[0],$temp[1],$temp[2],$temp[3],$temp[4],$temp[5]);
-            $temp=$this->userModel->get_user_by_id($temp[2]);
+            $temp=$this->userModel->get_user_id($temp[2]);
             foreach($temp as $row){
                 return $row->user_id;
             }
@@ -165,22 +166,6 @@ class register extends CI_Controller {
         }
 
     }
-
-/*
-* What: use to check Duplicate email in user table
-* Author: oat
-* return: boolean
-*/
-    private function isDuplicateEmail($email){
-        $temp=$this->userModel->get_email();
-        foreach($temp as $row){
-            if($row->email==$email){
-                return true;
-            }
-        }
-        return false;
-    }
-
 /*
 * What: use to check Duplicate phone number in user table
 * Author: oat
@@ -195,7 +180,20 @@ class register extends CI_Controller {
         }
         return false;
     }
-
+/*
+* What: use to check Duplicate email in user table
+* Author: oat
+* return: boolean
+*/
+    private function isDuplicateEmail($email){
+        $temp=$this->userModel->get_email();
+        foreach($temp as $row){
+            if($row->email==$email){
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 /* End of file register.php */
