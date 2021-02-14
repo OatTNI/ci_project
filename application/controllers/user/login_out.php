@@ -29,7 +29,8 @@ class login_out extends CI_Controller {
                 $this->load->view("loginRegisterView");
             }
             else{
-                if($this->login()){
+                $login=$this->login();
+                if($login!=false){
                     $this->session->set_userdata([
                         "user_id"=>$row->user_id
                     ]);
@@ -90,16 +91,14 @@ class login_out extends CI_Controller {
                 $result=$this->userModel->get_user_by_login("mobile",$temp[0]);
             }
             else{
-                $this->load->view('loginRegisterView');
+                return false;
             }
         }
-        else{
-            if($this->isDuplicateEmail($temp[0])){
+        else if($this->isDuplicateEmail($temp[0])){
                 $result=$this->userModel->get_user_by_login("email",$temp[0]);
-            }
-            else{
-                $this->load->view('loginRegisterView');
-            }
+        }
+        else{
+                return false;
         }
         foreach($result as $row){
             if(password_verify($temp[1],$row->password)){
