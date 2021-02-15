@@ -39,8 +39,8 @@ class login_out extends CI_Controller {
                         ]);
                         redirect("indexCon/index");
                     }else{
-                        $error="Not found This account";
-                        $this->load->view("loginRegisterView",$error);
+                        $this->session->set_flashdata('error', 'Not found this email or phone number');
+                        $this->load->view("loginRegisterView");
                     }
                 }
             }

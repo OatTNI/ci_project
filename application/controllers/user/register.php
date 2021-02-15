@@ -36,8 +36,8 @@ class register extends CI_Controller {
                     ]);
                     redirect("home/account");
                 }else{
-                    $error="your email or phone number is Duplicated";
-                    $this->load->view('loginRegisterView',$error);
+                    $this->session->set_flashdata('error', 'your email or phone number is Duplicated');
+                    $this->load->view('loginRegisterView');
                 }
             }
         }
