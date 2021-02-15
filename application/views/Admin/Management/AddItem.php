@@ -1,11 +1,17 @@
-<div class="row">
-	<div class="col">
-		<label style="font-size:150%; color:black;">เพิ่มสินค้า</label>
-	</div>
+<div class="row ">
+    <div class="col-8">
+        <a href="<?php echo base_url('admin/index');?> " class="btn btn-danger">< BACK</a>
+        
+
+    </div>
+    <div class="col-4">
+        <h2 style="text-align: right; color:black;">เพิ่มสินค้า</h2>
+    </div>
 </div>
 <div class="dropdown-divider"></div>
 <div class="row">
-	<form action="#" method="post" name="AddItemForm">
+	<div class="col">
+     <form action="#" method="post" name="AddItemForm">
         <table class="table table-borderless">
             <tr>
                 <td><b>ชื่อสินค้า</b> <label style="color:red">*</label></td>
@@ -34,14 +40,15 @@
             <tr>
                 <td></td>
                 <td colspan="3">
-                    <input class="btn btn-success  my-3" type="submit" value="Save">
-                    <a href="<?php echo base_url('admin/index');?> "class="btn btn-danger my-3">Cancle</a>
+                    <input class="btn btn-success btn-block my-3" type="submit" value="Save">
+                   
                 </td>
             </tr>
 
         </table>
 
         
-    </form>
+    </form>   
+    </div>
 	
 </div>
