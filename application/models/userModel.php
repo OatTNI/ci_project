@@ -50,7 +50,7 @@ class userModel extends CI_Model
     public function get_user_by_login($type, $auth)
     {
         $query = "
-        select user_id,password
+        select user_id,password,first_name
         from user
         where $type='$auth'";
         return $this->db->query($query)->result();

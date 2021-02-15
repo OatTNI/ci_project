@@ -18,3 +18,5 @@ class Product extends CI_Controller
         $data['content'] = 'Shop/Product';
         $this->load->view('Shop', $data);
     }
+}
+?>

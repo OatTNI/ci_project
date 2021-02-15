@@ -23,21 +23,34 @@ class login_out extends CI_Controller {
     {   
         if($method=="show"){
             $this->load->view('loginRegisterView');
-        }else{
-            if($this->session->userdata("user_id")){
+        }
+        else
+        {
+            if($this->session->userdata("user_id"))
+            {
                 $this->session->unset_userdata("user_id");
-                // redirect("");
-            }else{
+                redirect("Home/index");
+            }
+            else
+            {
                 $this->set_all_rules();
-                if($this->form_validation->run()==FALSE){
+                if($this->form_validation->run()==FALSE)
+                {
                     $this->load->view("loginRegisterView");
-                }else{
+                }
+                else
+                {
                     $login=$this->login();
                     if($login!=false){
                         $this->session->set_userdata([
-                            "user_id"=>$login
+                            "user_id"=>$login[0],
+                            "user_fname"=>$login[1],
+                            "user_lname"=>$login[2],
+                            "user_email"=>$login[3],
+                            "user_mobile"=>$login[4],
+                            "user_address"=>$login[5]
                         ]);
-                        redirect("indexCon/index");
+                        redirect("Home/index");
                     }else{
                         $this->session->set_flashdata('error', 'Not found this email or phone number');
                         $this->load->view("loginRegisterView");
@@ -105,7 +118,13 @@ class login_out extends CI_Controller {
         }
         foreach($result as $row){
             if(password_verify($temp[1],$row->password)){
-                return $row->user_id;
+                $attr[0]=$row->user_id;
+                $attr[1]=$row->first_name;
+                $attr[2]=$row->last_name;
+                $attr[3]=$row->email;
+                $attr[4]=$row->mobile;
+                $arrt[5]=$row->address;
+                return $attr;
             }
         }
     }
@@ -153,3 +172,9 @@ class login_out extends CI_Controller {
 }
 
 /* End of file login_out.php */
+    // private function logout()
+    // {
+    //     $this->session->sess_destroy();
+    //     redirect('indexCon/index');
+    //     # code...
+    // }

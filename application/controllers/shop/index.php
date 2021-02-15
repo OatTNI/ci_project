@@ -13,7 +13,7 @@ class index extends CI_Controller
     public function index()
     {
         $data['Product'] = $this->Product_model->getProducts();
-        $data['content'] = 'Shop/ShopMain';
+        $data['content'] = 'Shop/Shopmain';
         $this->load->view('Shop', $data);
     }
 }

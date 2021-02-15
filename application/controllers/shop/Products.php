@@ -12,7 +12,7 @@ class Products extends CI_Controller
     public function index($ID = 0)
     {
         $data['Product'] = $this->Product_model->getProductsbyCategory($ID);
-        $data['content'] = 'Shop/Category';
+        $data['content'] = 'Shop/Shopmain';
         $this->load->view('Shop', $data);
     }
 }
