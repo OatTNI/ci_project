@@ -76,6 +76,6 @@ class userModel extends CI_Model
         select user_id
         from user
         where email='$email'";
-        $this->db->query($query);
+        return $this->db->query($query)->result();
     }
 }
