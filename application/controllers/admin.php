@@ -1,5 +1,4 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
 
 class admin extends CI_Controller
 {
@@ -14,6 +13,17 @@ class admin extends CI_Controller
     {
         $data['Product'] = $this->Product_model->getProducts();
        // $data['content'] = 'Shop/ShopMain';
+        $data['content'] = 'Admin/Management/ItemManager';
+        $this->load->view('Admin/index', $data);
+    }
+    public function ItemAddPanel(){
+        $data['Product'] = $this->Product_model->getProducts();
+        $data['content'] = 'Admin/Management/AddItem';
+        $this->load->view('Admin/index', $data);
+    }
+    public function CategoryManager(){
+        $data['categories'] = $this->Category_model->getCategories();
+        $data['content'] = 'Admin/Management/CategoryManager';
         $this->load->view('Admin/index', $data);
     }
 

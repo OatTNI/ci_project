@@ -35,7 +35,7 @@
                 <td></td>
                 <td colspan="3">
                     <input class="btn btn-success  my-3" type="submit" value="Save">
-                    <input class="btn btn-danger my-3" type="submit" value="Cancle">
+                    <a href="<?php echo base_url('admin/index');?> "class="btn btn-danger my-3">Cancle</a>
                 </td>
             </tr>
 

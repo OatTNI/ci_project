@@ -15,8 +15,8 @@
 	<div class="container mb-5 rounded" style="background: white; padding:25px;">
 	<!-- Collapsable Card Example -->
 
-        <?php $this->load->view("Admin/Management/ItemManager"); ?>
-        <?php //$this->load->view("Admin/Management/AddItem"); ?>
+        <?php $this->load->view($content); ?>
+       
 
 
 	</div>
