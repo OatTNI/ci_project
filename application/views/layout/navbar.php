@@ -30,7 +30,7 @@
                      <div class="full">
                          <div class="center-desk">
                              <div class="d-flex justify-content-center">
-                                 <h1><a href="<?php echo base_url("indexCon/index"); ?>"><strong>KAAIKONG</strong></a></h1>
+                                 <h1><a href="<?php echo base_url("home/index"); ?>"><strong>KAAIKONG</strong></a></h1>
                              </div>
                          </div>
                      </div>
@@ -47,10 +47,10 @@
                          <div class="limit-box">
                              <nav class="main-menu">
                                  <ul class="menu-area-main">
-                                     <li> <a class="text-dark" href="<?php echo base_url("indexCon/index"); ?>">Home</a> </li>
+                                     <li> <a class="text-dark" href="<?php echo base_url("home/index"); ?>">Home</a> </li>
                                      <li> <a class="text-dark" href="<?php echo base_url("Shop/index"); ?>">Shop</a></li>
                                      <li> <a class="text-dark" href="#" onclick="openNav()">Category</a></li>
-                                     <li> <a class="text-dark" href="<?php echo base_url("userCon/index"); ?>">Login</a></li>
+                                     <li> <a class="text-dark" href="<?php echo base_url("user/login_out/index/show"); ?>">Login</a></li>
                                      <li> <a class="text-dark" href="<?php echo base_url("myAccount/index"); ?>"><i class="fas fa-user-circle"></i> My Account</a></li>
                                  </ul>
                              </nav>
