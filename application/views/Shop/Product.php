@@ -32,7 +32,7 @@
         </div>
         <div class="row mb-2">
             <div class="col-12 border-bottom brodersize">
-                <h2><strong>ราคา : <?= $Product->{'price'} ?> บาท</strong></h2>
+                <h2><strong>ราคา : <?= number_format($Product->{'price'},2) ?> บาท</strong></h2>
             </div>
         </div>
         <div class="row mb-3 mt-3">

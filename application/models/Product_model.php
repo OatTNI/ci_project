@@ -9,6 +9,7 @@ class Product_model extends CI_Model {
 
 	public function getProducts()
 	{
+		$this->db->order_by('product_id', 'RANDOM');
 		$query = $this->db->get('product');
 
 		return $query->result();
