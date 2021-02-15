@@ -123,7 +123,7 @@ class login_out extends CI_Controller {
                 $attr[2]=$row->last_name;
                 $attr[3]=$row->email;
                 $attr[4]=$row->mobile;
-                $arrt[5]=$row->address;
+                $attr[5]=$row->address;
                 return $attr;
             }
         }
