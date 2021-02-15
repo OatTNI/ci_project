@@ -20,23 +20,25 @@ class register extends CI_Controller {
 * return 1: if form validation is true, will return index of website with session of user
 * return 2: if form validation is false, will return the same page with flash session of error message
 */
-    public function index()
+    public function index($method="")
     {
-        $this->set_all_rules();
-
-        if($this->form_validation->run()==FALSE){
+        if($method=="show"){
             $this->load->view('loginRegisterView');
-        }
-        else{
-            $add_user=$this->add_user();
-            if($add_user!=false){
-                $this->session->set_userdata([
-                    "user_id"=>$add_user
-                ]);
-                redirect("home/account");
+        }else{
+            $this->set_all_rules();
+            if($this->form_validation->run()==FALSE){
+                $this->load->view('loginRegisterView');
             }else{
-                $error="your email or phone number is Duplicated";
-                $this->load->view('loginRegisterView',$error);
+                $add_user=$this->add_user();
+                if($add_user!=false){
+                    $this->session->set_userdata([
+                        "user_id"=>$add_user
+                    ]);
+                    redirect("home/account");
+                }else{
+                    $error="your email or phone number is Duplicated";
+                    $this->load->view('loginRegisterView',$error);
+                }
             }
         }
     }
