@@ -41,16 +41,6 @@
                 </div>
             </div>
         </div>
-        <div class="menu_main">
-            <div class="menu_text">
-                <ul>
-                    <li> <a href="<?php echo base_url("indexCon/index"); ?>" class="text-dark">Home</a> </li>
-                    <li> <a href="<?php echo base_url("Shop/index"); ?>" class="text-dark">Shop</a></li>
-                    <li> <a href="#" onclick="openNav()" class="text-dark">Category</a></li>
-                    <li> <a class="text-dark" href="<?php echo base_url("userCon/index"); ?>">Login</a></li>
-                </ul>
-            </div>
-        </div>
     </div>
     </div>
     <!-- footer -->

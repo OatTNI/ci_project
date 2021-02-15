@@ -40,7 +40,7 @@
                                     <div class="carousel-caption">
                                         <h1><strong><?= $Pre[1]->{'product_name'} ?></strong></h1>
                                         <p class="text-dark"><?= $Pre[1]->{'description'} ?></p>
-                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/Product/"); ?><?= $Pre[1]->product_id ?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
+                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/Product/index/"); ?><?= $Pre[1]->product_id ?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-end justify-content-center">
@@ -58,7 +58,7 @@
                                     <div class="carousel-caption">
                                         <h1><strong><?= $Pre[0]->{'product_name'} ?></strong></h1>
                                         <p class="text-dark"><?= $Pre[0]->{'description'} ?></p>
-                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/Product/"); ?><?= $Pre[0]->product_id ?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
+                                        <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Shop/Product/index/"); ?><?= $Pre[0]->product_id ?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-end justify-content-center">

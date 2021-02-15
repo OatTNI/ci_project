@@ -17,7 +17,7 @@
               <tr>
                 <td>รูปสินค้า</td>
                 <td>ชื่อสินค้า</td>
-                <td><input type="number" value="9" min="0" max="100" step="1" ></td>
+                <td><input type="number" value="1" min="0" max="100" step="1" ></td>
                 <td>ราคารวม</td>
                 <td><a href="#" class="btn btn-danger" style="width: 50px;">ลบ</a></td>
               </tr>   

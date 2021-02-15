@@ -5,9 +5,7 @@
     </div> -->
  <!-- end loader -->
  <!-- header -->
- <div class="loader_bg" style="background-color:wihte;">
-     <div class="loader"><img src="<?php echo base_url('assets/') ?>images/loading.gif" alt="#" style="width: 10%; height:auto;"></div>
- </div>
+
  <header class="section bg-dark">
      <!-- header inner -->
      <div class="header banner-main">
@@ -39,7 +37,7 @@
                      <div class="input-group">
                          <input class="form-control mr-2 rounded" type="Search" placeholder="What are you looking for?" aria-label="Search">
                          <button class="btn btn-lg rounded-circle" type="submit" style="background-color:#05386B" role="button"><i class="fas fa-search text-light"></i></button>
-                         <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("userCon/MyCart"); ?>" role="button"><i class="fas fa-shopping-cart"></i> My Cart</a>
+                         <a class="btn btn-lg btn-primary ml-2" href="<?php echo base_url("Home/MyCart"); ?>" role="button"><i class="fas fa-shopping-cart"></i> My Cart</a>
                      </div>
                  </div>
                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
