@@ -15,30 +15,33 @@ class login_out extends CI_Controller {
 /*
 * What: use to logout if there's not email-session, if don't have will be login function
 * Author: oat
-* return: return nothing
+* return1: if no user_id session will create session and redirect to account,
+*          if session of user_id was set will clear session and redirect to index
+* return2: return the same same page with flash session data
 */
-    public function index()
+    public function index($method="")
     {   
-        // $this->set_all_rules();
-        if($this->session->userdata("user_id")){
-            $this->session->unset_userdata("user_id");
-            redirect("home/index");
+        if($method=="show"){
+            $this->load->view('loginRegisterView');
         }else{
-            $this->set_all_rules();
-            if($this->form_validation->run()==FALSE){
-                $this->load->view("loginRegisterView");
-            }
-            else{
-                $login=$this->login();
-                if($login!=false){
-                    $this->session->set_userdata([
-                        "user_id"=>$login
-                    ]);
-                    redirect("home/account");
-                }
-                else{
-                    $error="Not found This account";
-                    $this->load->view("loginRegisterView",$error);
+            if($this->session->userdata("user_id")){
+                $this->session->unset_userdata("user_id");
+                // redirect("");
+            }else{
+                $this->set_all_rules();
+                if($this->form_validation->run()==FALSE){
+                    $this->load->view("loginRegisterView");
+                }else{
+                    $login=$this->login();
+                    if($login!=false){
+                        $this->session->set_userdata([
+                            "user_id"=>$login
+                        ]);
+                        redirect("indexCon/index");
+                    }else{
+                        $error="Not found This account";
+                        $this->load->view("loginRegisterView",$error);
+                    }
                 }
             }
         }
