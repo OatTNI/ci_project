@@ -32,7 +32,7 @@ class login_out extends CI_Controller {
                 $login=$this->login();
                 if($login!=false){
                     $this->session->set_userdata([
-                        "user_id"=>$row->user_id
+                        "user_id"=>$login
                     ]);
                     redirect("home/account");
                 }
