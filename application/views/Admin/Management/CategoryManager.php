@@ -1,8 +1,12 @@
 <div class="row ">
-	<div class="col">
-		<label style="font-size:150%; color:black;">จัดการหมวดหมู่</label>
+	<div class="col-8">
+		<a href="<?php echo base_url('admin/index');?> " class="btn btn-danger">< BACK</a>
+        
 
 	</div>
+    <div class="col-4">
+        <h2 style="text-align: right; color:black;">จัดการหมวดหมู่</h2>
+    </div>
 </div>
 <div class="dropdown-divider"></div>
 <div class="row">
