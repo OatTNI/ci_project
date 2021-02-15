@@ -22,11 +22,11 @@
                             </h2>
                             <?php foreach ($category as $c) { ?>
                                 <div class="col-12 my-2">
-                                    <a href="<?= base_url("Shop/Products/$c->category_id") ?>"><?= $c->category_name ?></a>
+                                    <a href="<?php echo base_url("Shop/Products/index/$c->category_id") ?>"><?= $c->category_name ?></a>
                                 </div>
                             <?php } ?>
                             <div class="col-12 my-2">
-                                <a href="<?= base_url("Shop/index") ?>">See All</a>
+                                <a href="<?php echo base_url("Shop/index") ?>">See All</a>
                             </div>
                         </div>
                     </div>
