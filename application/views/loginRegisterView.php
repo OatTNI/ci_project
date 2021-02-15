@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>My Account</title>
     <?php $this->load->view('layout/header-css'); ?>
@@ -13,40 +12,72 @@
             <div class="row mb-3">
                 <div class="col-md-6" style="background-color:white; ">
                     <h1 class="my-3">Login</h1>
-                    <form action="<?php echo base_url("userCon/post_login"); ?>" method="post" name="loginform">
+                    <form action="<?php echo base_url("user/login_out"); ?>" method="post" name="loginform">
                         <label for="auth">Email or Phone Number</label>
+                        <?php echo form_error('auth'); ?>
                         <input class="form-control mb-2" type="text" name="auth" id="auth" placeholder="Email / Phone Number">
                         <label for="p">password</label>
+                        <?php echo form_error('pwloginfield'); ?>
                         <input class="form-control" type="password" name="pwloginfield" id="pwloginfield">
                         <input class="btn btn-success btn-block my-3" type="submit" value="Login">
                     </form>
                 </div>
                 <div class="col-md-6" style="background-color:white;">
                     <h1 class="my-3">Register</h1>
-                    <form action="<?php echo base_url("userCon/register"); ?>" method="post" name="Registerform">
+                    <form action="<?php echo base_url("user/register"); ?>" method="post" name="Registerform">
                         <table class="table table-borderless">
                             <tr>
                                 <td><b>Name</b> <label style="color:red">*</label></td>
-                                <td><input class="form-control mb-3" type="text" name="firstname" placeholder="Enter Firstname"></td>
-                                <td><input class="form-control mb-3" type="text" name="lastname" placeholder="Enter Lastname"></td>
+                                <td>
+                                    <?php echo form_error('firstname'); ?>
+                                    <input class="form-control mb-3" type="text" name="firstname" placeholder="Enter Firstname">
+                                </td>
+                                <td>
+                                    <?php echo form_error('lastname'); ?>
+                                    <input class="form-control mb-3" type="text" name="lastname" placeholder="Enter Lastname">
+                                </td>
                             </tr>
                             <tr>
-                                <td><b>Email</b> <label style="color:red">*</label></td>
-                                <td colspan="2"><input class="form-control mb-3" type="email" name="emailfield" placeholder="Enter Email"></td>
+                                <td>
+                                    <b>Email</b>
+                                    <label style="color:red">*</label>
+                                </td>
+                                <td colspan="2">
+                                    <?php echo form_error('emailfield'); ?>
+                                    <input class="form-control mb-3" type="email" name="emailfield" placeholder="Enter Email">
+                                </td>
 
                             </tr>
                             <tr>
-                                <td><b>Password</b> <label style="color:red"> * </label></td>
-                                <td colspan="2"><input class="form-control mb-3" type="password" id="passwordfield" name="passwordfield" placeholder="Enter Password"></td>
+                                <td>
+                                    <b>Password</b>
+                                    <label style="color:red"> * </label>
+                                </td>
+                                <td colspan="2">
+                                    <?php echo form_error('passwordfield'); ?>
+                                    <input class="form-control mb-3" type="password" id="passwordfield" name="passwordfield" placeholder="Enter Password">
+                                </td>
                             </tr>
                             <tr>
-                                <td><b>Confirm Password</b> <label style="color:red"> * </label></td>
-                                <td colspan="2"><input class="form-control mb-3" type="password" name="confirmpasswordfield" placeholder="Enter Password Again"></td>
+                                <td>
+                                    <b>Confirm Password</b>
+                                    <label style="color:red"> * </label>
+                                </td>
+                                <td colspan="2">
+                                    <?php echo form_error('confirmpasswordfield'); ?>
+                                    <input class="form-control mb-3" type="password" name="confirmpasswordfield" placeholder="Enter Password Again">
+                                </td>
                             </tr>
                             <tr>
                             <tr>
-                                <td><b>Phone Number</b> <label style="color:red"> * </label></td>
-                                <td colspan="2"><input class="form-control mb-3" type="text" name="phonenumber" placeholder="Enter Phone number"></td>
+                                <td>
+                                    <b>Phone Number</b>
+                                    <label style="color:red"> * </label>
+                                </td>
+                                <td colspan="2">
+                                    <?php echo form_error('phonenumber'); ?>
+                                    <input class="form-control mb-3" type="text" name="phonenumber" placeholder="Enter Phone number">
+                                </td>
                             </tr>
                             <tr>
                                 <td><b>Address</b> (Optional)</td>
