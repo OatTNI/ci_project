@@ -5,11 +5,9 @@
 		public function __construct()
     {
         parent::__construct();
-        // $this->load->model('Shopping_Cart_model');
     }
 	    public function index()
 	    {
-			// $data['category'] = Data category
 	        $data["content"] = "userConfig/MyInfo";
 	        $this->load->view('userView', $data);
 	    }
