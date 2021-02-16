@@ -34,7 +34,7 @@ class register extends CI_Controller {
                     $this->session->set_userdata([
                         "user_id"=>$add_user
                     ]);
-                    redirect("indexCon/index");
+                    redirect("Home/index");
                 }else{
                     $this->session->set_flashdata('error', 'your email or phone number is Duplicated');
                     $this->load->view('loginRegisterView');

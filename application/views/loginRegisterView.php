@@ -14,11 +14,11 @@
                     <h1 class="my-3">Login</h1>
                     <form action="<?php echo base_url("user/login_out"); ?>" method="post" name="loginform">
                         <label for="auth">Email or Phone Number</label>
-                        <?php echo form_error('auth'); ?>
                         <input class="form-control mb-2" type="text" name="auth" id="auth" placeholder="Email / Phone Number">
+                        <?php echo form_error('auth'); ?>
                         <label for="p">password</label>
-                        <?php echo form_error('pwloginfield'); ?>
                         <input class="form-control" type="password" name="pwloginfield" id="pwloginfield">
+                        <?php echo form_error('pwloginfield'); ?>
                         <input class="btn btn-success btn-block my-3" type="submit" value="Login">
                     </form>
                 </div>
@@ -29,12 +29,12 @@
                             <tr>
                                 <td><b>Name</b> <label style="color:red">*</label></td>
                                 <td>
-                                    <?php echo form_error('firstname'); ?>
                                     <input class="form-control mb-3" type="text" name="firstname" placeholder="Enter Firstname">
+                                    <?php echo form_error('firstname'); ?>
                                 </td>
                                 <td>
-                                    <?php echo form_error('lastname'); ?>
                                     <input class="form-control mb-3" type="text" name="lastname" placeholder="Enter Lastname">
+                                     <?php echo form_error('lastname'); ?>
                                 </td>
                             </tr>
                             <tr>
@@ -43,8 +43,8 @@
                                     <label style="color:red">*</label>
                                 </td>
                                 <td colspan="2">
-                                    <?php echo form_error('emailfield'); ?>
                                     <input class="form-control mb-3" type="email" name="emailfield" placeholder="Enter Email">
+                                    <?php echo form_error('emailfield'); ?>
                                 </td>
 
                             </tr>
@@ -53,9 +53,9 @@
                                     <b>Password</b>
                                     <label style="color:red"> * </label>
                                 </td>
-                                <td colspan="2">
-                                    <?php echo form_error('passwordfield'); ?>
+                                <td colspan="2">                                    
                                     <input class="form-control mb-3" type="password" id="passwordfield" name="passwordfield" placeholder="Enter Password">
+                                    <?php echo form_error('passwordfield'); ?>
                                 </td>
                             </tr>
                             <tr>
@@ -63,9 +63,9 @@
                                     <b>Confirm Password</b>
                                     <label style="color:red"> * </label>
                                 </td>
-                                <td colspan="2">
-                                    <?php echo form_error('confirmpasswordfield'); ?>
+                                <td colspan="2">                                    
                                     <input class="form-control mb-3" type="password" name="confirmpasswordfield" placeholder="Enter Password Again">
+                                    <?php echo form_error('confirmpasswordfield'); ?>
                                 </td>
                             </tr>
                             <tr>
@@ -74,9 +74,9 @@
                                     <b>Phone Number</b>
                                     <label style="color:red"> * </label>
                                 </td>
-                                <td colspan="2">
-                                    <?php echo form_error('phonenumber'); ?>
+                                <td colspan="2">                                    
                                     <input class="form-control mb-3" type="text" name="phonenumber" placeholder="Enter Phone number">
+                                    <?php echo form_error('phonenumber'); ?>
                                 </td>
                             </tr>
                             <tr>

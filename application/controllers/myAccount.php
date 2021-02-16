@@ -5,14 +5,17 @@
 		public function __construct()
     {
         parent::__construct();
+
+        $this->load->model('History_model');
     }
 	    public function index()
 	    {
+	    	
 	        $data["content"] = "userConfig/MyInfo";
 	        $this->load->view('userView', $data);
 	    }
-	    public function History(){
-			
+	    public function History($uid){
+	    	$data["orderhis"] = $this->History_model->getOrderHistory($uid);
 	    	$data["content"] = "userConfig/userHistory";
 	        $this->load->view('userView', $data);
 	    }

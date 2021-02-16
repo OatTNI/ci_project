@@ -8,28 +8,29 @@
 
 <body class="main-layout">
   <?php $this->load->view('layout/navbar'); ?>
+  <?php $userID = $this->session->userdata('user_id');?>
   <!-- end header -->
   <div class="clothes_main section">
     <div class="container mb-3">
-      <div class="row" style="background: white; border-radius: 10px; padding: 10px;">
-        <div class="col-md-3 col-sm-4 col-4  rounded-left" style="background: rgb(83,216,149); font-size: 150%;">
+      <div class="row" style="background: white; border-radius: 10px; padding: 10px; margin-bottom: 10px;">
+        <div class="col-md-3 col-sm-4 col-4 rounded-left" style="background: rgb(83,216,149); font-size: 150%; ">
           <ul class="Menuside">
             <li class="" style="color:white;">
               Config
             </li>
             <div class="dropdown-divider"></div>
 
-            <li class="nav-item test1">
+            <li class="nav-item MAMenu">
               <a class="nav-link" href="<?php echo base_url('myAccount/index'); ?>"><i class="fas fa-user-circle"></i> Username</a> <!-- variable of username!!!-->
 
             </li>
-            <li class="nav-item test1" id="navbtm">
+            <li class="nav-item MAMenu" id="navbtm">
               <a class="nav-link" href="<?php echo base_url('myAccount/changePassword'); ?>"><i class="fas fa-key"></i> Change Password</a>
             </li>
-            <li class="nav-item test1">
-              <a class="nav-link" href="<?php echo base_url('myAccount/History'); ?>"><i class="fas fa-history"></i> History</a>
+            <li class="nav-item MAMenu">
+              <a class="nav-link" href="<?php echo base_url("myAccount/History/0000000010"); ?>"><i class="fas fa-history"></i> History</a>
             </li>
-            <li class="nav-item test1">
+            <li class="nav-item MAMenu">
               <a class="nav-link" href="<?php echo base_url('myAccount/myCart'); ?>"><i class="fas fa-shopping-cart"></i> My Cart</a>
             </li>
             
