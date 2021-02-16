@@ -40,3 +40,4 @@ class updateCart extends CI_Controller
         redirect("shop/Product/index/$pid");
     }
 }
+?>
