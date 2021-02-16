@@ -70,7 +70,7 @@ class login_out extends CI_Controller {
         $config =
         [
             [
-                // ! firstname
+                // ! email or phone
                 "field"=>"auth",
                 "label"=>"Email or Phone Number",
                 "rules"=>"required",
@@ -79,6 +79,7 @@ class login_out extends CI_Controller {
                 ]
             ],
             [
+                // ! password
                 "field"=>"pwloginfield",
                 "label"=>"Password",
                 "rules"=>"required"
