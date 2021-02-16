@@ -25,7 +25,6 @@
     </div>
     <div class="col-xl-6 col-sm-12 border-bottom brodersize">
         <!-- Data -->
-        <?php if(count($cart)){echo "<div class='HDText text-center'>ไม่มีรายการ</div>";} else{ ?>
             <form action="<?php echo base_url("cart/updateCart/addCart/"); echo $Product->{'product_id'}; ?>" method="post" >
                 <div class="row">
                     <div class="col-12 mb-2">
@@ -58,9 +57,7 @@
                         <h4>หมวดหมู่ : <?php echo $category->{'category_name'}; ?></h4>
                     </div>
                 </div>
-
             </form>
-        <?php }?>
     </div>
     <!-- Data End -->
 </div>
