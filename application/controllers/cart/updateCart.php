@@ -14,7 +14,7 @@ class updateCart extends CI_Controller
 
     }
 
-    public function addCart($pid)
+    public function addCart($pid,$qty)
     {
         $id = $this->session->userdata("user_id");
         
@@ -22,7 +22,7 @@ class updateCart extends CI_Controller
 
         if (is_object($product)) {
             $arr = array();
-            $arr['qty'] = $product->qty + 1;
+            $arr['qty'] = $product->qty + $qty;
 
             $this->db->where('user_id', $id);
             $this->db->where('product_id', $pid);

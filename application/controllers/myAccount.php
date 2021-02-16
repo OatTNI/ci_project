@@ -6,6 +6,7 @@
     	{
 	        parent::__construct();
 	        $this->load->model('History_model');
+			$this->load->model('Cart_model');
     	}
 	    public function index()
 	    {
@@ -18,6 +19,8 @@
 	        $this->load->view('userView', $data);
 	    }
 	    public function myCart(){
+			$id = $this->session->userdata('user_id');
+        	$data['cart'] = $this->Cart_model->getUserCart($id);
 	    	$data["content"] = "userConfig/cartLayout";
 	        $this->load->view('userView', $data);
 	    }

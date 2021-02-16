@@ -23,12 +23,20 @@ body {
     margin-top: 40px;
     margin-bottom: 30px;
 }
-.BGPanel{
-    background: #FFFFFF;
-     border-radius: 10px;
-}
-.HDText {
-   color:black; 
-   font-size:32px;
 
+.BGPanel {
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.HDText {
+    color: black;
+    font-size: 32px;
+}
+
+.table td,
+.table th {
+    padding: .75rem;
+    vertical-align: baseline;
+    border-top: 1px solid #dee2e6;
 }

@@ -40,12 +40,12 @@
                 <h3>จำนวนชิ้น</h3>
             </div>
             <div class="col-6">
-                <input type="number" value="1" min="1" max="100" step="1">
+                <input id="qty" name="qty" type="number" value="1" min="1" max="100" step="1">
             </div>
         </div>
         <div class="row p-3 mb-5">
             <div class="col-12 d-flex justify-content-center">
-                <a class="btn btnanSize btn-primary ml-2" href="<?php echo base_url("cart/updateCart/addCart/"); echo $Product->{'product_id'}?>" role="button"><i class="fas fa-shopping-cart"></i> หยิบใส่ตระกร้า</a>
+                <a class="btn btnanSize btn-primary ml-2" href="<?php echo base_url("cart/updateCart/addCart/"); echo $Product->{'product_id'}; ?>/#qty" role="button"><i class="fas fa-shopping-cart"></i> หยิบใส่ตระกร้า</a>
             </div>
         </div>
         <div class="row border-top brodersize no-gutters mb-5">
