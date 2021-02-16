@@ -45,23 +45,19 @@
                          <div class="limit-box">
                              <nav class="main-menu">
                                  <ul class="menu-area-main">
-                                     <li> <a class="text-dark" href="<?php echo base_url("Home/index"); ?>">Home</a> </li>
-                                     <li> <a class="text-dark" href="<?php echo base_url("Shop/index"); ?>">Shop</a></li>
-                                     <li> <a class="text-dark" href="#" onclick="openNav()">Category</a></li>
-                                     <?php 
-                                     if(!$this->session->userdata("user_id")){ ?>
+                                    <li> <a class="text-dark" href="<?php echo base_url("Home/index"); ?>">Home</a> </li>
+                                    <li> <a class="text-dark" href="<?php echo base_url("Shop/index"); ?>">Shop</a></li>
+                                    <li> <a class="text-dark" href="#" onclick="openNav()">Category</a></li>
+                                    <?php 
+                                    if(!$this->session->userdata("user_id")){ ?>
                                         <li> <a class="text-dark" href="<?php echo base_url("user/login_out/index/show"); ?>">Login</a></li>
-                                        <li> <a class="text-dark" href="<?php echo base_url("myAccount/index"); ?>"><i class="fas fa-user-circle"></i> My account </a></li>
+
                                     <?php } 
                                     else{
                                     ?>
-                                    <li> <a class="text-dark" href="<?php echo base_url("user/login_out/index/"); ?>">Logout</a></li>
-                                    <li> <a class="text-dark" href="<?php echo base_url("myAccount/index"); ?>"><i class="fas fa-user-circle"></i> <?=$this->session->userdata("user_fname") ?></a></li>
-                                    
-                                <?php } ?>
-                                    
-
-                                     
+                                        <li> <a class="text-dark" href="<?php echo base_url("myAccount/index"); ?>"><i class="fas fa-user-circle"></i> <?php echo $this->session->userdata("user_fname"); ?></a></li>
+                                        <li> <a class="text-dark" href="<?php echo base_url("user/login_out/index/"); ?>">Logout</a></li>                                  
+                                    <?php } ?>                              
                                  </ul>
                              </nav>
                          </div>
