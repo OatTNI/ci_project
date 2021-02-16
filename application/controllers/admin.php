@@ -27,7 +27,9 @@ class admin extends CI_Controller
         $this->load->view('Admin/index', $data);
     }
 
-
+    public function delete(){
+        
+    }
 
 }
 ?>
