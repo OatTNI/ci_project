@@ -17,7 +17,7 @@
         <?php foreach($orderhis as $orh){?>
          <tr>
           <td><?php echo $orh->order_id;?></td>
-          <td>NONE</td>
+          <td><?php echo $orh->order_date;?></td>
           <td><?php echo $orh->item_qty;?></td>
           <td><?php echo $orh->item_price;?></td>
         </tr>   
