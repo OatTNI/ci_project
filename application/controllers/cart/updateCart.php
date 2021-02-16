@@ -14,8 +14,9 @@ class updateCart extends CI_Controller
 
     }
 
-    public function addCart($pid,$qty)
+    public function addCart($pid)
     {
+        $qty = $_POST['qty'];
         $id = $this->session->userdata("user_id");
         
         $product = $this->Cart_model->getUserCartProduct($id, $pid);
@@ -31,7 +32,7 @@ class updateCart extends CI_Controller
             $arr = array();
             $arr['user_id'] = $id;
             $arr['product_id'] = $pid;
-            $arr['qty'] = 1;
+            $arr['qty'] = $qty;
 
             $this->db->insert('cart', $arr);
         }

@@ -7,7 +7,8 @@
   <div class="dropdown-divider"></div>
   <div class="row ">
     <div class="col">
-      <?php if(isset($cart)){echo "<div class='HDText text-center' >ไม่มีรายการ</div>";} else{ ?>
+      <?php if(count($cart)==0){echo "<div class='HDText text-center' >ไม่มีรายการ</div>"; } 
+      else{ ?>
       <form action="<?php echo base_url("userCon/checkOut"); ?>" method="post" name="CartForm">
         <table class="table table-striped">
           <!--Header-->
@@ -25,8 +26,7 @@
               <td><?php echo $c->{'product_name'}; ?></td>
               <td><input type="number" value="<?php echo $c->{'qty'}; ?>" min="1" max="20" step="1"></td>
               <td class="text-center">ราคารวม</td>
-              <td><a href="<?php echo base_url("cart/delete/deleteCart/");
-                            echo $c->{'product_id'}; ?>" class="btn btn-danger" style="width: 50px;">ลบ</a></td>
+              <td><a href="<?php echo base_url("cart/delete/deleteCart/"); echo $c->{'product_id'}; ?>" class="btn btn-danger" style="width: 50px;">ลบ</a></td>
             </tr>
           <?php }?>
         </table>
