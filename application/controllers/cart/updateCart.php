@@ -14,7 +14,7 @@ class updateCart extends CI_Controller
 
     }
 
-    public function addCart($pid,$qty)
+    public function addCart($pid)
     {
         $id = $this->session->userdata("user_id");
         

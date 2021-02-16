@@ -45,7 +45,7 @@
         </div>
         <div class="row p-3 mb-5">
             <div class="col-12 d-flex justify-content-center">
-                <a class="btn btnanSize btn-primary ml-2" href="<?php echo base_url("cart/updateCart/addCart/"); echo $Product->{'product_id'}; ?>/#qty" role="button"><i class="fas fa-shopping-cart"></i> หยิบใส่ตระกร้า</a>
+                <a class="btn btnanSize btn-primary ml-2" href="<?php echo base_url("cart/updateCart/addCart/"); echo $Product->{'product_id'}; ?>" role="button"><i class="fas fa-shopping-cart"></i> หยิบใส่ตระกร้า</a>
             </div>
         </div>
         <div class="row border-top brodersize no-gutters mb-5">
