@@ -32,7 +32,12 @@ class register extends CI_Controller {
                 $add_user=$this->add_user();
                 if($add_user!=false){
                     $this->session->set_userdata([
-                        "user_id"=>$add_user
+                        "user_id"=>$add_user[0],
+                        "user_fname"=>$add_user[1],
+                        "user_lname"=>$add_user[2],
+                        "user_email"=>$add_user[3],
+                        "user_mobile"=>$add_user[4],
+                        "user_address"=>$add_user[5]
                     ]);
                     redirect("Home/index");
                 }else{
@@ -160,7 +165,16 @@ class register extends CI_Controller {
             $this->userModel->add_user($temp[0],$temp[1],$temp[2],$temp[3],$temp[4],$temp[5]);
             $temp=$this->userModel->get_user_id($temp[2]);
             foreach($temp as $row){
-                return $row->user_id;
+                //get userinformation from DB
+                $temp2 = $this->userModel->get_user_by_id($row->user_id);
+                $attr[0]=$temp2[0]->user_id;
+                $attr[1]=$temp2[0]->first_name;
+                $attr[2]=$temp2[0]->last_name;
+                $attr[3]=$temp2[0]->email;
+                $attr[4]=$temp2[0]->mobile;
+                $attr[5]=$temp2[0]->address;
+                return $attr;
+
             }
         }
         else{

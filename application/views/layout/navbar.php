@@ -17,7 +17,7 @@
                  <h1 class="text-light">Category</h1>
              </a>
              <?php foreach ($category as $c) { ?>
-                 <a href="<?php echo base_url("Shop/Products/$c->category_id"); ?>"><?php echo $c->category_name; ?></a>
+                 <a href="<?php echo base_url("Shop/Products/index/$c->category_id"); ?>"><?php echo $c->category_name; ?></a>
              <?php } ?>
              <a href="<?php echo base_url("Shop/index"); ?>">See All</a>
              <a href="javascript:void(0)" onclick="closeNav()"><i class="fas fa-times-circle"></i></a>

@@ -28,7 +28,7 @@
               <a class="nav-link" href="<?php echo base_url('myAccount/changePassword'); ?>"><i class="fas fa-key"></i> Change Password</a>
             </li>
             <li class="nav-item MAMenu">
-              <a class="nav-link" href="<?php echo base_url("myAccount/History/0000000010"); ?>"><i class="fas fa-history"></i> History</a>
+              <a class="nav-link" href="<?php echo base_url("myAccount/History/$userID"); ?>"><i class="fas fa-history"></i> History</a>
             </li>
             <li class="nav-item MAMenu">
               <a class="nav-link" href="<?php echo base_url('myAccount/myCart'); ?>"><i class="fas fa-shopping-cart"></i> My Cart</a>
@@ -38,7 +38,6 @@
 
         </div>
         <div class="col-md-9 col-sm-8 col-8 rounded-right" style="background: gray;">
-          <!-- <?php $this->load->view("userConfig/changePassword"); ?> -->
           <?php $this->load->view($content); ?>
 
         </div>

@@ -28,7 +28,8 @@ class login_out extends CI_Controller {
         {
             if($this->session->userdata("user_id"))
             {
-                $this->session->unset_userdata("user_id");
+                //$this->session->unset_userdata("user_id");
+                $this->session->sess_destroy();
                 redirect("Home/index");
             }
             else
