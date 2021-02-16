@@ -28,9 +28,9 @@
 
                 </table>
                 
-                <div style="float:right;">
+                <div style="float:right; margin-bottom: 10px;">
                   <button class="btn btn-warning">ล้าง</button>
-                  <button class="btn btn-danger">ปิด</button>
+                  <!-- <button class="btn btn-danger">ปิด</button> -->
                   <button class="btn btn-success" >Check Out!!</button>
 
                 </div>

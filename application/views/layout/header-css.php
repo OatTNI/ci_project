@@ -4,11 +4,8 @@
     <!-- mobile metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <!-- site metas -->
-    <title>KAAIKONG</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/bootstrap.min.css">
-    <link href="<?php echo base_url('assets/');?>css/sb-admin-2.min.css" rel="stylesheet">
     <!-- style css -->
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/style.css">
     <!-- Responsive-->

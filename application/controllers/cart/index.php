@@ -7,3 +7,4 @@ class index extends CI_Controller{
         $this->load->view('cartNCheckoutView',$data);
     }
 }
+?>
