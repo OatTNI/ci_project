@@ -31,8 +31,8 @@
                     <?php echo number_format($c->{'sum_row'}, 2); ?>
                   </strong>
                 </td>
-                <td><a href="<?php echo base_url("cart/delete/deleteCart/");
-                              echo $c->{'product_id'}; ?>" class="btn btn-danger" style="width: 50px;">ลบ</a></td>
+                <td><a href="<?php echo base_url("cart/delete/deleteCart/"); echo $c->{'product_id'}; ?>" class="btn btn-danger" style="width: 50px;">ลบ</a>
+                  <a href="<?php echo base_url("Shop/Product/index/$c->product_id"); ?>" class="btn btn-warning" style="width: 50px;">แก้ไข</a></td>
               </tr>
             <?php $ari++; $sumtotal=$c->{'sum_total'};} ?>
             <tr>
@@ -43,7 +43,7 @@
 
           <div style="float:right; margin-bottom: 10px;">
             
-            <button class="btn btn-warning">ล้าง</button>
+            <button class="btn btn-danger">ล้าง</button>
             <!-- <button class="btn btn-danger">ปิด</button> -->
             <button class="btn btn-success">Check Out!!</button>
           </div>
@@ -54,6 +54,6 @@
   </div>
 
 </div>
-<!-- <script src="<?php echo base_url('assets/js/jquery.min.js');?>"></script> -->
+
 
 
