@@ -51,19 +51,23 @@ class password extends CI_Controller {
 * return: nothing
 */
     private function set_all_rules(){
+        $regex_password=regex_password();
         $config =
         [
             [
+                // ! Old Password
                 "field"=>"oldpasswordfield",
                 "label"=>"Old Password",
-                "rules"=>"required"
+                "rules"=>"required|min_length[8]|regex_match[{$regex_password}]"
             ],
             [
+                // ! New Password
                 "field"=>"passwordfield",
                 "label"=>"Password",
-                "rules"=>"required"
+                "rules"=>"required|min_length[8]|regex_match[{$regex_password}]"
             ],
             [
+                // ! New Password Confirmation
                 "field"=>"confirmpasswordfield",
                 "label"=>"Confirm Password",
                 "rules"=>"required|matches[passwordfield]"
