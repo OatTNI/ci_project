@@ -1,4 +1,3 @@
-<?php print_r($this->session->flashdata('error'));?>
 <div class="container BGPanel my-2" >
   <div class="row">
     <div class="col HDText mt-2">
