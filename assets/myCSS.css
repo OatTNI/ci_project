@@ -27,6 +27,12 @@ body {
 .BGPanel {
     background: #FFFFFF;
     border-radius: 10px;
+    height: 700px;
+}
+
+.ofPanel {
+    height: 500px;
+    overflow: auto;
 }
 
 .HDText {

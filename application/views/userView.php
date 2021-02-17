@@ -37,7 +37,7 @@
           </ul>
 
         </div>
-        <div class="col-md-9 col-sm-8 col-8 rounded-right" style="background: gray;">
+        <div class="col-md-9 col-sm-8 col-8 rounded-right" style="background: gray; ">
           <?php $this->load->view($content); ?>
 
         </div>

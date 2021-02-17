@@ -20,24 +20,26 @@ class updateCart extends CI_Controller
         $id = $this->session->userdata("user_id");
         
         $product = $this->Cart_model->getUserCartProduct($id, $pid);
-
+        $arr = array();
+        $arr['qty'] = $qty; 
         if (is_object($product)) {
-            $arr = array();
-            $arr['qty'] = $product->qty + $qty;
+            /*$arr['qty'] = $product->qty + $qty;*/
 
             $this->db->where('user_id', $id);
             $this->db->where('product_id', $pid);
             $this->db->update('cart', $arr);
+            
         } else {
-            $arr = array();
+            /* $arr = array();
+            $arr['qty'] = $qty;*/
             $arr['user_id'] = $id;
-            $arr['product_id'] = $pid;
-            $arr['qty'] = $qty;
+            $arr['product_id'] = $pid;      
 
             $this->db->insert('cart', $arr);
+            
         }
 
-        redirect("shop/Product/index/$pid");
+        redirect("shop/Product/index/$pid/$id");
     }
 }
 ?>

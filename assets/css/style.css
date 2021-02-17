@@ -1706,17 +1706,19 @@ input[type="radio"] .styled:checked+label::after {
     color: #fff;
 }
 
-.btn-primary {
+.btn-primary-beautyful {
+    color: #FFFFFF;
     background: #081b30;
-    border: indianred;
+    /* border: indianred; */
     max-width: 170px;
     width: 100%;
     margin-right: 10px;
     border-radius: 25px;
 }
 
-.btn-primary:hover {
+.btn-primary-beautyful:hover {
     background: #ffffff;
+    border: 1px solid black;
     color: #000;
 }
 
@@ -2032,8 +2034,8 @@ img.zoom {
 
 form {
     /*background: #081b30;*/
-   /*padding: 35px 30px;*/
-   padding: 15px 10px;
+    /*padding: 35px 30px;*/
+    padding: 15px 10px;
 }
 
 .map_section figure img {
@@ -2576,7 +2578,7 @@ ul.location_icon span {
     float: left;
     background-color: #EDF5E1;
     height: auto;
-    padding: 83px 0 0 0;
+    padding: 83px 0 83px 0;
 }
 
 .address_text {
@@ -2924,8 +2926,8 @@ body {
     margin: auto;
     padding: 20px;
     border-radius: 15px;
-    margin-top: 50px;
-    margin-bottom: 50px
+    /* margin-top: 50px; */
+    /* margin-bottom: 50px */
 }
 
 .marginLR {

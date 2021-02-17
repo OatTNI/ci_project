@@ -1,11 +1,11 @@
-<div class="container BGPanel my-2" >
+<div class="container BGPanel my-2">
   <div class="row">
     <div class="col HDText mt-2">
         My Information
     </div>
 </div>
 <div class="dropdown-divider"></div>
-   <div class="row " >
+   <div class="row" >
     <div class="col">
             <form action="<?php echo base_url("user/information"); ?>" method="post" name="MyInformationForm">
                 <table class="table table-borderless"> 

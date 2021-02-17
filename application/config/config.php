@@ -25,7 +25,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 // $config['base_url'] = 'http://192.168.1.10/ci_project/';
 $config['base_url'] = 'http://localhost/ci_project/';
-
+//$config['javascript_location'] = 'http://localhost/ci_project/assets/js/jquery.min.js';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -36,7 +36,7 @@ $config['base_url'] = 'http://localhost/ci_project/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
