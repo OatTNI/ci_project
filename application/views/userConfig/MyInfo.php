@@ -7,7 +7,7 @@
 <div class="dropdown-divider"></div>
    <div class="row " >
     <div class="col">
-            <form action="#" method="post" name="MyInformationForm">
+            <form action="<?php echo base_url("user/information"); ?>" method="post" name="MyInformationForm">
                 <table class="table table-borderless"> 
                       <tr>
                         <td><b>Name</b></td>
@@ -25,7 +25,7 @@
                     <tr>
                         <td><b>Address</b></td>
                         <td colspan="2">
-                            <textarea class="form-control mb-3" rows="3" ><?php echo $this->session->userdata("user_address")?$this->session->userdata("user_address"):''; ?></textarea>
+                            <textarea name="address" class="form-control mb-3" rows="3" ><?php echo $this->session->userdata("user_address")?$this->session->userdata("user_address"):''; ?></textarea>
                         </td>
                     </tr>
                      
