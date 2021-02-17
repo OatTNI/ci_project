@@ -13,6 +13,13 @@ class userModel extends CI_Model
     public function index()
     {
     }
+    public function get_password($user_id){
+        $query="
+        select password
+        from user
+        where user_id=$user_id";
+        return $this->db->query($query)->result();
+    }
     public function update_password($user_id, $password)
     {
         $query = "
