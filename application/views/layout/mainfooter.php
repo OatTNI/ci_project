@@ -46,6 +46,6 @@
     <!-- footer -->
 <div id="plant" class="footer layout_padding">
         <div class="container">
-            <p>This Website As part of the subjects ITE-416, ITE-417 <a href="https://www.tni.ac.th/home/"> Thai-Nichi Institute of Technology.</a></p>
+            <p>This Website As part of the subjects ITE-416, ITE-417 <a href="https://www.tni.ac.th/home/"> Thai-Nichi Institute of Technology.</a><br>© 2019 All Rights Reserved. Design by Free Html Templates</p>
         </div>
     </div>
