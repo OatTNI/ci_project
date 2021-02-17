@@ -1,4 +1,4 @@
-<div class="card-body">
+
     <div class="row">
         <div class="col-5">
             <h2 class="card-title">
@@ -19,7 +19,7 @@
     </div>
     <div class="card-body row no-gutters">
         <?php foreach ($Product as $P) { ?>
-            <div class="col-xl-3 col-lg-3 col-ms-12">
+            <div class="col-xl-4 col-lg-4 col-sm-4">
                 <div class="rounded-0 border text-center">
                     <img class="card-img-top p-2 img-fluid" src="<?= $P->img ?>" alt="Card image cap Responsive image" style="width: 175px; height:175px;">
                     <div class="card-body">
@@ -31,4 +31,3 @@
             </div>
         <?php } ?>
     </div>
-</div>
