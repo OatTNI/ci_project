@@ -67,6 +67,7 @@ class login_out extends CI_Controller {
 * return: return nothing
 */
     private function set_all_rules(){
+        $regex_password=regex_password();
         $config =
         [
             [
@@ -82,7 +83,7 @@ class login_out extends CI_Controller {
                 // ! password
                 "field"=>"pwloginfield",
                 "label"=>"Password",
-                "rules"=>"required"
+                "rules"=>"required|min_length[8]|regex_match[{$regex_password}]"
             ]
         ];
         $this->form_validation->set_rules($config);
