@@ -7,6 +7,7 @@
   <div class="dropdown-divider"></div>
   <div class="row ">
     <div class="col">
+      <?php $ari=0; $arid;?>
       <?php if (count($cart) == 0) {
         echo "<div class='HDText text-center' >ไม่มีรายการ</div>";
       } else { ?>
@@ -21,26 +22,30 @@
               <th></th>
             </tr>
             <!--Content-->
-            <?php foreach ($cart as $c) { ?>
+            <?php foreach ($cart as $c) {  ?>
               <tr>
                 <td><img class="card-img-top p-2 img-fluid" src="<?php echo $c->{'img'}; ?>" alt="Card image cap Responsive image" style="width: 175px; height:175px;"></td>
                 <td><?php echo $c->{'product_name'}; ?></td>
-                <td><input type="number" value="<?php echo $c->{'qty'}; ?>" min="1" max="20" step="1"></td>
-                <td class="text-center"> <strong>
+                <td class="text-center"><?php echo $c->{'qty'}; ?></td>
+                <td class="text-center" id="sumrow<?php echo $ari;?>" name="sumrow<?php echo $ari;?>"> <strong>
                     <?php echo number_format($c->{'sum_row'}, 2); ?>
                   </strong>
                 </td>
                 <td><a href="<?php echo base_url("cart/delete/deleteCart/");
                               echo $c->{'product_id'}; ?>" class="btn btn-danger" style="width: 50px;">ลบ</a></td>
               </tr>
-            <?php } ?>
+            <?php $ari++; $sumtotal=$c->{'sum_total'};} ?>
+            <tr>
+              <td colspan="3"></td>
+              <td colspan="2" class="text-right"><h2> รวม <?php echo number_format($sumtotal, 2); ?> บาท</h2></td>
+            </tr>
           </table>
 
           <div style="float:right; margin-bottom: 10px;">
+            
             <button class="btn btn-warning">ล้าง</button>
             <!-- <button class="btn btn-danger">ปิด</button> -->
             <button class="btn btn-success">Check Out!!</button>
-
           </div>
 
         </form>
@@ -49,3 +54,13 @@
   </div>
 
 </div>
+<script src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+
+<script type="text/javascript">
+     $(document).ready(function(){ 
+      var z = 0;
+        <?php echo $js;?>
+     });
+</script>
+
+
