@@ -54,13 +54,6 @@
   </div>
 
 </div>
-<script src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
-
-<script type="text/javascript">
-     $(document).ready(function(){ 
-      var z = 0;
-        <?php echo $js;?>
-     });
-</script>
+<!-- <script src="<?php echo base_url('assets/js/jquery.min.js');?>"></script> -->
 
 
