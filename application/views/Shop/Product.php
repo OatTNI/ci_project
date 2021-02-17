@@ -41,12 +41,12 @@
                         <h3>จำนวนชิ้น</h3>
                     </div>
                     <div class="col-6">
-                        <input id="qty" name="qty" type="number" value="1" min="1" max="100" step="1">
+                        <input id="qty" name="qty" type="number" value="<?php echo isset($qty)?$qty:'1';?>" min="1" max="100" step="1">
                     </div>
                 </div>
                 <div class="row p-3 mb-5">
                     <div class="col-12 d-flex justify-content-center">
-                        <button class="btn btnanSize btn-primary ml-2" type="submit"><i class="fas fa-shopping-cart"></i> หยิบใส่ตระกร้า</button>
+                        <button class="btn btnanSize btn-primary-beautyful ml-2" type="submit"><i class="fas fa-shopping-cart"></i> หยิบใส่ตระกร้า</button>
                     </div>
                 </div>
                 <div class="row border-top brodersize no-gutters mb-5">

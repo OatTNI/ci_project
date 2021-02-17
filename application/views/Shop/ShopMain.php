@@ -25,7 +25,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-truncate"><strong><?php echo $P->product_name; ?></strong></h5>
                         <p class="card-text text-truncate"><?php echo $P->description; ?></p>
-                        <a href="<?php echo base_url("Shop/Product/index/$P->product_id"); ?>" class="btn btn-primary">See</a>
+                        <a href="<?php echo base_url("Shop/Product/index/$P->product_id"); ?>" class="btn btn-primary-beautyful">See</a>
                     </div>
                 </div>
             </div>
