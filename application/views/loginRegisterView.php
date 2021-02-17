@@ -9,8 +9,8 @@
     <?php $this->load->view('layout/navbar'); ?>
     <div class="clothes_main">
         <div class="container">
-            <div class="row mb-3">
-                <div class="col-md-6" style="background-color:white; ">
+            <div class="row mb-3" >
+                <div class="col-md-6 " style="background-color:white; border-bottom-left-radius: 15px; border-top-left-radius: 15px;">
                     <h1 class="my-3">Login</h1>
                     <form action="<?php echo base_url("user/login_out"); ?>" method="post" name="loginform">
                         <label for="auth">Email or Phone Number</label>
@@ -22,7 +22,7 @@
                         <input class="btn btn-success btn-block my-3" type="submit" value="Login">
                     </form>
                 </div>
-                <div class="col-md-6" style="background-color:white;">
+                <div class="col-md-6 " style="background-color:white; border-bottom-right-radius: 15px; border-top-right-radius: 15px;">
                     <h1 class="my-3">Register</h1>
                     <form action="<?php echo base_url("user/register"); ?>" method="post" name="Registerform">
                         <table class="table table-borderless">
