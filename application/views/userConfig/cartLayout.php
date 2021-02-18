@@ -36,14 +36,14 @@
                       <a href="<?php echo base_url("cart/delete/deleteCart/"); echo $c->{'product_id'}; ?>" class="btn btn-danger" style="width: 50px;">ลบ</a></td>
                       
                   </tr>
-                <?php $ari++; $sumtotal=$c->{'sum_total'};} ?>
+                <?php $ari++; $sumtotal=$c->{'sum_total'}; } ?>
               </table>
             </div>            
             <div class="row mt-5 mr-3 " style="margin-bottom: 10px; border-color:black; float:right;"> 
             <h2>รวม <?php echo number_format($sumtotal, 2); ?> บาท</h2> &emsp;   
-              <button class="btn btn-outline-danger">ล้าง</button> &nbsp;
+              <a href="#" class="btn btn-outline-danger">ล้าง</a> &nbsp;
               <!-- <button class="btn btn-danger">ปิด</button> -->
-              <button class="btn btn-primary">Check Out!!</button>          
+              <button type="submit" class="btn btn-primary">Check Out!!</button>          
           </div>
         </form>
       <?php } ?>
