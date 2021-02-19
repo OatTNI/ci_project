@@ -32,5 +32,12 @@
 	   		$data["content"] = "userConfig/checkOut";
 	        $this->load->view('userView', $data);
 	   	}
+		public function clearCart(){
+			$id=$this->session->userdata('user_id');
+			$this->Cart_model->clearCart($id);
+			$data['cart'] = $this->Cart_model->getUserCart($id);
+			$data["content"] = "userConfig/cartLayout";
+	        $this->load->view('userView', $data);
+		}
 	}
 ?>
