@@ -43,7 +43,7 @@ class Product_model extends CI_Model {
 	}
 	public function getProductsbySearch($sid)
 	{
-		$this->db->select('*');
+		$this->db->select('product_name');
 		$this->db->from('product');
 		$this->db->like('product_name',$sid,'both');
 		$query = $this->db->get();
