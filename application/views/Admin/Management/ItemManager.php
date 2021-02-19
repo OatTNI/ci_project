@@ -18,6 +18,7 @@
 	            <div class="card-body">
 	                <h5 class="card-title text-truncate"><strong><?php echo $P->product_name; ?></strong></h5>
 	                <p class="card-text text-truncate"><?php echo $P->description; ?></p>
+					<p class="card-text text-truncate"><?php echo $P->vendor; ?></p>
 	                <a href="#" class="btn btn-warning">แก้ไข</a>
 	                <a href="#" class="btn btn-danger">ลบ</a>
 	            </div>
