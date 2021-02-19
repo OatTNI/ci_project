@@ -37,7 +37,8 @@ class register extends CI_Controller {
                         "user_lname"=>$add_user[2],
                         "user_email"=>$add_user[3],
                         "user_mobile"=>$add_user[4],
-                        "user_address"=>$add_user[5]
+                        "user_address"=>$add_user[5],
+                        "user_status"=>$add_user[6]
                     ]);
                     redirect("Home/index");
                 }else{
@@ -173,6 +174,7 @@ class register extends CI_Controller {
                 $attr[3]=$temp2[0]->email;
                 $attr[4]=$temp2[0]->mobile;
                 $attr[5]=$temp2[0]->address;
+                $attr[6]=$temp2[0]->isAdmin;
                 return $attr;
 
             }
