@@ -48,5 +48,11 @@ class Cart_model extends CI_Model {
 			$this->db->insert('cart',$arr);
 		}
 	}
+	public function clearCart($user_id){
+		$query="
+		delete from cart
+		where user_id=$user_id;";
+		$this->db->query($query);
+	}
 
 }

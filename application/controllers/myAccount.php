@@ -18,12 +18,6 @@
 	    	$data["content"] = "userConfig/userHistory";
 	        $this->load->view('userView', $data);
 	    }
-	    public function myCart(){
-			$id = $this->session->userdata('user_id');
-        	$data['cart'] = $this->Cart_model->getUserCart($id);
-	    	$data["content"] = "userConfig/cartLayout";
-	        $this->load->view('userView', $data);
-	    }
 	   	public function changePassword(){
 	   		$data["content"] = "userConfig/changePassword";
 	        $this->load->view('userView', $data);
@@ -32,5 +26,12 @@
 	   		$data["content"] = "userConfig/checkOut";
 	        $this->load->view('userView', $data);
 	   	}
+		public function clearCart(){
+			$id=$this->session->userdata('user_id');
+			$this->Cart_model->clearCart($id);
+			$data['cart'] = $this->Cart_model->getUserCart($id);
+			$data["content"] = "userConfig/cartLayout";
+	        $this->load->view('cartNCheckoutView', $data);
+		}
 	}
 ?>

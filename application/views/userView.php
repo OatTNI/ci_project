@@ -30,9 +30,7 @@
             <li class="nav-item MAMenu">
               <a class="nav-link" href="<?php echo base_url("myAccount/History/$userID"); ?>"><i class="fas fa-history"></i> History</a>
             </li>
-            <li class="nav-item MAMenu">
-              <a class="nav-link" href="<?php echo base_url('myAccount/myCart'); ?>"><i class="fas fa-shopping-cart"></i> My Cart</a>
-            </li>
+           
             
           </ul>
 
