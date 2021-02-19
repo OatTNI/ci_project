@@ -19,5 +19,17 @@
 
 	<!--FOOTER-->
 	<?php $this->load->view("layout/footer-js"); ?>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			let i=0;
+			$("#add_image2").click(function () {
+				i++;
+				if(i<3){
+					$("#add_image1").append('<input class="form-control mb-3" type="text" name="Picture[]">');
+				} 				
+			});
+		});
+	</script>
 </body>
 </html>
