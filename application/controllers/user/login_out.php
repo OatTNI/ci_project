@@ -49,7 +49,8 @@ class login_out extends CI_Controller {
                             "user_lname"=>$login['last_name'],
                             "user_email"=>$login['email'],
                             "user_mobile"=>$login['mobile'],
-                            "user_address"=>$login['address']
+                            "user_address"=>$login['address'],
+                            "user_status"=>$login['status']
                         ]);
                         redirect("Home/index");
                     }else{
@@ -127,6 +128,7 @@ class login_out extends CI_Controller {
                 $attr['email']=$row->email;
                 $attr['mobile']=$row->mobile;
                 $attr['address']=$row->address;
+                $attr["status"]=$row->isAdmin;
                 return $attr;
             }
         }
