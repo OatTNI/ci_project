@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>admin-css.css">
     
 </head>
-<body>
+<body>	
 	<!--NAV BAR-->
 	<?php $this->load->view("layout/AdminNav"); ?>
 	<div class="container mb-5 rounded" style="background: white; padding:25px;">

@@ -33,9 +33,9 @@
                     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
                         <div class="input-group">
                         <!-- Search -->
-                            <input class="form-control mr-2 rounded"  type="text" id="key_word" name="keyword" value="" placeholder="What are you looking for?" aria-label="Search">                        
-                            <a class="btn btn-lg rounded-circle" href="<?php echo base_url("Shop/Search/index/"); ?>" style="background-color:#05386B" role="button" >
-                            <i class="fas fa-search text-light"></i></a>
+                            <input class="form-control mr-2 rounded"  type="text" id="keyword" name="keyword" value="" placeholder="What are you looking for?" aria-label="Search">                        
+                                  
+                        <button class="btn btn-lg rounded-circle" onclick="FuntionSearch()" style="background-color:#05386B" role="button" ><i class="fas fa-search text-light"></i></button>
                          <!-- Cart -->
                             <a class="btn btn-lg btn-primary-beautyful ml-2" href="<?php echo base_url("cart/Home"); ?>" role="button"><i class="fas fa-shopping-cart"></i> My Cart</a>
                         </div>
@@ -69,3 +69,11 @@
      </div>
      <!-- end header inner -->
  </header>
+ <script type="text/javascript">                                     
+     function FuntionSearch(){
+         var hreff = "http://localhost/ci_project/Shop/Search/index/"+document.getElementById('keyword').value;
+         //alert(hreff);                 
+         location.replace(hreff);                                     
+     }
+
+ </script>  

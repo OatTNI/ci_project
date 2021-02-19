@@ -50,7 +50,7 @@
                     <tr>
                         <td><?php echo $category->category_id; ?></td>
                         <td><?php echo $category->category_name; ?></td>
-                        <td style="float: right;"><a href="#" class="btn btn-warning">แก้ไข</a>&nbsp;
+                        <td colspan="2" style="float: right;"><a href="#" class="btn btn-warning">แก้ไข</a>&nbsp;
                         <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#logoutModal">ลบ</a></td>
                     </tr>
                 <?php } ?>
