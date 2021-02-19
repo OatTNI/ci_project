@@ -50,7 +50,7 @@ class login_out extends CI_Controller {
                             "user_email"=>$login['email'],
                             "user_mobile"=>$login['mobile'],
                             "user_address"=>$login['address'],
-                            "user_status"=>$login['status']
+                            "user_status"=>$login["status"]
                         ]);
                         redirect("Home/index");
                     }else{
