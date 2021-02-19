@@ -6,9 +6,11 @@
                 <?php if(isset($Product[0]->{'category_name'})) { ?>
                     <strong><?php echo $Product[0]->{'category_name'}; ?></strong>
                 <?php } 
+                elseif(isset($Keyword[0])) { ?>
+                    <strong>See All <?php echo $Keyword[0] ?></strong>
+                <?php } 
                 else { ?>
                     <strong>See All</strong>
-
                 <?php } ?>
                
             </h2>

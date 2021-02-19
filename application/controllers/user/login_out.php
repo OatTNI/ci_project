@@ -44,12 +44,12 @@ class login_out extends CI_Controller {
                     $login=$this->login();
                     if($login!=false){
                         $this->session->set_userdata([
-                            "user_id"=>$login[0],
-                            "user_fname"=>$login[1],
-                            "user_lname"=>$login[2],
-                            "user_email"=>$login[3],
-                            "user_mobile"=>$login[4],
-                            "user_address"=>$login[5]
+                            "user_id"=>$login['user_id'],
+                            "user_fname"=>$login['first_name'],
+                            "user_lname"=>$login['last_name'],
+                            "user_email"=>$login['email'],
+                            "user_mobile"=>$login['mobile'],
+                            "user_address"=>$login['address']
                         ]);
                         redirect("Home/index");
                     }else{
@@ -121,12 +121,12 @@ class login_out extends CI_Controller {
         }
         foreach($result as $row){
             if(password_verify($temp[1],$row->password)){
-                $attr[0]=$row->user_id;
-                $attr[1]=$row->first_name;
-                $attr[2]=$row->last_name;
-                $attr[3]=$row->email;
-                $attr[4]=$row->mobile;
-                $attr[5]=$row->address;
+                $attr['user_id']=$row->user_id;
+                $attr['first_name']=$row->first_name;
+                $attr['last_name']=$row->last_name;
+                $attr['email']=$row->email;
+                $attr['mobile']=$row->mobile;
+                $attr['address']=$row->address;
                 return $attr;
             }
         }

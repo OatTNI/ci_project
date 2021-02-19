@@ -41,5 +41,14 @@ class Product_model extends CI_Model {
 
 		return $query->result();	
 	}
+	public function getProductsbySearch($sid)
+	{
+		$this->db->select('*');
+		$this->db->from('product');
+		$this->db->like('product_name',$sid,'both');
+		$query = $this->db->get();
+		return $query->result();
+		# code...
+	}
 
 }
