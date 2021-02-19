@@ -13,9 +13,9 @@ class information extends CI_Controller {
     }
 
 /*
-* What: use to get information in my account page
+* What: change information of user
 * Author: oat
-* return: return nothing
+* return: nothing
 */
     public function index()
     {
@@ -25,7 +25,61 @@ class information extends CI_Controller {
                     $data["content"] = "userConfig/MyInfo";
 	                $this->load->view('userView', $data);
                 }else{
+                    // ! 0 fname
+                    // ! 1 lname
+                    // ! 2 email
+                    // ! 3 phone
+                    // ! 4 addr
+                    $temp=$this->get_all_post_data();
 
+                    $email_IsChange= $temp[2]!=$this->session->userdata("user_email");
+                    $phone_IsChange=$temp[3]!=$this->session->userdata("user_mobile");
+
+                    // ! change only email
+                    // ! change nothing
+                    // ! change both email and phone
+                    if($email_IsChange&&$phone_IsChange){
+                        // ! are They duplicated?
+                        if(!$this->isDuplicateEmail($temp[2])&&!$this->isDuplicatePhone($temp[3])){
+                            $this->changeInfo($temp);
+                            $data["content"] = "userConfig/MyInfo";
+	                        $this->load->view('userView', $data);
+                        }else{
+                            $this->session->set_flashdata('error',"your email or phone number is Duplicated");
+                            $data["content"] = "userConfig/MyInfo";
+	                        $this->load->view('userView', $data);
+                        }
+                    }
+                    // ! change only phone
+                    else if($phone_IsChange){
+                        // ! check for Is it duplicated?
+                        if(!$this->isDuplicatePhone($temp[3])){
+                            $this->changeInfo($temp);
+                            $data["content"] = "userConfig/MyInfo";
+	                        $this->load->view('userView', $data);
+                        }else{
+                            $this->session->set_flashdata('error',"your phone number is Duplicated");
+                            $data["content"] = "userConfig/MyInfo";
+	                        $this->load->view('userView', $data);
+                        }
+                    }
+                    // ! change only email
+                    else if($email_IsChange){
+                        // ! check for Is it duplicated?
+                        if(!$this->isDuplicateEmail($temp[2])){
+                            $this->changeInfo($temp);
+                            $data["content"] = "userConfig/MyInfo";
+	                        $this->load->view('userView', $data);
+                        }else{
+                            $this->session->set_flashdata('error',"your email is Duplicated");
+                            $data["content"] = "userConfig/MyInfo";
+	                        $this->load->view('userView', $data);
+                        }
+                    }else{
+                        $this->changeInfo($temp);
+                        $data["content"] = "userConfig/MyInfo";
+	                    $this->load->view('userView', $data);
+                    }
                 }
             }
             else{
@@ -35,9 +89,9 @@ class information extends CI_Controller {
     }
         
 /*
-* What: use to get information of user by user_id
+* What: use to set rule for form validation
 * Author: oat
-* return: array of user information
+* return: nothing
 */
     private function set_all_rules(){
         $regex_phone=regex_phone();
@@ -89,7 +143,7 @@ class information extends CI_Controller {
     private function get_all_post_data(){
         $fname=$this->input->post("firstname");
         $lname=$this->input->post("lastname");
-        $email=$this->input->post("email");
+        $email=$this->input->post("emailfield");
         $phone=$this->input->post("phonenumber");
         $addr=$this->input->post("address");
 
@@ -130,6 +184,23 @@ class information extends CI_Controller {
             }
         }
         return false;
+    }
+
+/*
+* What: use to change Information of user
+* Author: oat
+* return: nothing
+*/
+    private function changeInfo($temp){
+        $this->userModel->update_row($this->session->userdata("user_id"),$temp[0],$temp[1],$temp[2],$temp[3],$temp[4]);
+            
+        $this->session->set_userdata([
+            "user_fname"=>$temp[0],
+            "user_lname"=>$temp[1],
+            "user_email"=>$temp[2],
+            "user_mobile"=>$temp[3],
+            "user_address"=>$temp[4]
+        ]);
     }
 
 }
