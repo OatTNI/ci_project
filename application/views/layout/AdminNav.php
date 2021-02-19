@@ -3,6 +3,7 @@
 
     
     <span style="font-size: 200%; color:white;">Administrator</span>
+    <span class="mx-5" style="font-size: 10%; color:white;"><a class="text-white" href="<?php echo base_url("Home/index"); ?>">กลับสู่หน้า Home</a></span>
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
