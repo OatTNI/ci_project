@@ -14,7 +14,7 @@
 	        $this->load->view('userView', $data);
 	    }
 	    public function History($uid){
-	    	$data["orderhis"] = $this->History_model->getOrderHistory($uid);
+	    	$data["orderhis"] = $this->History_model->getUserHistory($uid);
 	    	$data["content"] = "userConfig/userHistory";
 	        $this->load->view('userView', $data);
 	    }
