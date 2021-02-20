@@ -38,8 +38,12 @@
                 <tr>
                     <td><b>ภาพสินค้า</b> <label style="color:red"> * </label></td>
                     <td>
-                    <span id="add_image1"><input class="form-control mb-3" type="text" name="Picture[]"></span></td>
-                    <td colspan="2"><a id="add_image2" href="#" class="btn btn-outline-success">+ เพิ่มรูป</a></td>
+                    <span id="image"><input class="form-control mb-3" type="text" name="Picture[]"></span></td>
+                    <td colspan="2">
+                        <a id="add_image" href="#" class="btn btn-outline-success">+ เพิ่มรูป</a>
+                        <a id="remove_image" href="#" class="btn btn-outline-danger">- ลบรูป</a>
+                    </td>
+                        
                 </tr>
                 <tr>
                     <td><b>คำอธิบายสินค้า</b> <label style="color:red"> * </label></td>
