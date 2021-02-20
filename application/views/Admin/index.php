@@ -23,11 +23,18 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 			let i=0;
-			$("#add_image2").click(function () {
-				i++;
-				if(i<3){
-					$("#add_image1").append('<input class="form-control mb-3" type="text" name="Picture[]">');
+			$("#add_image").click(function () {
+				if(i<2){
+					i++;
+					$("#image").append('<input class="form-control mb-3" type="text" name="Picture[]">');
 				} 				
+			});
+			$("#remove_image").click(function () {
+				if(i>0){
+					i--;
+					$("#image input:last-child").remove();
+				}
+				
 			});
 		});
 	</script>
