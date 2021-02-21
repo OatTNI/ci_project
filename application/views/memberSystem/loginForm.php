@@ -18,7 +18,7 @@
            <?php echo form_error('pwloginfield'); ?>
            <input class="btn btn-success btn-block my-3" type="submit" value="Login">
        </form>
-       <a href=""></a>
+       <a href="<?php echo base_url('user/register/index');?>"><i class="fas fa-edit"></i> ยังไม่เป็นสมาชิก? สมัครเลย!</a>
      </div>
     </div>
   </div>

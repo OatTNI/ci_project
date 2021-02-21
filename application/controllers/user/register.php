@@ -21,11 +21,11 @@ class register extends CI_Controller {
     public function index($method="")
     {
         if($method=="show"){
-            $this->load->view('loginRegisterView');
+            $this->load->view('memberSystem/registerForm');
         }else{
             $this->set_all_rules();
             if($this->form_validation->run()==FALSE){
-                $this->load->view('loginRegisterView');
+                $this->load->view('memberSystem/registerForm');
             }else{
                 $add_user=$this->add_user();
                 if($add_user!=false){
@@ -41,7 +41,7 @@ class register extends CI_Controller {
                     redirect("Home/index");
                 }else{
                     $this->session->set_flashdata('error', 'your email or phone number is Duplicated');
-                    $this->load->view('loginRegisterView');
+                    $this->load->view('memberSystem/registerForm');
                 }
             }
         }

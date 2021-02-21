@@ -52,7 +52,7 @@
                                      <?php
                                         if (!$this->session->userdata("user_id")) { ?>
                                          <li> 
-                                            <a class="text-dark" id="loginbutton" data-toggle="modal" data-target="#LoginModal">Login</a>
+                                            <a class="text-dark" id="loginbutton" data-toggle="modal" data-target="#LoginModal"><i class="fas fa-sign-in-alt"></i> Login</a>
                                             
                                          </li>
 
