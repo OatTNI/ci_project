@@ -19,6 +19,7 @@ class admin extends CI_Controller
     public function ItemAddPanel(){
         $data['Category'] = $this->Category_model->getCategories();
         $data['Product'] = $this->Product_model->getProducts();
+        $data["vendor"]=$this->Product_model->getVendor();
         $data['content'] = 'Admin/Management/AddItem';
         $this->load->view('Admin/index', $data);
 

@@ -23,6 +23,7 @@ class addProduct extends CI_Controller {
             if($this->form_validation->run()==FALSE){
                 $data["Category"]=$this->Category_model->getCategories();
                 $data["Product"]=$this->Product_model->getProducts();
+                $data["vendor"]=$this->Product_model->getVendor();
                 $data["content"]="Admin/Management/AddItem";
                 $this->load->view("Admin/index",$data);
             }else{
