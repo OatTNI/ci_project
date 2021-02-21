@@ -38,7 +38,7 @@ class Product_model extends CI_Model {
 	{
 		$this->db->where('product_id', $pid);
 		$query = $this->db->get('product_image');
-
+		
 		return $query->result();	
 	}
 	public function getProductsbySearch($sid)
@@ -63,6 +63,21 @@ class Product_model extends CI_Model {
 		from product
 		where ";
 	}
-
+	public function getProductvendor($VID){
+		$this->db->select('vendor_name');
+		$this->db->from('vendor');
+		$this->db->where('vendor_id', $VID);
+		$query = $this->db->get();
+		// echo $this->db->last_query();
+		return $query->result();
+		
+	}
+	public function getVendor(){
+		$this->db->select('*');
+		$this->db->from('vendor');
+		$query = $this->db->get();
+		// echo $this->db->last_query();
+		return $query->result();
+		
+	}
 }
-?>
