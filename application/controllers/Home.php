@@ -11,6 +11,7 @@ class Home extends CI_Controller
     
     public function index($user_data = "")
     {
+
         $data["Pre"] = $this->Product_model->getProducts();
 
         $category=$this->Category_model->getCategories();

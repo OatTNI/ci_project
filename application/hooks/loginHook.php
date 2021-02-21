@@ -10,7 +10,7 @@ class loginHook
         $classname = $this->CI->router->class;
         $methodname = $this->CI->router->method;
         if (!$this->CI->session->userdata('user_id') && $methodname != "index" && $classname != "userCon") {
-            redirect("userCon/index");
+            redirect("Home/index");
         }
     }
 }
