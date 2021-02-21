@@ -51,7 +51,10 @@
                                      <li> <a class="text-dark" href="#" onclick="openNav()"><i class="fas fa-list-alt"></i> Category</a></li>
                                      <?php
                                         if (!$this->session->userdata("user_id")) { ?>
-                                         <li> <a class="text-dark" href="<?php echo base_url("user/login_out/index/show"); ?>"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                                         <li> 
+                                            <a class="text-dark" id="loginbutton" data-toggle="modal" data-target="#LoginModal">Login</a>
+                                            
+                                         </li>
 
                                          <?php } else {
                                              
@@ -72,8 +75,10 @@
      </div>
      <!-- end header inner -->
  </header>
- <script type="text/javascript">
+<?php $this->load->view('loginForm');?>
 
+ <script type="text/javascript">
+   
      function FuntionSearch() {
          var hreff = "http://localhost/ci_project/Shop/Search/index/" + document.getElementById('keyword').value;
          //alert(hreff);                 

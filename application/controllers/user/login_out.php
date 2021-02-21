@@ -20,46 +20,40 @@ class login_out extends CI_Controller {
 * return2: return the same same page with flash session data
 */
     public function index($method="")
-    {   
-        if($method=="show"){
-            $this->load->view('loginRegisterView');
+    {           
+        if($this->session->userdata("user_id"))
+        {
+            //$this->session->unset_userdata("user_id");
+            $this->session->sess_destroy();
+            redirect("Home/index");
         }
         else
         {
-            if($this->session->userdata("user_id"))
+            $this->set_all_rules();
+            if($this->form_validation->run()==FALSE)
             {
-                //$this->session->unset_userdata("user_id");
-                $this->session->sess_destroy();
-                redirect("Home/index");
+                $this->load->view("loginRegisterView");
             }
             else
             {
-                $this->set_all_rules();
-                if($this->form_validation->run()==FALSE)
-                {
+                $login=$this->login();
+                if($login!=false){
+                    $this->session->set_userdata([
+                        "user_id"=>$login['user_id'],
+                        "user_fname"=>$login['first_name'],
+                        "user_lname"=>$login['last_name'],
+                        "user_email"=>$login['email'],
+                        "user_mobile"=>$login['mobile'],
+                        "user_address"=>$login['address'],
+                        "user_status"=>$login["status"]
+                    ]);
+                    redirect("Home/index");
+                }else{
+                    $this->session->set_flashdata('error', 'Not found this email or phone number');
                     $this->load->view("loginRegisterView");
                 }
-                else
-                {
-                    $login=$this->login();
-                    if($login!=false){
-                        $this->session->set_userdata([
-                            "user_id"=>$login['user_id'],
-                            "user_fname"=>$login['first_name'],
-                            "user_lname"=>$login['last_name'],
-                            "user_email"=>$login['email'],
-                            "user_mobile"=>$login['mobile'],
-                            "user_address"=>$login['address'],
-                            "user_status"=>$login["status"]
-                        ]);
-                        redirect("Home/index");
-                    }else{
-                        $this->session->set_flashdata('error', 'Not found this email or phone number');
-                        $this->load->view("loginRegisterView");
-                    }
-                }
             }
-        }
+        }      
     }
 
 /*

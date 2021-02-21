@@ -12,8 +12,6 @@ class register extends CI_Controller {
         require("regex.php");
         require("security.php");
     }
-
-
 /* 
 * What: add a user to database in user table
 * Author: oat

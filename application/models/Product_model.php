@@ -61,7 +61,8 @@ class Product_model extends CI_Model {
 		$query="
 		select product_id
 		from product
-		where "
+		where ";
 	}
 
 }
+?>
