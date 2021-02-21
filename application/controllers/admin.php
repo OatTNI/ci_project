@@ -21,6 +21,7 @@ class admin extends CI_Controller
         $data['Product'] = $this->Product_model->getProducts();
         $data['content'] = 'Admin/Management/AddItem';
         $this->load->view('Admin/index', $data);
+
     }
     public function CategoryManager(){
         $data['categories'] = $this->Category_model->getCategories();
