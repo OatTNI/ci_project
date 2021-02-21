@@ -50,5 +50,18 @@ class Product_model extends CI_Model {
 		return $query->result();
 		# code...
 	}
+	public function add_product($product_name,$product_price,$vendor_name,$category,$description){
+		$query="
+		insert into product (product_name,vendor,description,price,category_id)
+		values ('$product_name','$vendor_name','$description',$product_price,$category);
+		";
+		$this->db->query($query);
+	}
+	public function get_id($product_name,$vendor_name){
+		$query="
+		select product_id
+		from product
+		where "
+	}
 
 }
