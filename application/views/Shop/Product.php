@@ -52,7 +52,7 @@
             </div>
             <div class="row border-top brodersize no-gutters mb-5">
                 <div class="col-xl-12 col-sm-6 mt-5">
-                    <h4>ผู้ผลิต : <?php echo $Product->{'vendor'}; ?></h4>
+                    <h4>ผู้ผลิต : <?php echo $vendor[0]->{'vendor_name'}; ?></h4>
                 </div>
                 <div class="col-xl-12 col-sm-6 mt-2">
                     <h4>หมวดหมู่ : <?php echo $category->{'category_name'}; ?></h4>

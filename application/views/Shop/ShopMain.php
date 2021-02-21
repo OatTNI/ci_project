@@ -23,7 +23,7 @@
         <?php foreach ($Product as $P) { ?>
             <div class="col-xl-4 col-lg-4 col-sm-4">
                 <div class="rounded-0 border text-center">
-                    <img class="card-img-top p-2 img-fluid" src="<?php echo $P->img ?>" alt="Card image cap Responsive image" style="width: 175px; height:175px;">
+                    <img class="card-img-top p-2 img-fluid" src="<?php/* echo $Img->image_url*/ ?>" alt="Card image cap Responsive image" style="width: 175px; height:175px;">
                     <div class="card-body">
                         <h5 class="card-title text-truncate"><strong><?php echo $P->product_name; ?></strong></h5>
                         <p class="card-text text-truncate"><?php echo $P->description; ?></p>
