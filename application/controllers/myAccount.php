@@ -31,7 +31,7 @@
 			$this->Cart_model->clearCart($id);
 			$data['cart'] = $this->Cart_model->getUserCart($id);
 			$data["content"] = "userConfig/cartLayout";
-	        $this->load->view('cartNCheckoutView', $data);
+	        $this->load->view('cartView', $data);
 		}
 	}
 ?>

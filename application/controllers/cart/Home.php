@@ -18,11 +18,9 @@ class Home extends CI_Controller
         $id = $this->session->userdata('user_id');
         $data['cart'] = $this->Cart_model->getUserCart($id);
         $data['content'] = 'userConfig/cartLayout';
-        $this->load->view('cartNCheckoutView', $data);
+        $this->load->view('cartView', $data);
     }
-    public function test(){
-        $this->load->view('My404');
-    }
+
 }
 
 ?>

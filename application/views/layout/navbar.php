@@ -75,7 +75,7 @@
      </div>
      <!-- end header inner -->
  </header>
-<?php $this->load->view('loginForm');?>
+<?php $this->load->view('memberSystem/loginForm');?>
 
  <script type="text/javascript">
    
