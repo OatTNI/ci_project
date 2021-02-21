@@ -12,21 +12,28 @@
 <div class="dropdown-divider"></div>
 <div class="row">
     <div class="col">
-        <form action="#" method="post" name="AddItemForm">
+        <form action="<?php echo base_url("admins/addProduct"); ?>" method="post" name="AddItemForm">
             <table class="table table-borderless">
                 <tr>
                     <td><b>ชื่อสินค้า</b> <label style="color:red">*</label></td>
-                    <td><input class="form-control mb-3" type="text" name="ProductName"></td>
+                    <td>
+                    <?php echo form_error("ProductName"); ?>
+                    <input class="form-control mb-3" type="text" name="ProductName"></td>
                     <td><b>ราคาสินค้า</b> <label style="color:red"> * </label></td>
-                    <td><input class="form-control mb-3" type="text" name="VenderName"></td>
+                    <td>
+                    <?php echo form_error("ProductPrice"); ?>
+                    <input class="form-control mb-3" type="number" name="ProductPrice"></td>
                 </tr>
                 <tr>
                     <td><b>ผู้ขาย</b> <label style="color:red">*</label></td>
-                    <td><input class="form-control mb-3" type="text" name="VenderName"></td>
+                    <td>
+                    <?php echo form_error("VendorName"); ?>
+                    <input class="form-control mb-3" type="text" name="VendorName"></td>
                     <td><b>หมวดหมู่สินค้า</b> <label style="color:red"> * </label></td>
                     <td>
                         <div class="form-group">
-                            <select class="form-control" id="Categoryinput">
+                            <?php echo form_error("category"); ?>
+                            <select name="category" class="form-control" id="Categoryinput">
                                 <?php foreach ($Category as $C) { ?>
                                     <option value="<?php echo $C->{'category_id'} ?>"><?php echo $C->{'category_name'} ?></option>
                                 <?php } ?>
@@ -38,7 +45,9 @@
                 <tr>
                     <td><b>ภาพสินค้า</b> <label style="color:red"> * </label></td>
                     <td>
-                    <span id="image"><input class="form-control mb-3" type="text" name="Picture[]"></span></td>
+                    <span id="image">
+                    <?php echo form_error("Picture[]"); ?>
+                    <input class="form-control mb-3" type="text" name="Picture[]"></span></td>
                     <td colspan="2">
                         <a id="add_image" href="#" class="btn btn-outline-success">+ เพิ่มรูป</a>
                         <a id="remove_image" href="#" class="btn btn-outline-danger">- ลบรูป</a>
@@ -48,7 +57,8 @@
                 <tr>
                     <td><b>คำอธิบายสินค้า</b> <label style="color:red"> * </label></td>
                     <td colspan="3">
-                        <textarea class="form-control mb-3" rows="3" name="address"></textarea>
+                    <?php echo form_error("description"); ?>
+                        <textarea class="form-control mb-3" rows="3" name="description"></textarea>
                     </td>
                 </tr>
                 <tr>
