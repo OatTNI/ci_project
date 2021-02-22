@@ -1,2 +1,0 @@
-test ssh
-test fugitive
