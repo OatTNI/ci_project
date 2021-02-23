@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2021 at 02:21 PM
+-- Generation Time: Feb 23, 2021 at 02:56 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -332,19 +332,20 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL,
   `mobile` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `address` text NOT NULL
+  `address` text NOT NULL,
+  `isAdmin` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `mobile`, `password`, `address`) VALUES
-(0000000001, 'wendy', 'lee', 'lee_wendy@mmail.com', '0628885643', 'lml', 'Unit 14\r\n3 Edgar Buildings\r\nGeorge Street\r\nBath\r\nEngland\r\nBA1 2FJ\r\n'),
-(0000000002, 'tina', 'grey', 'tinaaa@amail.com', '0994038264', 'tina_g', 'Department 98\r\n44-46 Morningside Road\r\nEdinburgh\r\nScotland\r\nEH10 4BF'),
-(0000000003, 'cinzano', 'rosso', 'ros50@cmail.com', '0867643256', 'cinzanooo', 'Office 33\r\n27 Colmore Row\r\nBirmingham\r\nEngland\r\nB3 2EW'),
-(0000000004, 'john', 'fey', 'john_fc@gmail.com', '0236573923', '12345', 'JESSIE SANTANA\r\n4325 W PALM BEACH RD RM 419\r\nSAN FRANCISCO CA 94116'),
-(0000000005, 'michael', 'chess', 'm_michael@gmail.com', '0124572888', 'chess', '1771/1 Pattanakarn Road, Suan Luang, Bangkok 10250');
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `mobile`, `password`, `address`, `isAdmin`) VALUES
+(0000000001, 'wendy', 'lee', 'lee_wendy@mmail.com', '0628885643', 'lml', 'Unit 14\r\n3 Edgar Buildings\r\nGeorge Street\r\nBath\r\nEngland\r\nBA1 2FJ\r\n', 0),
+(0000000002, 'tina', 'grey', 'tinaaa@amail.com', '0994038264', 'tina_g', 'Department 98\r\n44-46 Morningside Road\r\nEdinburgh\r\nScotland\r\nEH10 4BF', 0),
+(0000000003, 'cinzano', 'rosso', 'ros50@cmail.com', '0867643256', 'cinzanooo', 'Office 33\r\n27 Colmore Row\r\nBirmingham\r\nEngland\r\nB3 2EW', 0),
+(0000000004, 'john', 'fey', 'john_fc@gmail.com', '0236573923', '12345', 'JESSIE SANTANA\r\n4325 W PALM BEACH RD RM 419\r\nSAN FRANCISCO CA 94116', 0),
+(0000000005, 'michael', 'chess', 'm_michael@gmail.com', '0124572888', 'chess', '1771/1 Pattanakarn Road, Suan Luang, Bangkok 10250', 0);
 
 -- --------------------------------------------------------
 
