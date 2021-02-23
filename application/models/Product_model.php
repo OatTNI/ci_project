@@ -18,7 +18,7 @@ class Product_model extends CI_Model {
 	public function getaProduct($pid)
 	{
 		$this->db->where('product_id', $pid);
-		$query = $this->db->get('product');
+		$query = $this->db->get('product_view');
 
 		return $query->row(0);
 	}
@@ -26,7 +26,7 @@ class Product_model extends CI_Model {
 	public function getProductsbyCategory($cid)
 	{
 		$this->db->select('*');
-		$this->db->from('product');
+		$this->db->from('product_view');
 		$this->db->join('category', 'product.category_id = category.category_id');
 		$this->db->where('category.category_id', $cid);
 		$query = $this->db->get();
@@ -44,7 +44,7 @@ class Product_model extends CI_Model {
 	public function getProductsbySearch($sid)
 	{
 		$this->db->select('product_name');
-		$this->db->from('product');
+		$this->db->from('product_view');
 		$this->db->like('product_name',$sid,'both');
 		$query = $this->db->get();
 		return $query->result();
@@ -60,7 +60,7 @@ class Product_model extends CI_Model {
 	public function get_id($product_name,$vendor_name){
 		$query="
 		select product_id
-		from product
+		from product_view
 		where ";
 	}
 	public function getProductvendor($VID){
