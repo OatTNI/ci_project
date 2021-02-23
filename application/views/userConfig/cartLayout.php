@@ -26,7 +26,7 @@
               <!--Content-->
               <?php foreach ($cart as $c) {  ?>
                 <tr>
-                  <td><img class="card-img-top p-2 img-fluid" src="<?php echo $c->{'img'}; ?>" alt="Card image cap Responsive image" style="width: 175px; height:175px;"></td>
+                  <td><img class="card-img-top p-2 img-fluid" src="<?php echo $c->{'image_url'}; ?>" alt="Card image cap Responsive image" style="width: 175px; height:175px;"></td>
                   <td><?php echo $c->{'product_name'}; ?></td>
                   <td class="text-center"><?php echo $c->{'qty'}; ?></td>
                   <td class="text-center" id="sumrow<?php echo $ari; ?>" name="sumrow<?php echo $ari; ?>"> <strong>
