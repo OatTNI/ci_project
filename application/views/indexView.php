@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-end justify-content-center">
                                     <div class="img-box">
-                                        <img src="<?php echo $Pre[1]->{'img'}; ?>" alt="img" style="max-width: 280px; max-height :280px;" />
+                                        <img src="<?php echo $Pre[1]->{'image_url'}; ?>" alt="img" style="max-width: 280px; max-height :280px;" />
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-end justify-content-center">
                                     <div class="img-box">
-                                        <img src="<?php echo $Pre[0]->{'img'}; ?>" alt="img" style="max-width: 280px; max-height :280px;" />
+                                        <img src="<?php echo $Pre[0]->{'image_url'}; ?>" alt="img" style="max-width: 280px; max-height :280px;" />
                                     </div>
                                 </div>
                             </div>
