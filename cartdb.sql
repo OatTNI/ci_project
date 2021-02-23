@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2021 at 12:54 PM
+-- Generation Time: Feb 23, 2021 at 02:21 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -126,7 +126,7 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
 (0000000001, 'Electronics'),
 (0000000002, 'Clothes'),
-(0000000003, 'Food and Drinks');
+(0000000003, 'Drinks');
 
 -- --------------------------------------------------------
 
@@ -270,24 +270,43 @@ CREATE TABLE `product_image` (
 --
 
 INSERT INTO `product_image` (`image_id`, `product_id`, `image_url`) VALUES
+(1, 0000000001, 'https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F5e%2F43%2F5e435180810c3852260d5cd4705672e02cdfcf9f.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_tshirtstanks_shortsleeve%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url['),
+(1, 0000000002, 'https://www.mouser.sg/images/espressifsystems/lrg/ESP32-DevKitC-VB_t.jpg'),
 (1, 0000000003, 'https://www.gnc.com/dw/image/v2/BBLB_PRD/on/demandware.static/-/Sites-master-catalog-gnc/default/dwbff8d0c3/hi-res/503319_web_Reign_Dreamsicle_12x16oz_12_Pack%20with%20Can.jpg?sw=2000&sh=2000&sm=fit'),
+(1, 0000000004, 'https://www.justforwomensite.com/wp-content/uploads/2015/07/%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B8%99%E0%B8%A1.jpg'),
+(1, 0000000005, 'https://cf.shopee.co.th/file/216baf5503f14ec9ca48961a43d34d09'),
+(1, 0000000006, 'https://anninc.scene7.com/is/image/LO/541323_6779?$pdp2x$'),
+(2, 0000000001, 'https://ae01.alicdn.com/kf/HTB1LiDrRFXXXXXHXpXXq6xXFXXXb/2019-Tshirt.jpg'),
+(2, 0000000002, 'https://th.cytron.io/image/catalog/products/NODEMCU-ESP32/NODEMCU-ESP32.jpg'),
 (2, 0000000003, 'https://store.bbcomcdn.com/images/store/skuimage/sku_SKU6120160/image_skuSKU6120160_largeImage_X_450_white.jpg'),
+(2, 0000000004, 'https://d12man5gwydfvl.cloudfront.net/wp-content/uploads/2019/06/shutterstock_568076731-copy.jpg'),
+(2, 0000000005, 'https://media.bnn.in.th/media/195122426576/HP-Notebook-15S-DU2051TX-White-content1.jpg'),
+(2, 0000000006, 'https://backend.central.co.th/media/catalog/product/c/d/cds28563433-1.jpg'),
+(3, 0000000001, 'https://i2.wp.com/heartpunk.co/wp-content/uploads/2019/03/mockup-c9d660d0.jpg?fit=1000%2C1000&ssl=1'),
+(3, 0000000002, 'https://cu.lnwfile.com/z9jd50.jpg'),
 (3, 0000000003, 'https://images-na.ssl-images-amazon.com/images/I/81epoSNsWjL._SL1500_.jpg'),
-(4, 0000000002, 'https://www.mouser.sg/images/espressifsystems/lrg/ESP32-DevKitC-VB_t.jpg'),
-(5, 0000000002, 'https://th.cytron.io/image/catalog/products/NODEMCU-ESP32/NODEMCU-ESP32.jpg'),
-(6, 0000000002, 'https://cu.lnwfile.com/z9jd50.jpg'),
-(7, 0000000004, 'https://www.justforwomensite.com/wp-content/uploads/2015/07/%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B8%99%E0%B8%A1.jpg'),
-(8, 0000000004, 'https://d12man5gwydfvl.cloudfront.net/wp-content/uploads/2019/06/shutterstock_568076731-copy.jpg'),
-(9, 0000000004, 'https://thaiorchidcooking.com/wp-content/uploads/2019/11/93102_40000_artland-dairy-clear-milk-bottle-drinking-glass-set-of-8-1024x1024.jpg'),
-(10, 0000000005, 'https://cf.shopee.co.th/file/216baf5503f14ec9ca48961a43d34d09'),
-(11, 0000000005, 'https://media.bnn.in.th/media/195122426576/HP-Notebook-15S-DU2051TX-White-content1.jpg'),
-(12, 0000000005, 'https://media.bnn.in.th/media/194441320954/HP-Notebook-15s-fq1000TU-ct-1.jpg'),
-(13, 0000000006, 'https://anninc.scene7.com/is/image/LO/541323_6779?$pdp2x$'),
-(14, 0000000006, 'https://backend.central.co.th/media/catalog/product/c/d/cds28563433-1.jpg'),
-(15, 0000000006, 'https://img1.g-star.com/product/c_fill,f_auto,h_420,q_80/v1559732763/D06746-6553-A889-F01/g-star-raw-lynn-mid-waist-skinnyjeans-medium-blue-model-front.jpg'),
-(16, 0000000001, 'https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F5e%2F43%2F5e435180810c3852260d5cd4705672e02cdfcf9f.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_tshirtstanks_shortsleeve%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url['),
-(17, 0000000001, 'https://ae01.alicdn.com/kf/HTB1LiDrRFXXXXXHXpXXq6xXFXXXb/2019-Tshirt.jpg'),
-(18, 0000000001, 'https://i2.wp.com/heartpunk.co/wp-content/uploads/2019/03/mockup-c9d660d0.jpg?fit=1000%2C1000&ssl=1');
+(3, 0000000004, 'https://thaiorchidcooking.com/wp-content/uploads/2019/11/93102_40000_artland-dairy-clear-milk-bottle-drinking-glass-set-of-8-1024x1024.jpg'),
+(3, 0000000005, 'https://media.bnn.in.th/media/194441320954/HP-Notebook-15s-fq1000TU-ct-1.jpg'),
+(3, 0000000006, 'https://img1.g-star.com/product/c_fill,f_auto,h_420,q_80/v1559732763/D06746-6553-A889-F01/g-star-raw-lynn-mid-waist-skinnyjeans-medium-blue-model-front.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `product_view`
+-- (See below for the actual view)
+--
+CREATE TABLE `product_view` (
+`product_id` int(10) unsigned zerofill
+,`vendor_id` int(10) unsigned zerofill
+,`category_id` int(10) unsigned zerofill
+,`product_name` varchar(50)
+,`description` text
+,`price` float unsigned
+,`category_name` varchar(255)
+,`vendor_name` varchar(255)
+,`image_id` int(10)
+,`image_url` varchar(255)
+);
 
 -- --------------------------------------------------------
 
@@ -380,6 +399,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
+-- Structure for view `product_view`
+--
+DROP TABLE IF EXISTS `product_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `product_view`  AS SELECT `product`.`product_id` AS `product_id`, `product`.`vendor_id` AS `vendor_id`, `product`.`category_id` AS `category_id`, `product`.`product_name` AS `product_name`, `product`.`description` AS `description`, `product`.`price` AS `price`, `category`.`category_name` AS `category_name`, `vendor`.`vendor_name` AS `vendor_name`, `product_image`.`image_id` AS `image_id`, `product_image`.`image_url` AS `image_url` FROM (((`product` join `category` on(`product`.`category_id` = `category`.`category_id`)) join `vendor` on(`product`.`vendor_id` = `vendor`.`vendor_id`)) join `product_image` on(`product`.`product_id` = `product_image`.`product_id`)) WHERE `product_image`.`image_id` = 1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `sum_by_user_id`
 --
 DROP TABLE IF EXISTS `sum_by_user_id`;
@@ -436,7 +464,7 @@ ALTER TABLE `product`
 -- Indexes for table `product_image`
 --
 ALTER TABLE `product_image`
-  ADD PRIMARY KEY (`image_id`),
+  ADD PRIMARY KEY (`image_id`,`product_id`),
   ADD KEY `FK_product_image_product` (`product_id`);
 
 --
@@ -465,7 +493,7 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `category_id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -495,7 +523,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `vendor`
 --
 ALTER TABLE `vendor`
-  MODIFY `vendor_id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `vendor_id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
