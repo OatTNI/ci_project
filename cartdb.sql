@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2021 at 02:56 PM
+-- Generation Time: Feb 23, 2021 at 03:22 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -79,6 +79,9 @@ INSERT INTO `cart` (`user_id`, `product_id`, `qty`) VALUES
 --
 CREATE TABLE `cart_product` (
 `product_id` int(10) unsigned zerofill
+,`category_name` varchar(255)
+,`vendor_name` varchar(255)
+,`image_url` varchar(255)
 ,`user_id` int(10) unsigned zerofill
 ,`qty` int(10) unsigned
 ,`product_name` varchar(50)
@@ -98,6 +101,9 @@ CREATE TABLE `cart_product` (
 CREATE TABLE `cart_product_sum` (
 `user_id` int(10) unsigned zerofill
 ,`product_id` int(10) unsigned zerofill
+,`category_name` varchar(255)
+,`vendor_name` varchar(255)
+,`image_url` varchar(255)
 ,`qty` int(10) unsigned
 ,`product_name` varchar(50)
 ,`vendor_id` int(10) unsigned zerofill
@@ -377,7 +383,7 @@ INSERT INTO `vendor` (`vendor_id`, `vendor_name`) VALUES
 --
 DROP TABLE IF EXISTS `cart_product`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cart_product`  AS SELECT `cart`.`product_id` AS `product_id`, `cart`.`user_id` AS `user_id`, `cart`.`qty` AS `qty`, `product`.`product_name` AS `product_name`, `product`.`vendor_id` AS `vendor_id`, `product`.`description` AS `description`, `product`.`price` AS `price`, `product`.`category_id` AS `category_id`, `product`.`price`* `cart`.`qty` AS `sum_row` FROM (`cart` join `product` on(`cart`.`product_id` = `product`.`product_id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cart_product`  AS SELECT `cart`.`product_id` AS `product_id`, `product_view`.`category_name` AS `category_name`, `product_view`.`vendor_name` AS `vendor_name`, `product_view`.`image_url` AS `image_url`, `cart`.`user_id` AS `user_id`, `cart`.`qty` AS `qty`, `product_view`.`product_name` AS `product_name`, `product_view`.`vendor_id` AS `vendor_id`, `product_view`.`description` AS `description`, `product_view`.`price` AS `price`, `product_view`.`category_id` AS `category_id`, `product_view`.`price`* `cart`.`qty` AS `sum_row` FROM (`cart` join `product_view` on(`cart`.`product_id` = `product_view`.`product_id`)) ;
 
 -- --------------------------------------------------------
 
@@ -386,7 +392,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `cart_product_sum`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cart_product_sum`  AS SELECT `cart_product`.`user_id` AS `user_id`, `cart_product`.`product_id` AS `product_id`, `cart_product`.`qty` AS `qty`, `cart_product`.`product_name` AS `product_name`, `cart_product`.`vendor_id` AS `vendor_id`, `cart_product`.`description` AS `description`, `cart_product`.`price` AS `price`, `cart_product`.`category_id` AS `category_id`, `cart_product`.`sum_row` AS `sum_row`, `sum_by_user_id`.`sum_total` AS `sum_total` FROM (`cart_product` join `sum_by_user_id` on(`cart_product`.`user_id` = `sum_by_user_id`.`user_id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cart_product_sum`  AS SELECT `cart_product`.`user_id` AS `user_id`, `cart_product`.`product_id` AS `product_id`, `cart_product`.`category_name` AS `category_name`, `cart_product`.`vendor_name` AS `vendor_name`, `cart_product`.`image_url` AS `image_url`, `cart_product`.`qty` AS `qty`, `cart_product`.`product_name` AS `product_name`, `cart_product`.`vendor_id` AS `vendor_id`, `cart_product`.`description` AS `description`, `cart_product`.`price` AS `price`, `cart_product`.`category_id` AS `category_id`, `cart_product`.`sum_row` AS `sum_row`, `sum_by_user_id`.`sum_total` AS `sum_total` FROM (`cart_product` join `sum_by_user_id` on(`cart_product`.`user_id` = `sum_by_user_id`.`user_id`)) ;
 
 -- --------------------------------------------------------
 
