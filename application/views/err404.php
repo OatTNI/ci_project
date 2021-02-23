@@ -7,11 +7,11 @@
 </head>
 <body>
 	<!-- <audio id="player" style="display:none;" autoplay controls ><source src="<?php //echo base_url("assets/");?>20210215_-1446245723202169827.mp3" type="audio/mp3" ></audio> -->
-		<div class="container-fluid">
-			<div class="row">
-			<a class="btn btn-danger" href="<?php echo base_url('Home/index');?>" style="margin:10px;">Go to Homepage</a>
+	<div class="container-fluid">
+		<div class="row">
+		<a class="btn btn-danger" href="<?php echo base_url('Home/index');?>" style="margin:10px;">Go to Homepage</a>
 		</div>
-		</div>
+	</div>
 </body>
 
 </html>
