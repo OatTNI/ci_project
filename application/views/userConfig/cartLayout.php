@@ -11,7 +11,7 @@
         <?php $ari = 0;
         $arid; ?>
         <?php if (count($cart) == 0) {
-          echo "<div class='HDText text-center' >ไม่มีรายการ</div>";
+          echo "<h1 class='display-1 text-center'>ไม่มีรายการ</h1>";
         } else { ?>
           <div class="row ofPanel px-2">
             <table class="table table-striped border">
