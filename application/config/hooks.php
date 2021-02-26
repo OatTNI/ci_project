@@ -12,14 +12,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $hook['post_controller_constructor'] = [
+    [
     'class'    => 'unauth_user',
     'function' => 'index',
     'filename' => 'unauth_user.php',
     'filepath' => 'hooks'
-];
-$hook['post_controller_constructor'] = [
+    ],
+    [
     'class'    => 'only_admin',
     'function' => 'index',
     'filename' => 'only_admin.php',
     'filepath' => 'hooks'
+    ]
 ];
