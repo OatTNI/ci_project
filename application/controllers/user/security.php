@@ -11,4 +11,4 @@ function sql_prevention($input){
     $input=mysqli_escape_string($link,$input);
     return $input;
 }
-
+?>
