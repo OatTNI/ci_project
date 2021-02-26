@@ -11,6 +11,8 @@ class login_out extends CI_Controller {
         $this->load->model("userModel");
         require("regex.php");
         require("security.php");
+        $this->load->library('javascript');
+        $this->load->library('javascript/jquery');
     }
 /*
 * What: use to logout if there's not email-session, if don't have will be login function
@@ -32,7 +34,8 @@ class login_out extends CI_Controller {
             $this->set_all_rules();
             if($this->form_validation->run()==FALSE)
             {
-                $this->load->view("loginRegisterView");
+                //$this->load->view("loginRegisterView");
+                $this->load->view('indexView');
             }
             else
             {
