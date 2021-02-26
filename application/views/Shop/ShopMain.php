@@ -3,8 +3,8 @@
         <div class="col-5">
             <h2 class="card-title">
 
-                <?php if(isset($Product[0]->{'category_name'})) { ?>
-                    <strong><?php echo $Product[0]->{'category_name'}; ?></strong>
+                <?php if(isset($Product->{'category_name'})) { ?>
+                    <strong><?php echo $Product->{'category_name'}; ?></strong>
                 <?php } 
                 elseif(isset($Keyword)) { ?>
                     <strong>See All <?php echo $Keyword ?></strong>
