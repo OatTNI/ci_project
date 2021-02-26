@@ -11,63 +11,54 @@
     <!-- end header -->
     <div class="clothes_main section">
         <div class="">
-            <div id="main_slider" class="carousel slide section banner-main rounded " data-ride="carousel">
+            <div id="main_slider" class="carousel slide section banner-main " data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#main_slider" data-slide-to="0" class="active"></li>
                     <li data-target="#main_slider" data-slide-to="1"></li>
                     <li data-target="#main_slider" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner bg-white">
-                    <!-- Go to shop -->
-                    <div class="carousel-item active">
-                        <div class="container pt-5">
-                            <div class="row marginii">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                    <div class="carousel-caption">
-                                        <h1>Welcome to <strong>KAAI KONG</strong></h1>
-                                        <p class="text-dark">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                                        <a class="btn btn-lg btn-primary-beautyful ml-2" href="<?php echo base_url("Shop/index"); ?>"><i class="fas fa-search"></i><span class=""> Shop </span></a>
+                <div class="clothes_main">
+                    <div class="carousel-inner bg-white rounded container">
+                        <!-- Go to shop -->
+                        <div class="carousel-item active">
+                            <div class="container pt-5">
+                                <div class="row marginii">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <div class="carousel-caption">
+                                            <h1>Welcome to <strong>KAAI KONG</strong></h1>
+                                            <p class="text-dark">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                                            <a class="btn btn-lg btn-primary-beautyful ml-2" href="<?php echo base_url("Shop/index"); ?>"><i class="fas fa-search"></i><span class=""> Shop </span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- สินค้าสองชิ้นมาจากการสุ่ม -->
-                    <div class="carousel-item">
-                        <div class="container pt-5">
-                            <div class="row marginii">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                    <div class="carousel-caption">
-                                        <h1><strong><?php echo $Pre[1]->{'product_name'}; ?></strong></h1>
-                                        <p class="text-dark"><?php echo $Pre[1]->{'description'} ?></p>
-                                        <a class="btn btn-lg btn-primary-beautyful ml-2" href="<?php echo base_url("Shop/Product/index/"); ?><?php echo $Pre[1]->product_id; ?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-end justify-content-center">
-                                    <div class="img-box">
-                                        <img src="<?php echo $Pre[1]->{'image_url'}; ?>" alt="img" style="max-width: 280px; max-height :280px;" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="container pt-5">
-                            <div class="row marginii">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                    <div class="carousel-caption">
-                                        <h1><strong><?php echo $Pre[0]->{'product_name'}; ?></strong></h1>
-                                        <p class="text-dark"><?php echo $Pre[0]->{'description'}; ?></p>
-                                        <a class="btn btn-lg btn-primary-beautyful ml-2" href="<?php echo base_url("Shop/Product/index/"); ?><?php echo $Pre[0]->product_id; ?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-end justify-content-center">
-                                    <div class="img-box">
-                                        <img src="<?php echo $Pre[0]->{'image_url'}; ?>" alt="img" style="max-width: 280px; max-height :280px;" />
+                        <!-- สินค้าสองชิ้นมาจากการสุ่ม -->
+                        <?php $i = 0;
+                        foreach ($Pre as $P) {
+                            if ($i == 2) {
+                                break;
+                            } ?>
+                            <div class="carousel-item">
+                                <div class="container pt-5">
+                                    <div class="row marginii">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                            <div class="carousel-caption">
+                                                <h1><strong><?php echo $P->{'product_name'}; ?></strong></h1>
+                                                <p class="text-dark"><?php echo $P->{'description'} ?></p>
+                                                <a class="btn btn-lg btn-primary-beautyful ml-2" href="<?php echo base_url("Shop/Product/index/"); ?><?php echo $P->product_id; ?>"><i class="fas fa-caret-right"></i><span class=""> Go </span></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex align-items-end justify-content-center">
+                                            <div class="img-box">
+                                                <img src="<?php echo $P->{'image_url'}; ?>" alt="img" style="max-width: 280px; max-height :280px;" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php $i++;
+                        } ?>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
@@ -77,10 +68,34 @@
                     <i class='fa fa-angle-right'></i>
                 </a>
             </div>
+
         </div>
-    </div>
-    <?php $this->load->view("layout/mainfooter"); ?>
-    <?php $this->load->view("layout/mainJS"); ?>
+        <div class="clothes_main section">
+            <div class="container card mt-5">
+                <h2 class="card-title"> Products </h2>
+                <div class="card-body row no-gutters">
+                    <?php $i = 0;
+                    foreach ($Pre as $P) {
+                        if ($i == 3) {
+                            break;
+                        } ?>
+                        <div class="col-xl-4 col-lg-4 col-sm-4">
+                            <div class="rounded-0 border text-center">
+                                <img class="card-img-top p-2 img-fluid" src="<?php echo $P->image_url ?>" alt="Card image cap Responsive image" style="width: 175px; height:175px;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-truncate"><strong><?php echo $P->product_name; ?></strong></h5>
+                                    <p class="card-text text-truncate"><?php echo $P->description; ?></p>
+                                    <a href="<?php echo base_url("Shop/Product/index/$P->product_id"); ?>" class="btn btn-primary-beautyful">See</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php $i++;
+                    } ?>
+                </div>
+            </div>
+        </div>
+        <?php $this->load->view("layout/mainfooter"); ?>
+        <?php $this->load->view("layout/mainJS"); ?>
 </body>
 
 </html>
