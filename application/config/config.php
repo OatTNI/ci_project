@@ -25,7 +25,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 // $config['base_url'] = 'http://192.168.1.10/ci_project/';
 $config['base_url'] = 'http://localhost/ci_project/';
-//$config['javascript_location'] = 'http://localhost/ci_project/assets/js/jquery.min.js';
+$config['javascript_location'] = 'http://localhost/ci_project/assets/js/jquery.min.js';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -101,7 +101,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = TRUE;
+$config['enable_hooks'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
