@@ -23,6 +23,10 @@ class only_admin
             if($this->CI->session->userdata("user_status")!=1&&$is_allow){
                 redirect("Home/index");
             }
+        }else{
+            if($is_allow){
+                redirect("Home/index");
+            }
         }
     }
 }
