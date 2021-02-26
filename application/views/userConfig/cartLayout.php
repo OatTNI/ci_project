@@ -1,5 +1,5 @@
-<form action="<?php echo base_url("userCon/checkOut"); ?>" method="post" name="CartForm" style="padding-top: 0px;padding-bottom: 0px;">
-  <div class="container BGPanel my-0">
+<form action="<?php echo base_url("cart/checkout/showItems"); ?>" method="post" name="CartForm">
+  <div class="container BGPanel my-2">
     <div class="row">
       <div class="col HDText mt-2">
         My Cart
@@ -11,7 +11,7 @@
         <?php $ari = 0;
         $arid; ?>
         <?php if (count($cart) == 0) {
-          echo "<h1 class='display-1 text-center'>ไม่มีรายการ</h1>";
+          echo "<div class='HDText text-center' >ไม่มีรายการ</div>";
         } else { ?>
           <div class="row ofPanel px-2">
             <table class="table table-striped border">
@@ -105,7 +105,7 @@
           </div>
         </div>
         <div class="col-12 py-1 text-right">
-          <button type="submit" class="btn btn-primary">Check Out!!</button>
+          <button type="submit" class="btn btn-primary" >Check Out!!</button>
         </div>
       </div>
     </div>
