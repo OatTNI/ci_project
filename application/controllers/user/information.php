@@ -143,7 +143,7 @@ class information extends CI_Controller {
     private function get_all_post_data(){
         $fname=$this->input->post("firstname");
         $lname=$this->input->post("lastname");
-        $email=$this->input->post("emailfield");
+        $email=strtolower($this->input->post("emailfield"));
         $phone=$this->input->post("phonenumber");
         $addr=$this->input->post("address");
 
