@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2021 at 03:22 PM
+-- Generation Time: Feb 26, 2021 at 06:46 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -66,10 +66,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`user_id`, `product_id`, `qty`) VALUES
-(0000000002, 0000000001, 3),
-(0000000002, 0000000004, 9),
-(0000000002, 0000000002, 1),
-(0000000002, 0000000003, 1);
+(0000000002, 0000000004, 1),
+(0000000002, 0000000001, 1);
 
 -- --------------------------------------------------------
 
@@ -167,7 +165,9 @@ INSERT INTO `order` (`order_id`, `user_id`, `order_date`, `status`, `total`) VAL
 (0000000012, 0000000003, '2021-01-08 20:25:07', 'Cancelled', 15),
 (0000000013, 0000000002, '2021-01-08 21:10:00', 'Paid', 56720),
 (0000000014, 0000000002, '2021-01-09 11:38:47', 'Paid', 2000),
-(0000000015, 0000000002, '2021-01-17 21:03:39', 'Paid', 160);
+(0000000015, 0000000002, '2021-01-17 21:03:39', 'Paid', 160),
+(0000000016, 0000000006, '2021-02-27 00:18:20', 'Paid', 20200),
+(0000000017, 0000000006, '2021-02-27 00:22:13', 'Paid', 700);
 
 -- --------------------------------------------------------
 
@@ -209,7 +209,10 @@ INSERT INTO `order_item` (`order_id`, `product_id`, `item_price`, `item_qty`) VA
 (0000000013, 0000000004, 200, 80),
 (0000000013, 0000000005, 20000, 2),
 (0000000014, 0000000004, 200, 10),
-(0000000015, 0000000001, 160, 1);
+(0000000015, 0000000001, 160, 1),
+(0000000016, 0000000005, 20000, 1),
+(0000000016, 0000000004, 200, 1),
+(0000000017, 0000000006, 700, 1);
 
 -- --------------------------------------------------------
 
@@ -276,7 +279,7 @@ CREATE TABLE `product_image` (
 --
 
 INSERT INTO `product_image` (`image_id`, `product_id`, `image_url`) VALUES
-(1, 0000000001, 'https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F5e%2F43%2F5e435180810c3852260d5cd4705672e02cdfcf9f.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_tshirtstanks_shortsleeve%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url['),
+(1, 0000000001, 'http://picture-cdn.wheretoget.it/jt6cmo-i.jpg'),
 (1, 0000000002, 'https://www.mouser.sg/images/espressifsystems/lrg/ESP32-DevKitC-VB_t.jpg'),
 (1, 0000000003, 'https://www.gnc.com/dw/image/v2/BBLB_PRD/on/demandware.static/-/Sites-master-catalog-gnc/default/dwbff8d0c3/hi-res/503319_web_Reign_Dreamsicle_12x16oz_12_Pack%20with%20Can.jpg?sw=2000&sh=2000&sm=fit'),
 (1, 0000000004, 'https://www.justforwomensite.com/wp-content/uploads/2015/07/%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B8%99%E0%B8%A1.jpg'),
@@ -351,7 +354,8 @@ INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `mobile`, `pa
 (0000000002, 'tina', 'grey', 'tinaaa@amail.com', '0994038264', 'tina_g', 'Department 98\r\n44-46 Morningside Road\r\nEdinburgh\r\nScotland\r\nEH10 4BF', 0),
 (0000000003, 'cinzano', 'rosso', 'ros50@cmail.com', '0867643256', 'cinzanooo', 'Office 33\r\n27 Colmore Row\r\nBirmingham\r\nEngland\r\nB3 2EW', 0),
 (0000000004, 'john', 'fey', 'john_fc@gmail.com', '0236573923', '12345', 'JESSIE SANTANA\r\n4325 W PALM BEACH RD RM 419\r\nSAN FRANCISCO CA 94116', 0),
-(0000000005, 'michael', 'chess', 'm_michael@gmail.com', '0124572888', 'chess', '1771/1 Pattanakarn Road, Suan Luang, Bangkok 10250', 0);
+(0000000005, 'michael', 'chess', 'm_michael@gmail.com', '0124572888', 'chess', '1771/1 Pattanakarn Road, Suan Luang, Bangkok 10250', 0),
+(0000000006, 'wanna', 'ch', 'ming@hotmail.com', '0896688245', '$2y$15$onLBjjxHS9S903Xx/OE2KepWf4icZYEb588vJO59xTKfniz0z1Fpu', '', 0);
 
 -- --------------------------------------------------------
 
@@ -506,7 +510,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `order_id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -524,7 +528,7 @@ ALTER TABLE `product_image`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `vendor`
