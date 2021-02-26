@@ -19,9 +19,7 @@ class Home extends CI_Controller
         );
         $this->session->set_userdata($category);
         $data["user"] = $user_data;
-       
         
-
         $this->load->view('indexView', $data);
     }
 }
