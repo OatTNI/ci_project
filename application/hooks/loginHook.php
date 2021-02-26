@@ -10,7 +10,7 @@ class loginHook
         $classname = $this->CI->router->class;
 
         $allowed_class=[
-            "Home","Product","Products","Search","index","cartHome"
+            "Home","Product","Products","Search","index","register","login_out"
         ];
         $is_allow=false;
         foreach($allowed_class as $class){
@@ -18,12 +18,7 @@ class loginHook
                 $is_allow=true;
             }
         }
-        echo $classname;
-        echo $is_allow;
-
         if (!$this->CI->session->userdata('user_id')&&!$is_allow) {
-            // echo $this->CI->session->userdata("user_id");
-            echo $classname;
             redirect("Home/index");
         }
     }
