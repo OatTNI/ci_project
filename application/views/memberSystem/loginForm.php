@@ -47,10 +47,10 @@
     });
 </script>
  -->
-<!--  <script type="text/javascript">
-    if (true) {
+<script type="text/javascript">
+    if (<?php echo $modalcheck;?>) {
         $(window).on('load', function() {
           $('#LoginModal').modal('toggle');
       });
     }
-</script> -->
+</script>

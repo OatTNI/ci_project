@@ -20,6 +20,7 @@ class Home extends CI_Controller
         );
         $this->session->set_userdata($category);
         $data["user"] = $user_data;
+        $data["modalcheck"]=false;
 
         $this->load->view('indexView', $data);
     }
