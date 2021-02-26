@@ -10,6 +10,7 @@ class addProduct extends CI_Controller {
         //Do your magic here
         $this->load->model("Product_model");
         $this->load->model("Category_model");
+        $this->load->model("Product_image_model");
     }
 /*
 * What: use for add Product at admin's page
@@ -28,11 +29,18 @@ class addProduct extends CI_Controller {
                 $this->load->view("Admin/index",$data);
             }else{
                 $product=$this->get_all_post_data();
-                $product=$this->add_product($product);
+                $this->add_product(
+                    $product[0],$product[1],$product[2],$product[3],
+                    $product[4],$product[5]
+                );
+                
+                $data["Category"]=$this->Category_model->getCategories();
+                $data["Product"]=$this->Product_model->getProducts();
+                $data["vendor"]=$this->Product_model->getVendor();
+                $data["content"]="Admin/Management/ItemManager";
+                $this->load->view("Admin/index",$data);
             }
         }else{
-            // $this->session->set_flashdata("error","you are not administrator");
-            redirect("www.google.com");
         }
         
     }
@@ -93,12 +101,12 @@ class addProduct extends CI_Controller {
 */
     private function get_all_post_data(){
        $product_name=$_POST["ProductName"];
-       $vendor_name=$_POST["VendorName"];
-       $category=$_POST["category"];
+       $vendor_id=$_POST["VendorName"];
+       $category_id=$_POST["category"];
        $description=$_POST["description"];
        $product_price=$_POST["ProductPrice"];
        $image_url=$_POST["Picture"];
-       return [$product_name,$product_price,$vendor_name,$category,$image_url,$description];
+       return [$product_name,$product_price,$vendor_id,$category_id,$image_url,$description];
     }
 
 /*
@@ -106,9 +114,14 @@ class addProduct extends CI_Controller {
 * Author:oat
 * return:nothing
 */
-    private function add_product($product_name,$product_price,$vendor_name,$category,$image_url,$description){
-        $this->Product_model->add_product($product_name,$product_price,$vendor_name,$category,$description);
-        
+    private function add_product($product_name,$product_price,$vendor_id,$category_id,$image_urls,$description){
+        $this->Product_model->add_product($product_name,$vendor_id,$description,$product_price,$category_id);
+
+        $pro_id=$this->Product_model->get_id($product_name,$vendor_id);
+        $pro_id=$pro_id->product_id;
+        foreach($image_urls as $url){
+            $this->Product_image_model->add_image($pro_id,$url);
+        }
     }
 }
 
