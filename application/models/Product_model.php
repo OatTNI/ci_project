@@ -50,18 +50,20 @@ class Product_model extends CI_Model {
 		return $query->result();
 		# code...
 	}
-	public function add_product($product_name,$product_price,$vendor_name,$category,$description){
+	public function add_product($product_name,$vendor_id,$description,$product_price,$category_id){
 		$query="
-		insert into product (product_name,vendor,description,price,category_id)
-		values ('$product_name','$vendor_name','$description',$product_price,$category);
+		insert into product (product_name,vendor_id,description,price,category_id)
+		values ('$product_name',$vendor_id,'$description',$product_price,$category_id);
 		";
 		$this->db->query($query);
 	}
-	public function get_id($product_name,$vendor_name){
+	public function get_id($product_name,$vendor_id){
 		$query="
 		select product_id
-		from product_view
-		where ";
+		from product
+		where product_name='$product_name'
+		and vendor_id=$vendor_id";
+		return $this->db->query($query)->result()[0];
 	}
 	public function getProductvendor($VID){
 		$this->db->select('vendor_name');
