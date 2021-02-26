@@ -15,6 +15,7 @@
     	{
         $data['Product'] = $this->Product_model->getProductsbySearch($key);
         $data['Keyword'] = $key;
+        $data['SeeAll'] = '';
         $data['content'] = 'Shop/Shopmain';
         $this->load->view('Shop', $data);
     	}

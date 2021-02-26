@@ -14,7 +14,7 @@ class index extends CI_Controller
     {
         $data['Product'] = $this->Product_model->getProducts();
         // $data['Img'] = $this->Product_model->getProductImages($data['Product']->{'product_id'});
-        
+        $data['SeeAll'] = "Yes";
         $data['content'] = 'Shop/Shopmain';
         $this->load->view('Shop', $data);
     }

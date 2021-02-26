@@ -1,9 +1,5 @@
  <?php $category = $this->session->userdata('category');?>
- <!-- loader  -->
- <!--    <div class="loader_bg">
-        <div class="loader"><img src="<?php// echo base_url('assets/') ?>images/loading.gif" alt="#"></div>
-    </div> -->
- <!-- end loader -->
+
  <!-- header -->
 
  <header class="section bg-dark">
