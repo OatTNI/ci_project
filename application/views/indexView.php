@@ -71,7 +71,7 @@
 
         </div>
         <div class="clothes_main section">
-            <div class="container card mt-5">
+            <div class="container card mt-5 border-0 rounded-0">
                 <h2 class="card-title"> Products </h2>
                 <div class="card-body row no-gutters">
                     <?php $i = 0;
