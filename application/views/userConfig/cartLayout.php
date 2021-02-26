@@ -1,5 +1,5 @@
-<form action="<?php echo base_url("userCon/checkOut"); ?>" method="post" name="CartForm">
-  <div class="container BGPanel my-2">
+<form action="<?php echo base_url("userCon/checkOut"); ?>" method="post" name="CartForm" style="padding-top: 0px;padding-bottom: 0px;">
+  <div class="container BGPanel my-0">
     <div class="row">
       <div class="col HDText mt-2">
         My Cart
