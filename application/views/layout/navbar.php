@@ -33,7 +33,7 @@
 
                          <button class="btn btn-lg rounded-circle" onclick="FuntionSearch()" style="background-color:#05386B" role="button"><i class="fas fa-search text-light"></i></button>
                          <!-- Cart -->
-                         <a class="btn btn-lg btn-primary-beautyful ml-2" href="<?php echo base_url("cart/Home"); ?>" role="button"><i class="fas fa-shopping-cart"></i> My Cart</a>
+                         <a class="btn btn-lg btn-primary-beautyful ml-2" href="<?php echo base_url("cart/cartHome"); ?>" role="button"><i class="fas fa-shopping-cart"></i> My Cart</a>
                      </div>
                  </div>
                  <!-- Menu Bar -->
