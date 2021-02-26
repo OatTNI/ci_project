@@ -134,7 +134,7 @@ class login_out extends CI_Controller {
 * return: [authen, password]
 */
     private function get_all_post_data(){
-        $auth=$this->input->post("auth");
+        $auth=strtolower($this->input->post("auth"));
         $pwd=$this->input->post("pwloginfield");
         return [$auth,$pwd];
     }
