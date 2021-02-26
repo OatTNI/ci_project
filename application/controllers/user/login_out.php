@@ -36,7 +36,8 @@ class login_out extends CI_Controller {
             {
                 //$this->load->view("loginRegisterView");
                 $data["modalcheck"]=true;
-                $this->load->view('indexView',$data);
+                // $this->load->view('indexView',$data);
+                redirect("Home/index",$data);
             }
             else
             {
@@ -55,7 +56,8 @@ class login_out extends CI_Controller {
                 }else{
                     $this->session->set_flashdata('error', 'Not found this email or phone number');
                      $data["modalcheck"]=true;
-                    $this->load->view('indexView',$data);
+                    // $this->load->view('indexView',$data);
+                    redirect("Home/index",$data);
                 }
             }
         }      
