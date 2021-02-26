@@ -12,15 +12,15 @@
           <tr>
             <th>Order ID</th>
             <th>Order Date</th>
-            <th>Quantity</th>
-            <th>Price</th>
+            <th>Status</th>
+            <th class="text-right">Price</th>
           </tr>
           <?php foreach ($orderhis as $orh) { ?>
             <tr>
               <td><?php echo $orh->order_id; ?></td>
               <td><?php echo $orh->order_date; ?></td>
-              <td><?php echo $orh->item_qty; ?></td>
-              <td><?php echo $orh->item_price; ?></td>
+              <td><?php echo $orh->status; ?></td>
+              <td class="text-right"><?php echo number_format($orh->total, 2); ?></td>
             </tr>
           <?php } ?>
         </table>

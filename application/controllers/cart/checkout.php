@@ -40,7 +40,7 @@ class checkout extends CI_Controller{
 		}
 
 		$this->Cart_model->clearCart($id);
-		redirect("cart");
+		redirect("myAccount");
     }
 }
 ?>
