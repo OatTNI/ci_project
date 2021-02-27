@@ -15,6 +15,12 @@ class Product_image_model extends CI_Model {
         values ($product_id,'$url')";
         $this->db->query($query);
     }
+    public function delete_product_id($product_id){
+        $query="
+        delete from product_image
+        where product_id=$product_id";
+        $this->db->query($query);
+    }
     
     
 
