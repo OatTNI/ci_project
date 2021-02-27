@@ -12,6 +12,7 @@
  <!-- javascript -->
  <script src="<?php echo base_url('assets/'); ?>js/bootstrap-input-spinner.js"></script>
  <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <script src="<?php echo base_url('assets/') ?>js/jquery.validate.min.js"></script>
  <script>
      $("input[type='number']").inputSpinner();
      $(document).ready(function() {
@@ -52,7 +53,24 @@
                  }
              });
          });
-
+         $('#loginform').validate({
+           rules : {
+             auth :{
+               required : true/*,
+               remote : {
+                 url : "CheckEmail.php",
+                 type:"post"
+               } */
+             },pwloginfield :{
+               required : true
+             }   
+           },
+           messages : {
+             auth:{ required : "โปรดระบุ Email หรือ Phone Number"/*,remote:"โปรดระบุ Email หรือ Phone Number ให้ถูกต้อง"*/},
+             pwloginfield : { required:"โปรดระบุรหัสผ่าน" }
+           },
+                  
+         });
      });
 
 
@@ -65,4 +83,4 @@
          document.getElementById("mySidenav").style.width = "0";
          document.getElementById("main").style.marginLeft = "0";
      };
- </script>
+</script>
