@@ -30,14 +30,13 @@ class password extends CI_Controller {
                         redirect("Home/index");
                     }else{
                         $this->session->set_flashdata('error', 'new password is not passed the policy');
-                        $data["content"] = "userConfig/changePassword";
-	                    $this->load->view('userView', $data);
                     }
                 }else{
                         $this->session->set_flashdata('error', 'Old Password is invalid');
-                        $data["content"] = "userConfig/changePassword";
-	                    $this->load->view('userView', $data);
-                }
+                        
+                }       
+                $data["content"] = "userConfig/changePassword";
+	            $this->load->view('userView', $data);
             }
         }else{
             redirect("Home/index");
