@@ -54,5 +54,11 @@ class Cart_model extends CI_Model {
 		where user_id=$user_id;";
 		$this->db->query($query);
 	}
+	public function delete_product($product_id){
+		$query="
+		delete from cart
+		where product_id=$product_id";
+		$this->db->query($query);
+	}
 
 }
