@@ -34,6 +34,7 @@ class login_out extends CI_Controller {
             {
                 //$this->load->view("loginRegisterView");
                 // $this->load->view('indexView',$data);
+                //return $this->login();
                 redirect("Home/index");
             }
             else
@@ -49,10 +50,12 @@ class login_out extends CI_Controller {
                         "user_address"=>$login['address'],
                         "user_status"=>$login["status"]
                     ]);
-                    redirect("Home/index");
+                    //return true;
+                    redirect("Home/index"); 
                 }else{
                     $this->session->set_flashdata('error', 'Not found this email or phone number');
                     // $this->load->view('indexView',$data);
+                   // return $this->login();
                     redirect("Home/index");
                 }
             }
@@ -127,6 +130,8 @@ class login_out extends CI_Controller {
                 $attr['address']=$row->address;
                 $attr["status"]=$row->isAdmin;
                 return $attr;
+            }else{
+                return false;
             }
         }
     }

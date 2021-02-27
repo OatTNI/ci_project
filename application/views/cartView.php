@@ -11,8 +11,7 @@
   <!-- end header -->
   <div class="clothes_main section">
     <div class="container mb-3">
-      <?php $this->load->view($content); ?>  
-      
+      <?php $this->load->view($content); ?>        
     </div>
   </div>
 

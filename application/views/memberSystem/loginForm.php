@@ -9,7 +9,7 @@
         </button>
       </div>
      <div class="modal-body">       
-       <form action="<?php echo base_url("user/login_out"); ?>" method="post" name="loginform" id="loginform">
+       <form action="<?php echo base_url("user/login_out/index"); ?>" method="post" name="loginform" id="loginform">
            <label for="auth">Email or Phone Number</label>
            <input class="form-control mb-2" type="text" name="auth" id="auth" placeholder="Email / Phone Number">
           
