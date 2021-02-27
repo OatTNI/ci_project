@@ -55,20 +55,13 @@
          });
          $('#loginform').validate({
            rules : {
-             auth :{
-               required : true/*,
-               remote : {
-                 url : "CheckEmail.php",
-                 type:"post"
-               } */
-             },pwloginfield :{
-               required : true
-             }   
+             auth : "required",
+             pwloginfield : "required"
            },
            messages : {
-             auth:{ required : "โปรดระบุ Email หรือ Phone Number"/*,remote:"โปรดระบุ Email หรือ Phone Number ให้ถูกต้อง"*/},
+             auth:{ required : "โปรดระบุ Email หรือ Phone Number"},
              pwloginfield : { required:"โปรดระบุรหัสผ่าน" }
-           },
+           }
                   
          });
      });
