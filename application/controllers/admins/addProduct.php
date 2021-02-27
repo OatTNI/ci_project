@@ -131,9 +131,10 @@ class addProduct extends CI_Controller {
 
         $pro_id=$this->Product_model->get_id($product_name,$vendor_id);
         $pro_id=$pro_id->product_id;
-        foreach($image_urls as $url){
-            $this->Product_image_model->add_image($pro_id,$url);
+        for($i=0;$i<count($image_urls);$i++){
+            $this->Product_image_model->add_image($pro_id,$image_urls[$i],($i+1));
         }
+        
     }
 
 /*
