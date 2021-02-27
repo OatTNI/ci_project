@@ -38,28 +38,23 @@ class addProduct extends CI_Controller {
                 if($this->isImage($product[4])){
                     if(!$this->isDuplicate($product[2],$product[0])){
                         $this->add_product(
-                        $product[0],$product[1],$product[2],$product[3],
-                        $product[4],$product[5]
+                            $product[0],$product[1],$product[2],$product[3],
+                            $product[4],$product[5]
                         );
                         redirect("admin/index");
                     }else{
-                        $this->session->set_flashdata("error","The Product is Duplicated");
-                        $data['Category'] = $this->Category_model->getCategories();
-                        $data['Product'] = $this->Product_model->getProducts();
-                        $data["vendor"]=$this->Product_model->getVendor();
-                        $data['content'] = 'Admin/Management/AddItem';
-                        $this->load->view('Admin/index', $data);   
+                        $this->session->set_flashdata("error","The Product is Duplicated"); 
                     }
                     
                 }else{
                     $this->session->set_flashdata("error","The url is not image");
+                    
+                }
                     $data['Category'] = $this->Category_model->getCategories();
                     $data['Product'] = $this->Product_model->getProducts();
                     $data["vendor"]=$this->Product_model->getVendor();
                     $data['content'] = 'Admin/Management/AddItem';
                     $this->load->view('Admin/index', $data);
-                }
-                
             }
         }else{
             $this->session->set_flashdata("error","you are not admin");
