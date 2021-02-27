@@ -46,8 +46,6 @@ class information extends CI_Controller {
 	                        $this->load->view('userView', $data);
                         }else{
                             $this->session->set_flashdata('error',"your email or phone number is Duplicated");
-                            $data["content"] = "userConfig/MyInfo";
-	                        $this->load->view('userView', $data);
                         }
                     }
                     // ! change only phone
@@ -55,12 +53,8 @@ class information extends CI_Controller {
                         // ! check for Is it duplicated?
                         if(!$this->isDuplicatePhone($temp[3])){
                             $this->changeInfo($temp);
-                            $data["content"] = "userConfig/MyInfo";
-	                        $this->load->view('userView', $data);
                         }else{
                             $this->session->set_flashdata('error',"your phone number is Duplicated");
-                            $data["content"] = "userConfig/MyInfo";
-	                        $this->load->view('userView', $data);
                         }
                     }
                     // ! change only email
@@ -68,18 +62,15 @@ class information extends CI_Controller {
                         // ! check for Is it duplicated?
                         if(!$this->isDuplicateEmail($temp[2])){
                             $this->changeInfo($temp);
-                            $data["content"] = "userConfig/MyInfo";
-	                        $this->load->view('userView', $data);
                         }else{
                             $this->session->set_flashdata('error',"your email is Duplicated");
-                            $data["content"] = "userConfig/MyInfo";
-	                        $this->load->view('userView', $data);
                         }
                     }else{
                         $this->changeInfo($temp);
-                        $data["content"] = "userConfig/MyInfo";
-	                    $this->load->view('userView', $data);
+                        
                     }
+                    $data["content"] = "userConfig/MyInfo";
+	                $this->load->view('userView', $data);
                 }
             }
             else{
