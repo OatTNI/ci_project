@@ -28,19 +28,31 @@ class addProduct extends CI_Controller {
                 $data["content"]="Admin/Management/AddItem";
                 $this->load->view("Admin/index",$data);
             }else{
+                // ! 0 product_name
+                // ! 1 product_price
+                // ! 2 vendor_id
+                // ! 3 category_id
+                // ! 4 image_url
+                // ! 5 description
                 $product=$this->get_all_post_data();
-                $this->add_product(
+                if($this->isImage($product[4])){
+                    $this->add_product(
                     $product[0],$product[1],$product[2],$product[3],
                     $product[4],$product[5]
-                );
+                    );
+                    redirect("admin/index");
+                }else{
+                    $this->session->set_flashdata("error","The url is not image");
+                    $data['Category'] = $this->Category_model->getCategories();
+                    $data['Product'] = $this->Product_model->getProducts();
+                    $data["vendor"]=$this->Product_model->getVendor();
+                    $data['content'] = 'Admin/Management/AddItem';
+                    $this->load->view('Admin/index', $data);
+                }
                 
-                $data["Category"]=$this->Category_model->getCategories();
-                $data["Product"]=$this->Product_model->getProducts();
-                $data["vendor"]=$this->Product_model->getVendor();
-                $data["content"]="Admin/Management/ItemManager";
-                $this->load->view("Admin/index",$data);
             }
         }else{
+            $this->session->set_flashdata("error","you are not admin");
         }
         
     }
@@ -122,6 +134,17 @@ class addProduct extends CI_Controller {
         foreach($image_urls as $url){
             $this->Product_image_model->add_image($pro_id,$url);
         }
+    }
+    private function isImage($urls){
+        $pattern="/\.(png|jpeg|jpg|gif|bmp)$/i";
+
+        foreach($urls as $url){
+           if(!preg_match($pattern,$url)){
+                return false;
+            }
+        }
+        return true;
+        
     }
 }
 
