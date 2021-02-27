@@ -9,10 +9,10 @@ class Product_image_model extends CI_Model {
     {
         parent::__construct();
     }
-    public function add_image($product_id,$url){
+    public function add_image($product_id,$url,$image_id){
         $query="
-        insert into product_image (product_id,image_url)
-        values ($product_id,'$url')";
+        insert into product_image (image_id,product_id,image_url)
+        values ($image_id,$product_id,'$url')";
         $this->db->query($query);
     }
     public function delete_product_id($product_id){
