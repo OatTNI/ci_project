@@ -11,6 +11,11 @@ class removeProduct extends CI_Controller {
         $this->load->model("Product_model");
     }
 
+/*
+* What:use for delete product and product_image
+* Author:oat
+* return:nothing
+*/
     public function index($product_id="")
     {
         if($product_id!=""){
