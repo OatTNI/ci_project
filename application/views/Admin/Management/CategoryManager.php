@@ -68,17 +68,19 @@
                 <tr>
                     <td><b>Category ID</b></td>
                     <td><b>Category Name</b></td>
+                    <td class="text-center"><b>Product in Category</b></td>
                     <td></td>
                 </tr>
-                <?php foreach ($categories as $category) { ?>
+                <?php $i=0; foreach ($categories as $category) { ?>
                     <tr>
                         <td><?php echo $category->category_id; ?></td>
                         <td><label id="editText<?=$category->category_id;?>"><?php echo $category->category_name; ?></label>
                         <input class="form-control editData" id="editInput<?=$category->category_id;?>" value="<?php echo $category->category_name; ?>"></td>
-                        <td colspan="2" style="float: right;"><a href="#" class="btn btn-warning editButton" id="editButton_<?=$category->category_id;?>">EDIT</a>&nbsp;
+                        <td class="text-center"><?php echo count($Product[$i]);?></td>
+                        <td style="float: right;"><a href="#" class="btn btn-warning editButton" id="editButton_<?=$category->category_id;?>">EDIT</a>&nbsp;
                         <a href="#" class="btn btn-danger deleteButton" data-toggle="modal" data-target="#deleteModal<?=$category->category_id;?>" id="deleteButton_<?=$category->category_id;?>">DELETE</a></td>
                     </tr>
-                <?php } ?>
+                <?php $i++;} ?>
             </table>
         </form>
     </div>
