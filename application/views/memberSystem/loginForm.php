@@ -18,7 +18,7 @@
            <input class="form-control" type="password" name="pwloginfield" id="pwloginfield">
           
            <br>
-           <button class="btn btn-success btn-block my-3" type="submit" >Login</button>
+           <button class="btn btn-success btn-block my-3" type="submit" name="submitButton">Login</button>
        </form>
        <a href="<?php echo base_url('user/register/index/show');?>"><i class="fas fa-edit"></i> ยังไม่เป็นสมาชิก? สมัครเลย!</a>
      </div>

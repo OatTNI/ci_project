@@ -13,12 +13,12 @@
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>fontawesome-free-5.15.1/css/all.min.css">
-    <script src="<?php echo base_url('assets/'); ?>js/bootstrap.bundle.min.js"></script>
     <!-- owl stylesheets -->
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <link href ="<?php echo base_url('assets/'); ?>myCSS.css" rel="stylesheet">
     <script src="<?php echo base_url('assets/') ?>js/jquery.min.js"></script>
+    <script src="<?php echo base_url('assets/') ?>js/bootstrap.min.js"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
