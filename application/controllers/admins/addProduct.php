@@ -135,6 +135,12 @@ class addProduct extends CI_Controller {
             $this->Product_image_model->add_image($pro_id,$url);
         }
     }
+
+/*
+* What:check url for image
+* Author:oat
+* return:boolean
+*/
     private function isImage($urls){
         $pattern="/\.(png|jpeg|jpg|gif|bmp)$/i";
 
