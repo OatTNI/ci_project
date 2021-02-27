@@ -88,4 +88,11 @@ class Product_model extends CI_Model {
 		where product_id=$product_id";
 		$this->db->query($query);
 	}
+	public function get_list_product($vendor_id){
+		$query="
+		select product_name
+		from product
+		where vendor_id=$vendor_id";
+		return $this->db->query($query)->result();
+	}
 }
