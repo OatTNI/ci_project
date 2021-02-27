@@ -82,4 +82,10 @@ class Product_model extends CI_Model {
 		return $query->result();
 		
 	}
+	public function delete($product_id){
+		$query="
+		delete from product
+		where product_id=$product_id";
+		$this->db->query($query);
+	}
 }
