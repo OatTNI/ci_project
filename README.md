@@ -24,7 +24,7 @@ learning about PHP Framework (Codeigniter 3)
 1. Visual Code
 2. Sublime Text
 3. HeidiSQL
-4. Bootstrap 5
+4. Bootstrap 4
 
 ### Languages
 
@@ -35,7 +35,7 @@ learning about PHP Framework (Codeigniter 3)
 
 ### Frameworks
 
-1. Bootstrap 5
+1. Bootstrap 4
 2. Codeigniter 3
 3. jQuery
 
@@ -44,7 +44,7 @@ learning about PHP Framework (Codeigniter 3)
 ### Frontend
 
 1. Mr.Wiraphat Sakdikul 1813110184 (IT)
-2. Mr.Krittayoch Sermwattanakul 60121004-0 (IT)
+2. Mr.Jiramed Jetawattana 1813110390 (IT)
 
 ### Backend
 
@@ -55,8 +55,5 @@ learning about PHP Framework (Codeigniter 3)
 
 1. Mrs.Wannaporn Chokewissavakul 1813110166 (CE)
 
-### Coop
-
-1. Mr.Jiramed Jetawattana 1813110390 (IT)
 
 # Thank you for visiting
