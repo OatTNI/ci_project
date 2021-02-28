@@ -37,12 +37,14 @@
 			let i=<?php echo $i; ?>;
 			$("#add_image").click(function () {
 				if(i<2){
+					
 					i++;
 					$("#image").append('<input class="form-control mb-3" type="text" name="Picture[]">');
 				} 				
 			});
 			$("#remove_image").click(function () {
 				if(i>0){
+					
 					i--;
 					$("#image input:last-child").remove();
 				}
