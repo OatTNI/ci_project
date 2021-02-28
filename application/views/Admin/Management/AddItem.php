@@ -2,9 +2,11 @@
     if(isset($product_detail)){
         $dest="admins/changeProduct/index";
         $p_name=$product_detail->product_name;
+        $this->session->set_userdata([
+            "product_name"=>$p_name
+        ]);
         $p_price=$product_detail->price;
         $description=$product_detail->description;
-        $picture="";
         $p_id=$product_detail->product_id;
         $v_id=$product_detail->vendor_id;
         $c_id=$product_detail->category_id;
@@ -13,7 +15,6 @@
         $p_name="";
         $p_price="";
         $description="";
-        $picture="";
         $p_id="";
         $v_id="";
         $c_id="";
@@ -35,6 +36,9 @@
 <div class="row">
     <div class="col">
         <form action="<?php echo base_url($dest); ?>" method="post" name="AddItemForm">
+        <?php if($p_id!=""){ ?>
+         <input type="hidden" name="ProductID" value="<?php echo $p_id; ?>">
+        <?php } ?>
             <table class="table table-borderless">
                 <tr>
                     <td><b>ชื่อสินค้า</b> <label style="color:red">*</label></td>
@@ -83,7 +87,6 @@
                             <?php }else{ 
                                 foreach($images as $image){ ?>
                                     <input value="<?php echo $image->image_url; ?>" class="form-control mb-3" type="text" name="Picture[]">
-                                    <input type="hidden" name="Picture_ID[]" value="<?php echo $image->image_id; ?>">
                                 <?php }
                             }?>
                         </span>
@@ -108,7 +111,6 @@
 
                     </td>
                 </tr>
-
             </table>
         </form>
     </div>
