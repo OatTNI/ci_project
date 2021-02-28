@@ -155,7 +155,8 @@ class addProduct extends CI_Controller {
             curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
             curl_exec($ch);
             $type=curl_getinfo($ch,CURLINFO_CONTENT_TYPE);
-            if(strpos($type,"image")==false){
+            if(strpos($type,"image")!==false){
+            }else{
                 return false;
             }
         return true;
