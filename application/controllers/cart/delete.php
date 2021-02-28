@@ -21,7 +21,7 @@ class delete extends CI_Controller
 		$this->db->where('product_id',$pid);
 		$this->db->delete('cart');
 
-		redirect('cart/Home/index');		
+		redirect('cart/cartHome/index');		
 	}
 
 }

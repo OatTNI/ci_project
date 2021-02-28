@@ -25,7 +25,7 @@
           <?php } ?>
         </table>
       <?php } else { ?>
-        <h1 class="display-1">ยังไม่มีรายการ</h1>
+        <div class='HDText text-center' >ไม่มีรายการ</div>
       <?php } ?>
     </div>
   </div>
