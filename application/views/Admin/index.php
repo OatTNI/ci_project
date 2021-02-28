@@ -23,10 +23,18 @@
 
 	<!--FOOTER-->
 	<?php $this->load->view("layout/footer-js"); ?>
-
+	<?php
+	if(isset($images)){
+		if($images==""){
+			$i=0;
+		}else{
+			$i=count($images)-1;
+		}
+	}
+	?>
 	<script type="text/javascript">
 		$(document).ready(function () {
-			let i=0;
+			let i=<?php echo $i; ?>;
 			$("#add_image").click(function () {
 				if(i<2){
 					i++;
