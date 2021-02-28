@@ -95,4 +95,15 @@ class Product_model extends CI_Model {
 		where vendor_id=$vendor_id";
 		return $this->db->query($query)->result();
 	}
+	public function updateProduct($pro_id,$pro_name,$vendor_id,$description,$price,$category_id){
+		$query="
+		update product
+		set product_name='$pro_name',
+		vendor_id=$vendor_id,
+		description='$description',
+		price=$price,
+		category_id=$category_id
+		where product_id=$pro_id";
+		$this->db->query($query);
+	}
 }
