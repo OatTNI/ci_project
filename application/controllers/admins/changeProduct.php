@@ -144,8 +144,6 @@ class changeProduct extends CI_Controller {
 * return:boolean
 */
     private function isImage($urls){
-        $pattern="/\.(png|jpeg|jpg|gif|bmp)$/i";
-
         foreach($urls as $url){
             $ch=curl_init($url);
             curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
