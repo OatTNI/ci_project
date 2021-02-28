@@ -22,6 +22,7 @@
                          <div class="center-desk">
                              <div class="d-flex justify-content-center">
                                  <h1><a href="<?php echo base_url("Home/index"); ?>"><strong>KAAIKONG</strong></a></h1>
+                                 
                              </div>
                          </div>
                      </div>
@@ -47,11 +48,11 @@
                                      <li> <a class="text-dark" href="#" onclick="openNav()"><i class="fas fa-list-alt"></i> Category</a></li>
                                      <?php
                                         if (!$this->session->userdata("user_id")) { ?>
-                                         <li> 
+                                         <!-- <li> 
                                             <a class="text-dark" id="loginbutton" data-toggle="modal" data-target="#LoginModal"><i class="fas fa-sign-in-alt"></i> Login</a>
                                             
-                                         </li>
-
+                                         </li> -->
+                                         <li> <a class="text-dark" href="<?php echo base_url("user/login_out/index"); ?>"><i class="fas fa-sign-in-alt"></i> Login</li>
                                          <?php } else {
                                              
                                             if ($this->session->userdata("user_status") == 1) { ?>
@@ -71,7 +72,6 @@
      </div>
      <!-- end header inner -->
  </header>
-<?php $this->load->view('memberSystem/loginForm');?>
 
  <script type="text/javascript">
    

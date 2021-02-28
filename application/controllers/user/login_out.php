@@ -32,10 +32,11 @@ class login_out extends CI_Controller {
             $this->set_all_rules();
             if($this->form_validation->run()==FALSE)
             {
-                //$this->load->view("loginRegisterView");
+                $data['content']="memberSystem/loginForm";
+                $this->load->view("memberSystem/msIndex",$data);
                 // $this->load->view('indexView',$data);
                 //return $this->login();
-                redirect("Home/index");
+               // redirect("Home/index");
             }
             else
             {
@@ -56,7 +57,9 @@ class login_out extends CI_Controller {
                     $this->session->set_flashdata('error', 'Not found this email or phone number');
                     // $this->load->view('indexView',$data);
                    // return $this->login();
-                    redirect("Home/index");
+                    $data['content']="memberSystem/loginForm";
+                    $this->load->view("memberSystem/msIndex",$data);
+                   // redirect("Home/index");
                 }
             }
         }      

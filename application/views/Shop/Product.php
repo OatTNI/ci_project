@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-xl-4">
-        <a class="btn btnanSize btn-back ml-2 text-light" onclick="history.go(-1);" role="button"><i class="fas fa-backspace"></i> Back</a>
+        <!-- <a class="btn btnanSize btn-back ml-2 text-light" onclick="history.go(-1);" role="button"><i class="fas fa-backspace"></i> Back</a> -->
+        <a href="<?php echo base_url("Shop/index"); ?> " class="btn btnanSize btn-back btn-danger"><i class="fas fa-backspace"></i>Back</a> 
     </div>
 </div>
 <div class="card-body row">

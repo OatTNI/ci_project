@@ -1,7 +1,7 @@
 <div class="row ">
     <div class="col-8">
         <a href="<?php echo base_url('admin/index'); ?> " class="btn btn-danger">
-            < BACK</a>
+            BACK</a>
 <?php echo $this->session->flashdata("error"); ?>
 
 

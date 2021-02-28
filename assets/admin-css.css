@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 body {
     font-family: "Kanit", sans-serif;
-   	background:#D5F5E3;
+   	/* background:#D5F5E3; */
+	background:#C1C1C1;
 
 }
+.PacificoFN{
+	font-family: 'Pacifico', cursive;
+}
 .navbar {
-	 background: #82E0AA;
+	 background: White;
 }
