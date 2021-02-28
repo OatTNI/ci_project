@@ -24,28 +24,46 @@ class changeProduct extends CI_Controller {
             $data['content'] = 'Admin/Management/AddItem';
             $this->load->view('Admin/index', $data);
         }else{
+            $input_id=$_POST["ProductID"];
             $this->set_all_rule();
             if($this->form_validation->run()==FALSE){
-
+                $data["product_detail"]=$this->Product_model->getaProduct($input_id);
+                $data["images"]=$this->Product_model->getProductImages($input_id);
+                $data['Category'] = $this->Category_model->getCategories();
+                $data['Product'] = $this->Product_model->getProducts();
+                $data["vendor"]=$this->Product_model->getVendor();
+                $data['content'] = 'Admin/Management/AddItem';
+                $this->load->view('Admin/index', $data);
             }else{
-                // ! 0 product_id
-                // ! 1 product_name
-                // ! 2 product_price
-                // ! 3 vendor_id
-                // ! 4 category
-                // ! 5 picture
-                // ! 6 description
+                // ! 0 product_name
+                // ! 1 product_price
+                // ! 2 vendor_id
+                // ! 3 category
+                // ! 4 picture
+                // ! 5 description
                 $product=$this->get_all_post_data();
-                if($this->isImage($product[5])){
-                    if(!$this->isDuplicate($product[3],$product[1])||
-                    $product[1]==$this->session->userdata("product_name")){
+                if($this->isImage($product[4])){
+                    if(!$this->isDuplicate($product[2],$product[0])||
+                    $product[0]==$this->session->userdata("product_name")){
                         $this->session->unset_userdata("product_name");
-                        $this->Product_model->updateProduct($product[0],$product[1],$product[3],$product[6],
-                            $product[2],$product[4]);
-                        $this->updateImage($product[5],$product[0]);
+                        $this->Product_model->updateProduct($input_id,$product[0],$product[2],$product[5],
+                            $product[1],$product[3]);
+                        $this->updateImage($product[4],$input_id);
                         redirect("admin/index");
+                    }else{
+                        $this->session->set_flashdata("error","product is Duplicated");
                     }
+                }else{
+                    $this->session->set_flashdata("error","the url is not image");
                 }
+
+            $data["product_detail"]=$this->Product_model->getaProduct($input_id);
+            $data["images"]=$this->Product_model->getProductImages($input_id);
+            $data['Category'] = $this->Category_model->getCategories();
+            $data['Product'] = $this->Product_model->getProducts();
+            $data["vendor"]=$this->Product_model->getVendor();
+            $data['content'] = 'Admin/Management/AddItem';
+            $this->load->view('Admin/index', $data);
             }
         }
         
@@ -57,14 +75,13 @@ class changeProduct extends CI_Controller {
 * return:array of post data
 */
     private function get_all_post_data(){
-        $p_id=$_POST["ProductID"];
         $p_name=$_POST["ProductName"];
         $category=$_POST["category"];
         $picture=$_POST["Picture"];
         $description=$_POST["description"];
         $v_name=$_POST["VendorName"];
         $p_price=$_POST["ProductPrice"];
-        return [$p_id,$p_name,$p_price,$v_name,$category,$picture,$description];
+        return [$p_name,$p_price,$v_name,$category,$picture,$description];
     }
 
 /*
@@ -122,7 +139,7 @@ class changeProduct extends CI_Controller {
     }
 
 /*
-* What:check url for image
+* What:check url is image or not ?
 * Author:oat
 * return:boolean
 */
@@ -130,12 +147,18 @@ class changeProduct extends CI_Controller {
         $pattern="/\.(png|jpeg|jpg|gif|bmp)$/i";
 
         foreach($urls as $url){
-           if(!preg_match($pattern,$url)){
+            $ch=curl_init($url);
+            curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+            curl_exec($ch);
+            $type=curl_getinfo($ch,CURLINFO_CONTENT_TYPE);
+            echo curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
+            if(strpos($type,"image")!==false){
+            }else{
                 return false;
             }
-        }
         return true;
         
+        }
     }
 /*
 * What:check for product name is Duplicated
