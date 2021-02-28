@@ -64,8 +64,7 @@ class changeProduct extends CI_Controller {
         $description=$_POST["description"];
         $v_name=$_POST["VendorName"];
         $p_price=$_POST["ProductPrice"];
-        $image_count=$_POST["image_count"];
-        return [$p_id,$p_name,$p_price,$v_name,$category,$picture,$description,$image_count];
+        return [$p_id,$p_name,$p_price,$v_name,$category,$picture,$description];
     }
 
 /*
