@@ -143,7 +143,7 @@ class addProduct extends CI_Controller {
     }
 
 /*
-* What:check url for image
+* What:check url is image or not ?
 * Author:oat
 * return:boolean
 */
@@ -151,12 +151,16 @@ class addProduct extends CI_Controller {
         $pattern="/\.(png|jpeg|jpg|gif|bmp)$/i";
 
         foreach($urls as $url){
-           if(!preg_match($pattern,$url)){
+            $ch=curl_init($url);
+            curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+            curl_exec($ch);
+            $type=curl_getinfo($ch,CURLINFO_CONTENT_TYPE);
+            if(strpos($type,"image")==false){
                 return false;
             }
-        }
         return true;
         
+        }
     }
 
 /*
