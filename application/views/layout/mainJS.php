@@ -50,25 +50,6 @@
              }
          });
      });
-     $('#loginform').validate({
-         rules : {
-         auth : {required: true,
-					// remote : {
-					// 	url : <?php //echo base_url('user/login_out/index'); ?>,
-					// 	type:"post"
-					// }
-                    },
-         pwloginfield : "required"
-       },
-        messages : {
-         auth:{ required : "โปรดระบุ Email หรือ Phone Number",remote: "ท่านระบุ Email หรือ รหัสผ่าน ไม่ถูกต้อง กรุณากรอกใหม่อีกครั้ง"},
-         pwloginfield : { required:"โปรดระบุรหัสผ่าน" }
-       },
-       submitHandler: function(form) { 
-           form.submit(); 
-           
-       }
-     });
  });
 
 
