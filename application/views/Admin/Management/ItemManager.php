@@ -19,7 +19,7 @@
 	                <h5 class="card-title text-truncate"><strong><?php echo $P->product_name; ?></strong></h5>
 	                <p class="card-text text-truncate"><?php echo $P->description; ?></p>
 					<p class="card-text text-truncate"><?php echo $P->vendor_name; ?></p>
-	                <a href="<?php echo base_url("admins/changeProduct/index/").($P->product_id); ?>" class="btn btn-warning">แก้ไข</a>
+	                <a href="<?php echo base_url("admins/changeProduct/index/show/").($P->product_id); ?>" class="btn btn-warning">แก้ไข</a>
 	                <a href="<?php echo base_url("admins/removeProduct/index/").($P->product_id); ?>" class="btn btn-danger">ลบ</a>
 	            </div>
 	        </div>
