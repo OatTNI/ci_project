@@ -5,19 +5,30 @@
                 <a href="<?php echo base_url('user/login_out/index'); ?> " class="btn btn-danger">Back to login</a>
                 <span class="HDtext" style="font-size: 175%; color:Black;">Register at Kaaikong</span>
             </div>
-
             <hr>
             <form action="<?php echo base_url("user/register"); ?>" method="post" name="Registerform">
                 <table class="table table-borderless">
+                    <?php if ($this->session->flashdata('error')) { ?>
+                        <tr>
+                            <div class="col-xl-12 col-sm-6">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <div><?= $this->session->flashdata('error') ?></div>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </tr>
+                    <?php } ?>
                     <tr>
                         <td><b>Name</b> <label style="color:red">*</label></td>
                         <td>
                             <input class="form-control mb-3" type="text" name="firstname" placeholder="Enter Firstname">
-                            <?php echo form_error('firstname'); ?>
+                            <small class="form-text text-danger"><?php echo form_error('firstname'); ?></small>
                         </td>
                         <td>
                             <input class="form-control mb-3" type="text" name="lastname" placeholder="Enter Lastname">
-                            <?php echo form_error('lastname'); ?>
+                            <small class="form-text text-danger"><?php echo form_error('lastname'); ?></small>
                         </td>
                     </tr>
                     <tr>
@@ -27,7 +38,7 @@
                         </td>
                         <td colspan="2">
                             <input class="form-control mb-3" type="email" name="emailfield" placeholder="Enter Email">
-                            <?php echo form_error('emailfield'); ?>
+                            <small class="form-text text-danger"><?php echo form_error('emailfield'); ?></small>
                         </td>
 
                     </tr>
@@ -38,7 +49,7 @@
                         </td>
                         <td colspan="2">
                             <input class="form-control mb-3" type="password" id="passwordfield" name="passwordfield" placeholder="Enter Password">
-                            <?php echo form_error('passwordfield'); ?>
+                            <small class="form-text text-danger"><?php echo form_error('passwordfield'); ?></small>
                         </td>
                     </tr>
                     <tr>
@@ -48,7 +59,7 @@
                         </td>
                         <td colspan="2">
                             <input class="form-control mb-3" type="password" name="confirmpasswordfield" placeholder="Enter Password Again">
-                            <?php echo form_error('confirmpasswordfield'); ?>
+                            <small class="form-text text-danger"><?php echo form_error('confirmpasswordfield'); ?></small>
                         </td>
                     </tr>
                     <tr>
@@ -59,7 +70,7 @@
                         </td>
                         <td colspan="2">
                             <input class="form-control mb-3" type="text" name="phonenumber" placeholder="Enter Phone number">
-                            <?php echo form_error('phonenumber'); ?>
+                            <small class="form-text text-danger"><?php echo form_error('phonenumber'); ?></small>
                         </td>
                     </tr>
                     <tr>
