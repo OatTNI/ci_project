@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col HDText mt-2">
         My Cart
+        
       </div>
     </div>
     <div class="dropdown-divider"></div>
@@ -21,7 +22,7 @@
                 <th>ชื่อสินค้า</th>
                 <th width="150" class="text-center">จำนวน</th>
                 <th class="text-center">ราคารวม</th>
-                <th></th>
+                <th class="text-center"><a href="<?php echo base_url("myAccount/clearCart"); ?>" class="btn btn-outline-danger">ล้าง</a></th>
               </tr>
               <!--Content-->
               <?php foreach ($cart as $c) {  ?>
@@ -46,11 +47,12 @@
               } ?>
             </table>
           </div>
-          <div class="row mt-5 mr-3 " style="margin-bottom: 10px; border-color:black; float:right;">
-            <h2 >รวม <?php echo number_format($sumtotal, 2); ?> บาท </h2> &emsp;
-            <a href="<?php echo base_url("myAccount/clearCart"); ?>" class="btn btn-outline-danger">ล้าง</a> &nbsp;
-            <!-- <button class="btn btn-danger">ปิด</button> -->
-          </div>
+          <div class="row mt-2 mr-3" style="border-color:black; float:right;">
+            <div class="col"><h2 id="SumtotalH2" class="text-right">รวม <label id="sumtotalLB"><?php echo number_format($sumtotal, 2); ?></label> บาท </h2> </div>
+          
+             <!-- <button class="btn btn-danger">ปิด</button> -->            
+          </div>       
+         
         <?php } ?>
       </div>
     </div>
@@ -111,3 +113,11 @@
     </div>
   <?php } ?>
 </form>
+
+<script type="text/javascript" src="<?php echo base_url('assets/'); ?>js/BAHTTEXT.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var x = <?php echo $sumtotal;?>;
+      document.getElementById("SumtotalH2").innerHTML += '<br>('+BAHTTEXT(x)+')';
+    });      
+  </script>

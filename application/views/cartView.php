@@ -16,6 +16,8 @@
   </div>
 
   <?php $this->load->view("layout/mainfooter"); ?>
+
+ 
   <?php $this->load->view("layout/mainJS"); ?>
   
 
