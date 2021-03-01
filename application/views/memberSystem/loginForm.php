@@ -10,11 +10,11 @@
       <form id="loginform" name="loginform" method="post" action="<?php echo base_url("user/login_out/index"); ?>">
         <div class="form-group">
           <input class="form-control" type="text" name="auth" id="auth" placeholder="Email / Phone Number">
-          <?php echo form_error('auth'); ?>
+          <small class="form-text text-danger"><?php echo form_error('auth'); ?></small>
         </div>
         <div class="form-group">
           <input class="form-control" type="password" name="pwloginfield" id="pwloginfield">
-          <?php echo form_error('pwloginfield'); ?>
+          <small class="form-text text-danger"><?php echo form_error('pwloginfield'); ?></small>
         </div>
         <div class="d-flex justify-content-between">
           <button class="btn btn-success" style="width:160px;" type="submit" name="btn-login">LOGIN</button>
