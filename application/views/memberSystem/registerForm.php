@@ -79,6 +79,30 @@
                             <textarea class="form-control mb-3" rows="3" name="address"></textarea>
                         </td>
                     </tr>
+                    <tr>
+                        <td><b>ตำบล / แขวง</b> (Optional)</td>
+                        <td colspan="2">
+                            <input name="district" id="district" class="form-control mb-3" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>อำเภอ / เขต</b> (Optional)</td>
+                        <td colspan="2">
+                            <input name="amphoe" id="amphoe" class="form-control mb-3" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>จังหวัด</b> (Optional)</td>
+                        <td colspan="2">
+                            <input name="province" id="province" class="form-control mb-3" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>รหัสไปรษณีย์</b> (Optional)</td>
+                        <td colspan="2">
+                            <input name="zipcode" id="zipcode" class="form-control mb-3" type="text">
+                        </td>
+                    </tr>                    
                 </table>
                 <input class="btn btn-success btn-user btn-block my-3" type="submit" value="REGISTER">
             </form>

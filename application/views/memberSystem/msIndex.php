@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/bootstrap.min.css">
     <link href="<?php echo base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>admin-css.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>jquery.Thailand.js/dist/jquery.Thailand.min.css">
 
 </head>
 
@@ -39,7 +40,30 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<?php echo base_url('assets/') ?>js/sb-admin-2.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/'); ?>jquery.Thailand.js/dependencies/JQL.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/'); ?>jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/'); ?>jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+    <script type="text/javascript">
+         $.Thailand({
+            database: '<?php echo base_url('assets/'); ?>jquery.Thailand.js/database/db.json', 
+
+            $district: $('#district'),
+            $amphoe: $('#amphoe'),
+            $province: $('#province'),
+            $zipcode: $('#zipcode'),
+
+            onDataFill: function(data){
+                console.info('Data Filled', data);
+            },
+
+            onLoad: function(){
+                console.info('Autocomplete is ready!');
+                $('#loader, .demo').toggle();
+            }
+        });
+    </script>
     <?php $this->load->view("layout/mainJS"); ?>
+
 </body>
 
 </html>
