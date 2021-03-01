@@ -17,7 +17,7 @@ class cartHome extends CI_Controller
         // $data['js']=$this->javascript->change('.qtyT', "$('#sumrow1').text(++z);");
         $id = $this->session->userdata('user_id');
         $data['cart'] = $this->Cart_model->getUserCart($id);
-        $data['content'] = 'userConfig/cartLayout';
+        
         $this->load->view('cartView', $data);
     }
 

@@ -47,7 +47,7 @@
             </table>
           </div>
           <div class="row mt-5 mr-3 " style="margin-bottom: 10px; border-color:black; float:right;">
-            <h2>รวม <?php echo number_format($sumtotal, 2); ?> บาท</h2> &emsp;
+            <h2 >รวม <?php echo number_format($sumtotal, 2); ?> บาท </h2> &emsp;
             <a href="<?php echo base_url("myAccount/clearCart"); ?>" class="btn btn-outline-danger">ล้าง</a> &nbsp;
             <!-- <button class="btn btn-danger">ปิด</button> -->
           </div>
