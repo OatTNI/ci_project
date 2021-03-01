@@ -9,7 +9,7 @@
             <form action="<?php echo base_url("user/register"); ?>" method="post" name="Registerform">
                 <table class="table table-borderless">
                     <?php if ($this->session->flashdata('error')) { ?>
-                        <tr>
+                        <th id="" colspan="3">
                             <div class="col-xl-12 col-sm-6">
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     <div><?= $this->session->flashdata('error') ?></div>
@@ -18,7 +18,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </tr>
+                        </th>
                     <?php } ?>
                     <tr>
                         <td><b>Name</b> <label style="color:red">*</label></td>
