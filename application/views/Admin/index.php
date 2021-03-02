@@ -9,21 +9,29 @@
 	<link href="<?php echo base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo base_url('assets/'); ?>admin-css.css">
 	<script src="<?php echo base_url('assets/') ?>js/bootstrap.bundle.min.js"></script>
-
-
 </head>
 
-<body>
-	<!--NAV BAR-->
-	<?php $this->load->view("layout/AdminNav"); ?>
-
-	<div class="container mt-5 mb-5 rounded " style="background: white; padding:25px;">
-
-		<!-- Collapsable Card Example -->
+<body id="page-top">
+<?php $this->load->view("layout/AdminNav"); ?>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+	
+       <?php $this->load->view("layout/menu-left"); ?>
+	   
+	   
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+		<div class="container mt-5 mb-5 rounded " style="background: white; padding:25px;">
+	
 		<?php $this->load->view($content); ?>
-	</div>
+		
+		</div>
+		
 
-	<!--FOOTER-->
+        </div>
+
+    </div>
+    <!-- End of Page Wrapper -->
 	<?php $this->load->view("layout/footer-js"); ?>
 	<?php
 	if (isset($images)) {
@@ -109,6 +117,7 @@
 			});
 		});
 	</script>
+
 </body>
 
 </html>

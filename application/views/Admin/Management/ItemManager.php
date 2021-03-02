@@ -1,5 +1,6 @@
 
 <div class="row ">
+
     <div class="col-8">
         <a href="<?php echo base_url('admin/ItemAddPanel');?>" class="btn btn-outline-success">+ เพิ่มสินค้า</a>&nbsp;
         <a href="<?php echo base_url('admin/CategoryManager');?>" class="btn btn-outline-success">จัดการหมวดหมู่</a>
