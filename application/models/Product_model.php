@@ -43,7 +43,7 @@ class Product_model extends CI_Model {
 		return $query->row(0);
 	}
 
-	public function getProductsbyCategoryPerpage($start=0 , $perpage=0, $cid)
+	public function getProductsbyCategoryPerpage($start=0 , $perpage=0, $cid=0)
 	{
 		$this->db->select('*');
 		$this->db->from('product_view');
@@ -71,7 +71,7 @@ class Product_model extends CI_Model {
 		
 		return $query->result();	
 	}
-	public function getProductsbySearchPerpage($start=0 , $perpage=0, $sid)
+	public function getProductsbySearchPerpage($start=0 , $perpage=0, $sid=0)
 	{
 		$this->db->select('*');
 		$this->db->from('product_view');
