@@ -74,33 +74,33 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><b>Address</b> (Optional)</td>
+                        <td><b>Address</b> <label style="color:red">*</label></td>
                         <td colspan="2">
                             <textarea placeholder="XX/XX" class="form-control mb-3" rows="3" name="address"></textarea>
                         </td>
                     </tr>
                     <tr>
-                        <td><b>Sub-district</b> (Optional)</td>
+                        <td><b>Sub-district</b> <label style="color:red">*</label></td>
                         <td colspan="2">
                             <input name="district" id="district" class="form-control mb-3" type="text">
                         </td>
                     </tr>
                     <tr>
-                        <td><b>District</b> (Optional)</td>
+                        <td><b>District</b> <label style="color:red">*</label></td>
                         <td colspan="2">
-                            <input disabled name="amphoe" id="amphoe" class="form-control mb-3" type="text">
+                            <input  name="amphoe" id="amphoe" class="form-control mb-3" type="text">
                         </td>
                     </tr>
                     <tr>
-                        <td><b>Province</b> (Optional)</td>
+                        <td><b>Province</b> <label style="color:red">*</label></td>
                         <td colspan="2">
-                            <input disabled name="province" id="province" class="form-control mb-3" type="text">
+                            <input name="province" id="province" class="form-control mb-3" type="text">
                         </td>
                     </tr>
                     <tr>
-                        <td><b>Postal code</b> (Optional)</td>
+                        <td><b>Postal code</b> <label style="color:red">*</label></td>
                         <td colspan="2">
-                            <input disabled name="zipcode" id="zipcode" class="form-control mb-3" type="text">
+                            <input  name="zipcode" id="zipcode" class="form-control mb-3" type="text">
                         </td>
                     </tr>                    
                 </table>
