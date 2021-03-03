@@ -20,7 +20,10 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 input-group">
                                     <!-- Search -->
-                                    <input class="form-control form-control-sm rounded-left border" type="text" id="keyword" name="keyword" value="" placeholder="What are you looking for?" aria-label="Search">
+
+                                    <input class="form-control form-control-sm rounded-left border" type="text" id="keyword"  name="keyword" placeholder="What are you looking for?" aria-label="Search">
+                                    
+
                                     <button class="rounded-right bg-white mr-1" onclick="FuntionSearch()" style="width: 50px;"><i class="fas fa-search"></i></button>
                                     <a class="btn btn-lg btn-primary" href="<?php echo base_url("cart/cartHome"); ?>" role="button"><i class="fas fa-shopping-cart"></i></a>
                                 </div>
@@ -70,4 +73,15 @@
         //alert(hreff);                 
         location.replace(hreff);
     }
+    $( function() {
+        var availableTags = [
+        <?php foreach ($Product as $value) { ?>
+            "<?php echo $value->product_name; ?>",
+        <?php } ?>
+        ];
+        
+        $( "#keyword" ).autocomplete({
+            source: availableTags
+        });
+    } );
 </script>
