@@ -14,12 +14,19 @@ class Product_model extends CI_Model {
 		$query = $this->db->get('product_view');
 		return $query->result();
 	}
-	public function getProducts()
+
+	public function getProducts($activate = 0)
 	{
-		$this->db->order_by('product_id');
+		if($activate == 0){
+			$this->db->order_by('product_id','RANDOM');
+		}
+		else{
+			$this->db->order_by('product_id');
+		}
 		$query = $this->db->get('product_view');
 		return $query->result();
 	}
+
 	public function count($keyword = '',$cid = 0  ){
 
 		if(strlen($keyword)>0){
