@@ -22,7 +22,7 @@ class Product extends CI_Controller
         $data['Proimg'] = $this->Product_model->getProductImages($ProID);
         $data['vendor'] = $this->Product_model->getProductvendor($data['Product']->{'vendor_id'});
         $data['category'] = $this->Category_model->getaCategory($data['Product']->{'category_id'});
-        $data['content'] = 'Shop/Product';
-        $this->load->view('Shop', $data);
+        // $data['content'] = 'Shop/Product';
+        $this->load->view('Shop/Product', $data);
     }
 }
