@@ -23,7 +23,7 @@
                         <div class="row marginii">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width: 525px; height:441.562px;">
                                 <div class="carousel-caption">
-                                    <h1>Welcome to <strong class="color">Our Shop</strong></h1>
+                                    <h1>Welcome to <strong class="color">Kaaikong</strong></h1>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
                                     <a class="btn btn-lg btn-primary" href="<?php echo base_url("Shop/index"); ?>"><i class="fas fa-search"></i><span class=""> Shop </span></a>
                                     <?php
