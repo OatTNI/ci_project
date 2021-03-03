@@ -7,9 +7,10 @@
 </head>
 
 <body class="main-layout">
-    <?php $this->load->view('layout/navbar'); ?>
+    
     <!-- end header -->
-    <div class="clothes_main section ">
+    <div class="Nav_main section ">
+    <?php $this->load->view('layout/navbar'); ?>
     </div>
     <div class="clothes_main section ">
         <div class="container bg-white rounded">

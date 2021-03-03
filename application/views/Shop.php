@@ -8,9 +8,10 @@
 </head>
 
 <body class="main-layout">
-    <?php $this->load->view('layout/navbar'); ?>
-    <div class="clothes_main"></div>
-    <div class="clothes_main section ">
+
+    <div class="Nav_main section">
+        <?php $this->load->view('layout/navbar'); ?></div>
+    <div class="clothes_main section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -28,7 +29,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="row bg-white" style="border-radius: 10px;">
+            <div class="row bg-light" style="border-radius: 10px;">
                 <div class="col-xl-2">
                     <h2 class="card-title ml-2 mt-2">
                         <strong>หมวดหมู่</strong>

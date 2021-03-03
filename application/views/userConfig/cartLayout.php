@@ -1,14 +1,14 @@
 <form action="<?php echo base_url("cart/checkout/showItems"); ?>" method="post" name="CartForm">
-  <div class="container BGPanel my-2">
+  <div class="container BGPanel my-2 bg-light">
     <div class="row">
       <div class="col HDText mt-2">
         My Cart
-        
+
       </div>
     </div>
     <div class="dropdown-divider"></div>
     <div class="row">
-      <div class="col ">
+      <div class="col">
         <?php $ari = 0;
         $arid; ?>
         <?php if (count($cart) == 0) {
@@ -48,11 +48,13 @@
             </table>
           </div>
           <div class="row mt-2 mr-3" style="border-color:black; float:right;">
-            <div class="col"><h2 id="SumtotalH2" class="text-right">รวม <label id="sumtotalLB"><?php echo number_format($sumtotal, 2); ?></label> บาท </h2> </div>
-          
-             <!-- <button class="btn btn-danger">ปิด</button> -->            
-          </div>       
-         
+            <div class="col">
+              <h2 id="SumtotalH2" class="text-right">รวม <label id="sumtotalLB"><?php echo number_format($sumtotal, 2); ?></label> บาท </h2>
+            </div>
+
+            <!-- <button class="btn btn-danger">ปิด</button> -->
+          </div>
+
         <?php } ?>
       </div>
     </div>
@@ -107,7 +109,7 @@
           </div>
         </div>
         <div class="col-12 py-1 text-right">
-          <button type="submit" class="btn btn-primary" >Check Out!!</button>
+          <button type="submit" class="btn btn-primary">Check Out!!</button>
         </div>
       </div>
     </div>
@@ -115,9 +117,9 @@
 </form>
 
 <script type="text/javascript" src="<?php echo base_url('assets/'); ?>js/BAHTTEXT.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      var x = <?php echo $sumtotal;?>;
-      document.getElementById("SumtotalH2").innerHTML += '<br>('+BAHTTEXT(x)+')';
-    });      
-  </script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var x = <?php echo $sumtotal; ?>;
+    document.getElementById("SumtotalH2").innerHTML += '<br>(' + BAHTTEXT(x) + ')';
+  });
+</script>

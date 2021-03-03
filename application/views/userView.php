@@ -7,10 +7,12 @@
 </head>
 
 <body class="main-layout">
-  <?php $this->load->view('layout/navbar'); ?>
+
   <?php $userID = $this->session->userdata('user_id'); ?>
   <!-- end header -->
-  <div class="clothes_main section "></div>
+  <div class="Nav_main section ">
+    <?php $this->load->view('layout/navbar'); ?>
+  </div>
   <div class="clothes_main section ">
     <div class="container">
       <div class="row" style="background: white; border-radius: 10px; padding: 10px; margin-bottom: 10px;">
@@ -40,7 +42,7 @@
           <?php $this->load->view($content); ?>
 
         </div>
-        
+
       </div>
     </div>
   </div>

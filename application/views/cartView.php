@@ -8,16 +8,16 @@
 
 <body class="main-layout">
   <?php $this->load->view('layout/navbar'); ?>
-  <div class="clothes_main"></div>
+  <div class="Nav_main section"></div>
   <!-- end header -->
   <div class="clothes_main section">
     <div class="container mb-3">
-      <?php $this->load->view($content); ?>        
+      <?php $this->load->view($content); ?>
     </div>
   </div>
 
-  <?php $this->load->view("layout/mainfooter"); ?> 
-  <?php $this->load->view("layout/mainJS"); ?>  
+  <?php $this->load->view("layout/mainfooter"); ?>
+  <?php $this->load->view("layout/mainJS"); ?>
 
 
 </body>
