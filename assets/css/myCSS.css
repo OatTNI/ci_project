@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 body {
     font-family: "Kanit", sans-serif;
 }
@@ -12,7 +13,7 @@ body {
 }
 
 .MAMenu:hover {
-    background: #FFFFFF;
+    background: #081b30;
 }
 
 .menu_text {
@@ -190,4 +191,8 @@ nav.main-menu {
     background-color: #081b30;
     height: auto;
     padding: 0 0 0 0;
+}
+
+.PacificoFN {
+    font-family: 'Pacifico', cursive;
 }

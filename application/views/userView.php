@@ -15,14 +15,13 @@
   </div>
   <div class="clothes_main section ">
     <div class="container">
-      <div class="row" style="background: white; border-radius: 10px; padding: 10px; margin-bottom: 10px;">
+      <div class="row border border-3" style="background: white; border-radius: 10px; padding: 10px; margin-bottom: 10px;">
         <div class="col-md-3 col-sm-4 col-4 rounded-left" style="background: #007bff; font-size: 150%; ">
           <ul class="Menuside">
             <li class="" style="color:white;">
               Config
+              <div class="dropdown-divider border-3"></div>
             </li>
-            <div class="dropdown-divider"></div>
-
             <li class="nav-item MAMenu">
               <a class="nav-link text-light" href="<?php echo base_url('myAccount/index'); ?>"><i class="fas fa-user-circle"></i> Username</a> <!-- variable of username!!!-->
 

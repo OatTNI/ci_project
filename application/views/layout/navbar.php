@@ -9,7 +9,7 @@
                     <div class="full">
                         <div class="center-desk">
                             <div class="logo">
-                                <h1><a href="<?php echo base_url("Home/index"); ?>"><strong><span class="d-lg-inline" style="font-size: 200%; color:#FFFFFF;">Kaaikong</span> </strong></a></h1>
+                                <h1><a href="<?php echo base_url("Home/index"); ?>"><strong><span class="d-lg-inline PacificoFN" style="font-size: 200%; color:#FFFFFF;">Kaaikong</span> </strong></a></h1>
                             </div>
                         </div>
                     </div>
