@@ -24,7 +24,7 @@
         $data['links'] =  $this->pagination->create_links();
 
         $start = $this->uri->segment(5)>0?$this->uri->segment(5):0;
-        $product  = $this->Product_model->getProductsbySearch($start, $config['per_page'],$key);
+        $product  = $this->Product_model->getProductsbySearchPerpage($start, $config['per_page'],$key);
         $data['total_rows'] = $config['total_rows'];
         $data['Product'] = $product;
 

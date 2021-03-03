@@ -24,7 +24,7 @@ class index extends CI_Controller
         $data['links'] =  $this->pagination->create_links();
 
         $start = $this->uri->segment(4)>0?$this->uri->segment(4):0;
-        $product  = $this->Product_model->getProducts($start, $config['per_page']);
+        $product  = $this->Product_model->getProductsPerpage($start, $config['per_page']);
         $data['total_rows'] = $config['total_rows'];
         $data['Product'] = $product;
 
