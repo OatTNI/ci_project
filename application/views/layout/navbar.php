@@ -40,7 +40,7 @@
                                             <a class="text-dark" id="loginbutton" data-toggle="modal" data-target="#LoginModal"><i class="fas fa-sign-in-alt"></i> Login</a>
                                             
                                          </li> -->
-                                            <li> <a href="<?php echo base_url("user/login_out/index"); ?>"><i class="fas fa-sign-in-alt"></i> Login</li>
+                                            <li> <a href="<?php echo base_url("user/login_out/index"); ?>"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                                             <?php } else {
 
                                             if ($this->session->userdata("user_status") == 1) { ?>
