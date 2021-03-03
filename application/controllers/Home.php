@@ -20,7 +20,11 @@ class Home extends CI_Controller
         $this->session->set_userdata($category);
         $data["user"] = $user_data;
         
+        $data['Product'] = $this->Product_model->getProducts();
+
+        $data['SeeAll'] = "Yes";
+        $data['content'] = 'Shop/Shopmain';
+
         $this->load->view('indexView', $data);
     }
 }
-?>
