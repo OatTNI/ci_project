@@ -8,6 +8,7 @@
 
 <body class="main-layout">
   <?php $this->load->view('layout/navbar'); ?>
+  <div class="clothes_main"></div>
   <!-- end header -->
   <div class="clothes_main section">
     <div class="container mb-3">
