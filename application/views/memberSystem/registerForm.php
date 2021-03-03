@@ -69,38 +69,38 @@
                             <label style="color:red"> * </label>
                         </td>
                         <td colspan="2">
-                            <input class="form-control mb-3" type="text" name="phonenumber" placeholder="Enter Phone number">
+                            <input  class="form-control mb-3" type="text" name="phonenumber" placeholder="Enter Phone number">
                             <small class="form-text text-danger"><?php echo form_error('phonenumber'); ?></small>
                         </td>
                     </tr>
                     <tr>
                         <td><b>Address</b> (Optional)</td>
                         <td colspan="2">
-                            <textarea class="form-control mb-3" rows="3" name="address"></textarea>
+                            <textarea placeholder="XX/XX" class="form-control mb-3" rows="3" name="address"></textarea>
                         </td>
                     </tr>
                     <tr>
-                        <td><b>ตำบล / แขวง</b> (Optional)</td>
+                        <td><b>Sub-district</b> (Optional)</td>
                         <td colspan="2">
                             <input name="district" id="district" class="form-control mb-3" type="text">
                         </td>
                     </tr>
                     <tr>
-                        <td><b>อำเภอ / เขต</b> (Optional)</td>
+                        <td><b>District</b> (Optional)</td>
                         <td colspan="2">
-                            <input name="amphoe" id="amphoe" class="form-control mb-3" type="text">
+                            <input disabled name="amphoe" id="amphoe" class="form-control mb-3" type="text">
                         </td>
                     </tr>
                     <tr>
-                        <td><b>จังหวัด</b> (Optional)</td>
+                        <td><b>Province</b> (Optional)</td>
                         <td colspan="2">
-                            <input name="province" id="province" class="form-control mb-3" type="text">
+                            <input disabled name="province" id="province" class="form-control mb-3" type="text">
                         </td>
                     </tr>
                     <tr>
-                        <td><b>รหัสไปรษณีย์</b> (Optional)</td>
+                        <td><b>Postal code</b> (Optional)</td>
                         <td colspan="2">
-                            <input name="zipcode" id="zipcode" class="form-control mb-3" type="text">
+                            <input disabled name="zipcode" id="zipcode" class="form-control mb-3" type="text">
                         </td>
                     </tr>                    
                 </table>
