@@ -179,3 +179,15 @@ nav.main-menu {
     position: relative;
     margin-bottom: 20px;
 }
+
+.border-3 {
+    border-width: 3px !important;
+}
+
+.Address {
+    width: 100%;
+    float: left;
+    background-color: #081b30;
+    height: auto;
+    padding: 0 0 0 0;
+}

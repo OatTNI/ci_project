@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="bg-success">
+<body class="main-layout" style="background-color: #136af8;">
 
     <div class="container">
 
