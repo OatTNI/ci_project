@@ -134,11 +134,31 @@ fieldset {
     border-radius: 25px;
 }
 
+.btn-danger {
+    width: 100%;
+    margin-right: 10px;
+    border-radius: 25px;
+}
+
+.btn-danger:hover {
+    background: #ffc107;
+    color: #000;
+}
+
 .btn-success {
     background-color: #28a745;
     border: indianred;
     border-color: #28a745;
     /* max-width: 170px; */
+    width: 100%;
+    margin-right: 10px;
+    border-radius: 25px;
+}
+
+.btn-primary {
+    background-color: #081b30;
+    border: indianred;
+    border-color: #081b30;
     width: 100%;
     margin-right: 10px;
     border-radius: 25px;
@@ -195,4 +215,21 @@ nav.main-menu {
 
 .PacificoFN {
     font-family: 'Pacifico', cursive;
+}
+
+.mean-container .mean-bar {
+    background: #081b30;
+    float: left;
+    min-height: 40px;
+    padding: 5px 0;
+    position: relative;
+    width: 100%;
+    z-index: 999;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #081b30;
+    border-color: #007bff;
 }

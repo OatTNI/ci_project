@@ -25,12 +25,12 @@
                                 <div class="carousel-caption">
                                     <h1>Welcome to <strong class="color">Kaaikong</strong></h1>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                                    <a class="btn btn-lg btn-primary" href="<?php echo base_url("Shop/index"); ?>"><i class="fas fa-search"></i><span class=""> Shop </span></a>
+                                    <a class="btn btn-lg btn-primary" href="<?php echo base_url("Shop/index"); ?>"><i class="fas fa-search"></i><span> Shop </span></a>
                                     <?php
                                     if (!$this->session->userdata("user_id")) { ?>
-                                        <a class="btn btn-lg btn-primary" href="<?php echo base_url("user/login_out/index"); ?>" role="button"><i class="fas fa-sign-in-alt"></i> Login</a>
+                                        <a class="btn btn-lg btn-primary" href="<?php echo base_url("user/login_out/index"); ?>" role="button"><i class="fas fa-sign-in-alt"></i><span> Login</span></a>
                                     <?php } else { ?>
-                                        <a class="btn btn-lg btn-primary" href="<?php echo base_url("myAccount/index"); ?>"><i class="fas fa-user-circle"></i> <?php echo $this->session->userdata("user_fname"); ?></a></li>
+                                        <a class="btn btn-lg btn-primary" href="<?php echo base_url("myAccount/index"); ?>" role="button"><i class="fas fa-user-circle"></i><span> <?php echo $this->session->userdata("user_fname"); ?></span></a></li>
                                     <?php } ?>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                                         <h1><strong class="color"><?php echo $P->{'product_name'}; ?></strong></h1>
                                         <p><?php echo $P->{'description'} ?></p>
                                         <a class="btn btn-lg btn-primary" href="<?php echo base_url("Shop/Product/index/"); ?><?php echo $P->product_id; ?>" role="button">About</a>
-                                       
+
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
