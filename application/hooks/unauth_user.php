@@ -20,7 +20,7 @@ class unauth_user
             }
         }
         if (!$this->CI->session->userdata('user_id')&&!$is_allow) {
-            redirect("Home/index");
+            redirect("user/login_out/index");
         }
 
             
