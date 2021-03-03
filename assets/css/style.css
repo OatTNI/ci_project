@@ -2526,9 +2526,10 @@ button.btn.btn-primary:focus {
 .product_pagr .clothes_main {
     margin-bottom: 90px;
 }
-.main-menu ul>li a {
+
+/* .main-menu ul>li a {
     padding-top: 5px;
-}
+} */
 .sport_product {
     margin-bottom: 20px;
 }

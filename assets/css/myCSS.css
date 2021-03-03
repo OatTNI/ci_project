@@ -153,3 +153,19 @@ nav.main-menu {
     margin-top: 2px;
     margin-left: 0;
 }
+
+.clothes_main {
+    width: 100%;
+    float: left;
+    background-color: #FFFFFF;
+    height: auto;
+    padding: 60px 0px;
+}
+
+.Nav_main {
+    width: 100%;
+    float: left;
+    background-color: #136af8;
+    height: 150px;
+    padding: 60px 60px;
+}
