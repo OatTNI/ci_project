@@ -14,6 +14,7 @@ class Search extends CI_Controller
     public function index($key = '')
     {
         if (strlen($key) > 0) {
+            $key = urldecode($key);
             $config['base_url'] = base_url("shop/Search/index/$key/");
             $config['total_rows'] = $this->Product_model->count($key, 0);
             $config['per_page'] = 3;
