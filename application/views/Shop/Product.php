@@ -73,10 +73,10 @@
                 <!-- Data End -->
             </div>
             <div class="card-body row">
-                <div class="col border brodersize ">
+                <div class="col-xl-12 border brodersize ">
                     <p class="text-justify">รายละเอียดสินค้า : <?php echo $Product->{'description'}; ?></p>
                 </div>
-                <div class="col text-center mt-1">
+                <div class="col-xl-12 text-center mt-1">
                     <a href="<?php echo base_url("Shop/index"); ?> " class="btn btnanSize btn-danger"><i class="fas fa-backspace"></i>Back</a>
                 </div>
             </div>
