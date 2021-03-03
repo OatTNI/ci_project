@@ -26,13 +26,10 @@ class Products extends CI_Controller
         $data['total_rows'] = $config['total_rows'];
         $data['Product'] = $product;
 
+        
+
         $data['SeeAll'] = "No";
         $data['content'] = 'Shop/Shopmain';
         $this->load->view('Shop', $data);
-
-
-
-
     }
 }
-?>
