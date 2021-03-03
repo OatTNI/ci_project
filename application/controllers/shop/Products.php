@@ -22,11 +22,9 @@ class Products extends CI_Controller
         $data['links'] =  $this->pagination->create_links();
 
         $start = $this->uri->segment(5)>0?$this->uri->segment(5):0;
-        $product  = $this->Product_model->getProductsbyCategory($start, $config['per_page'],$ID);
+        $product  = $this->Product_model->getProductsbyCategoryPerpage($start, $config['per_page'],$ID);
         $data['total_rows'] = $config['total_rows'];
         $data['Product'] = $product;
-
-        
 
         $data['SeeAll'] = "No";
         $data['content'] = 'Shop/Shopmain';
