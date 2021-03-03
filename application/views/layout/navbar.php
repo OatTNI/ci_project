@@ -17,6 +17,7 @@
                 <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 input-group">
                                     <!-- Search -->
@@ -24,7 +25,7 @@
                                     <input class="form-control form-control-sm rounded-left border" type="text" id="keyword"  name="keyword" placeholder="What are you looking for?" aria-label="Search">
                                     
 
-                                    <button class="rounded-right bg-white mr-1" onclick="FuntionSearch()" style="width: 50px;"><i class="fas fa-search"></i></button>
+                                    <button class="rounded-right bg-white mr-1" onclick="FunctionSearch()" style="width: 50px;"><i class="fas fa-search"></i></button>
                                     <a class="btn btn-lg btn-primary" href="<?php echo base_url("cart/cartHome"); ?>" role="button"><i class="fas fa-shopping-cart"></i></a>
                                 </div>
                             </div>
@@ -68,9 +69,10 @@
 
 
 <script type="text/javascript">
-    function FuntionSearch() {
-        var hreff = "http://localhost/ci_project/Shop/Search/index/" + document.getElementById('keyword').value;
-        //alert(hreff);                 
+    function FunctionSearch() {
+        var hreff = "http://localhost/ci_project/Shop/Search/index/"+document.getElementById('keyword').value;
+        //alert(hreff);    
+        //urldecode(hreff);
         location.replace(hreff);
     }
     $( function() {

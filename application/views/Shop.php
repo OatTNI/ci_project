@@ -19,7 +19,7 @@
                         <h2><strong class="black"></strong> <?php if ($SeeAll == "No") { ?>
                                 <strong><?php echo $Product[0]->{'category_name'}; ?></strong>
                             <?php } elseif (isset($Keyword)) { ?>
-                                <strong>See All <?php echo $Keyword ?></strong>
+                                <strong>See All <?php echo urldecode($Keyword) ?></strong>
                             <?php } elseif ($SeeAll == "Yes") { ?>
                                 <strong>See All</strong>
                             <?php } ?>
