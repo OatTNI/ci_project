@@ -21,7 +21,7 @@ class Category_model extends CI_Model {
 
 		return $query->row(0);
 	}
-
+	
 	public function getCategoryBanners($cid)
 	{
 		$cid == 0? $this->db->where('category_id'):$this->db->where('category_id', $cid);

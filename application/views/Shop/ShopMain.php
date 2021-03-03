@@ -16,7 +16,7 @@
             </h2>
         </div>
         <div class="col-7 text-right">
-            Pagegination
+            Pagegination <?php echo $links ?>
         </div>
     </div>
     <div class="card-body row no-gutters">

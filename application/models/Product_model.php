@@ -7,14 +7,29 @@ class Product_model extends CI_Model {
 
 	}
 
-	public function getProducts()
+	public function getProducts($start=0 , $perpage=0)
 	{
-		$this->db->order_by('product_id', 'RANDOM');
+		$this->db->order_by('product_id');
+		$this->db->limit($perpage,$start);
 		$query = $this->db->get('product_view');
-
 		return $query->result();
-	}
 
+	}
+	public function count($keyword = '',$cid = 0  ){
+
+		if(strlen($keyword)>0){
+			$this->db->like('product_name',$keyword,'both');
+		}
+		if($cid>0){
+			$this->db->join('category', 'product_view.category_id = category.category_id');
+			$this->db->where('category.category_id',$cid);		
+		}
+	
+		$this->db->from('product_view');
+		return $this->db->count_all_results();
+	
+		
+	}
 	public function getaProduct($pid)
 	{
 		$this->db->where('product_id', $pid);
@@ -23,12 +38,13 @@ class Product_model extends CI_Model {
 		return $query->row(0);
 	}
 
-	public function getProductsbyCategory($cid)
+	public function getProductsbyCategory($start=0 , $perpage=0, $cid)
 	{
 		$this->db->select('*');
 		$this->db->from('product_view');
 		$this->db->join('category', 'product_view.category_id = category.category_id');
 		$this->db->where('category.category_id', $cid);
+		$this->db->limit($perpage,$start);
 		$query = $this->db->get();
 
 		return $query->result();
@@ -41,11 +57,12 @@ class Product_model extends CI_Model {
 		
 		return $query->result();	
 	}
-	public function getProductsbySearch($sid)
+	public function getProductsbySearch($start=0 , $perpage=0, $sid)
 	{
 		$this->db->select('*');
 		$this->db->from('product_view');
 		$this->db->like('product_name',$sid,'both');
+		$this->db->limit($perpage,$start);
 		$query = $this->db->get();
 		return $query->result();
 		# code...

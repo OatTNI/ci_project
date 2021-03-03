@@ -136,7 +136,12 @@ class register extends CI_Controller {
         $pwd=$this->input->post("passwordfield");
         $phone=$this->input->post("phonenumber");
         $addr=$this->input->post("address");
-        return [$fname,$lname,$email,$phone,$pwd,$addr];
+        $dist=$this->input->post("district");
+        $amp=$this->input->post("amphoe");
+        $prov=$this->input->post("province");
+        $zip=$this->input->post("zipcode");
+        $address = $addr." ".$dist." ".$amp." ".$prov." ".$zip;
+        return [$fname,$lname,$email,$phone,$pwd,$address];
     }
 
 /*
