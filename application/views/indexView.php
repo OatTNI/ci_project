@@ -89,7 +89,7 @@
                         break;
                     } ?>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                        <div class="sport_product border-bottom" style="border-radius: 10px;">
+                        <div class="sport_product" style="border-radius: 10px;">
                             <figure><img class="rounded" src="<?php echo $P->image_url ?>" alt="img" /></figure>
                             <h3><a href="<?php echo base_url("Shop/Product/index/$P->product_id"); ?>" class="btn btn-primary">See</a></h3>
                             <h4 class="text-truncate"><?php echo $P->product_name; ?></h4>

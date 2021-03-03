@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="row bg-light" style="border-radius: 10px;">
+            <div class="row bg-light p-2" style="border-radius: 10px;">
                 <div class="col-xl-2">
                     <h2 class="card-title ml-2 mt-2">
                         <strong>หมวดหมู่</strong>

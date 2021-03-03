@@ -13,7 +13,7 @@
           <small class="form-text text-danger"><?php echo form_error('auth'); ?></small>
         </div>
         <div class="form-group">
-          <input class="form-control" type="password" name="pwloginfield" id="pwloginfield">
+          <input class="form-control" type="password" name="pwloginfield" id="pwloginfield" placeholder="Password">
           <small class="form-text text-danger"><?php echo form_error('pwloginfield'); ?></small>
         </div>
         <div class="d-flex justify-content-between">
