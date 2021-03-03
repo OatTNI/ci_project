@@ -169,3 +169,13 @@ nav.main-menu {
     height: 150px;
     padding: 60px 60px;
 }
+
+.titlepage h2 {
+    padding: 0px 0px 0px 0px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #136af8;
+    line-height: 50px;
+    position: relative;
+    margin-bottom: 20px;
+}
