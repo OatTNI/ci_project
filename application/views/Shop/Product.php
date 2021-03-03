@@ -57,7 +57,7 @@
                                 <input id="qty" name="qty" type="number" value="<?php echo isset($qty) ? $qty : '1'; ?>" min="1" max="100" step="1">
                             </div>
                             <div class="col-12 my-3 d-flex justify-content-center">
-                                <button class="btn btnanSize btn-primary" type="submit"> หยิบใส่ตระกร้า</button>
+                                <button class="btn btn-lg btn-primary" type="submit"> หยิบใส่ตระกร้า</button>
                             </div>
                         </div>
                         <div class="row no-gutters mt-5">
@@ -77,7 +77,7 @@
                     <p class="text-justify">รายละเอียดสินค้า : <?php echo $Product->{'description'}; ?></p>
                 </div>
                 <div class="col-xl-12 text-center mt-3">
-                    <a href="<?php echo base_url("Shop/index"); ?> " class="btn btnanSize btn-danger">Back</a>
+                    <a href="<?php echo base_url("Shop/index"); ?> " class="btn btn-lg btn-danger">Back</a>
                 </div>
             </div>
         </div>
