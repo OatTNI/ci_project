@@ -20,8 +20,8 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 input-group">
                                     <!-- Search -->
-                                    <input class="form-control form-control-sm mr-2 rounded" type="text" id="keyword" name="keyword" value="" placeholder="What are you looking for?" aria-label="Search">
-                                    <a class="btn btn-lg btn bg-white mr-1" onclick="FuntionSearch()" role="button"><i class="fas fa-search"></i></a>
+                                    <input class="form-control form-control-sm rounded-left border" type="text" id="keyword" name="keyword" value="" placeholder="What are you looking for?" aria-label="Search">
+                                    <button class="rounded-right bg-white mr-1" onclick="FuntionSearch()" style="width: 50px;"><i class="fas fa-search"></i></button>
                                     <a class="btn btn-lg btn-primary" href="<?php echo base_url("cart/cartHome"); ?>" role="button"><i class="fas fa-shopping-cart"></i></a>
                                 </div>
                             </div>
