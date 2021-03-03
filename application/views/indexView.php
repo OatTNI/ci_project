@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                     <div class="img-box ">
-                                        <figure><img class="rounded" src="<?php echo $P->image_url ?>" alt="img" style="width: 525px; height:441.562px;" /></figure>
+                                        <figure><img class="rounded-circle" src="<?php echo $P->image_url ?>" alt="img" style="width: 525px; height:441.562px;" /></figure>
                                     </div>
                                 </div>
                             </div>

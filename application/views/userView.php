@@ -15,6 +15,16 @@
   </div>
   <div class="clothes_main section ">
     <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="titlepage text-center">
+            <h2>My Account
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
       <div class="row border border-3" style="background: white; border-radius: 10px; padding: 10px; margin-bottom: 10px;">
         <div class="col-md-3 col-sm-4 col-4 rounded-left" style="background: #007bff; font-size: 150%; ">
           <ul class="Menuside">

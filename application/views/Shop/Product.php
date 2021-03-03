@@ -35,7 +35,7 @@
 
                     </div>
                 </div>
-                <div class="col-xl-6 col-sm-12 border border-3 border-dark rounded">
+                <div class="col-xl-6 col-sm-12 border border-3  rounded">
                     <!-- Data -->
                     <form action="<?php echo base_url("cart/updateCart/addCart/");
                                     echo $Product->{'product_id'}; ?>" method="post">
@@ -49,7 +49,7 @@
                                 <h2><strong>ราคา : <?php echo number_format($Product->{'price'}, 2); ?> บาท</strong></h2>
                             </div>
                         </div>
-                        <div class="row mb-3  border-bottom border-3 border-dark">
+                        <div class="row mb-3  border-bottom border-3 ">
                             <div class="col-6 d-flex align-items-center">
                                 <h3>จำนวนชิ้น</h3>
                             </div>
@@ -73,11 +73,11 @@
                 <!-- Data End -->
             </div>
             <div class="card-body row">
-                <div class="col-xl-12 border border-3 border-dark  rounded">
+                <div class="col-xl-12 border border-3  rounded">
                     <p class="text-justify">รายละเอียดสินค้า : <?php echo $Product->{'description'}; ?></p>
                 </div>
                 <div class="col-xl-12 text-center mt-3">
-                    <a href="<?php echo base_url("Shop/index"); ?> " class="btn btnanSize btn-danger"><i class="fas fa-backspace"></i>Back</a>
+                    <a href="<?php echo base_url("Shop/index"); ?> " class="btn btnanSize btn-danger">Back</a>
                 </div>
             </div>
         </div>

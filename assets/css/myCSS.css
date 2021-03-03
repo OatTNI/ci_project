@@ -138,7 +138,7 @@ fieldset {
     background-color: #28a745;
     border: indianred;
     border-color: #28a745;
-    max-width: 170px;
+    /* max-width: 170px; */
     width: 100%;
     margin-right: 10px;
     border-radius: 25px;
