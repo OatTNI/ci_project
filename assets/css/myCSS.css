@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 body {
     font-family: "Kanit", sans-serif;
 }
@@ -12,7 +13,7 @@ body {
 }
 
 .MAMenu:hover {
-    background: #FFFFFF;
+    background: #081b30;
 }
 
 .menu_text {
@@ -137,7 +138,7 @@ fieldset {
     background-color: #28a745;
     border: indianred;
     border-color: #28a745;
-    max-width: 170px;
+    /* max-width: 170px; */
     width: 100%;
     margin-right: 10px;
     border-radius: 25px;
@@ -166,8 +167,8 @@ nav.main-menu {
     width: 100%;
     float: left;
     background-color: #136af8;
-    height: 150px;
-    padding: 60px 60px;
+    height: 165px;
+    padding: 60px 0px 60px 0px;
 }
 
 .titlepage h2 {
@@ -190,4 +191,8 @@ nav.main-menu {
     background-color: #081b30;
     height: auto;
     padding: 0 0 0 0;
+}
+
+.PacificoFN {
+    font-family: 'Pacifico', cursive;
 }

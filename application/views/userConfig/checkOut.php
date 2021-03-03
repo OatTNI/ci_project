@@ -29,14 +29,13 @@
         <div class="col" style="text-align: right;"><b><?= $cart[0]->sum_total; ?></b></div>
       </div>
     </form>
-
     <div style="float:right;">
-      <div class="row">
-        <div class="col">
-          <a class="btn btn-danger" href="<?= base_url("cart/cartHome"); ?>">ปิด</a>
+      <div class="row no-gutters">
+        <div class="col mr-2">
+          <a class="btn btn-lg btn-danger" href="<?= base_url("cart/cartHome"); ?>">ปิด</a>
         </div>
         <div class="col">
-          <button type="submit" form="makeorderform" class="btn btn-success">ชำระเงิน</button>
+          <button type="submit" form="makeorderform" class="btn btn-lg btn-success">ชำระเงิน</button>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@
           echo "<div class='HDText text-center' >ไม่มีรายการ</div>";
         } else { ?>
           <div class="row ofPanel px-2">
-            <table class="table table-striped border">
+            <table class="table table-striped border-0">
               <!--Header-->
               <tr>
                 <th>รูปสินค้า</th>
@@ -60,7 +60,7 @@
     </div>
   </div>
   <?php if (!count($cart) == 0) { ?>
-    <div class="container card rounded border-0">
+    <div class="container my-2 bg-light">
       <div class="row">
         <div class="col HDText mt-2">
           ชำระเงิน
@@ -68,7 +68,7 @@
       </div>
       <div class="dropdown-divider"></div>
       <div class="row">
-        <div class="col-12 py-1">
+        <div class="col-4 py-1">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="Payment " id="Card" value="option1" checked>
             <label class="form-check-label" for="Card">
@@ -76,7 +76,7 @@
             </label>
           </div>
         </div>
-        <div class="col-12 py-1">
+        <div class="col-4 py-1">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="Payment " id="Bank" value="option2">
             <label class="form-check-label" for="Bank">
@@ -84,7 +84,7 @@
             </label>
           </div>
         </div>
-        <div class="col-12 py-1">
+        <div class="col-4 py-1">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="Payment " id="IB" value="option2">
             <label class="form-check-label" for="IB">
@@ -92,7 +92,7 @@
             </label>
           </div>
         </div>
-        <div class="col-12 py-1">
+        <div class="col-4 py-1">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="Payment " id="counter" value="option2">
             <label class="form-check-label" for="counter">
@@ -100,7 +100,7 @@
             </label>
           </div>
         </div>
-        <div class="col-12 py-1">
+        <div class="col-4 py-1">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="Payment " id="Online" value="option2">
             <label class="form-check-label" for="Online">
@@ -108,8 +108,8 @@
             </label>
           </div>
         </div>
-        <div class="col-12 py-1 text-right">
-          <button type="submit" class="btn btn-primary">Check Out!!</button>
+        <div class="col-12 mb-1 py-1 text-right">
+          <button type="submit" class="btn btn-lg btn-primary">Check Out!!</button>
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@
                     <input class="form-control mb-3" type="password" name="confirmpasswordfield" placeholder="Enter Password Again"></td>
                 </tr>
             </table>
-        <input class="btn btn-success btn-block my-3" type="submit" value="Change Password">
+        <input class="btn btn-lg btn-success btn-block my-3" type="submit" value="Change Password">
         </form>
   </div> 
 </div>
