@@ -4,7 +4,7 @@
         <?php echo $links ?>
     </div>
 </div>
-<div class="card-body row no-gutters">
+<div class="card-body">
     <div class="row">
         <?php $i = 0;
         foreach ($Product as $P) {

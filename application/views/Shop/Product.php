@@ -15,15 +15,8 @@
         <div class="container bg-white rounded">
             <div class="card-body row">
                 <!-- PIC -->
-                <div class=" col-xl-6 col-sm-12 d-flex justify-content-center">
-                    <div>
-                        <div class="d-flex flex-column thumbnails">
-                            <?php $i = 1;
-                            foreach ($Proimg as $P) { ?>
-                                <div id="f<?php echo $i; ?>" class="tb <?php echo ($i == 1 ? "tb-active" : ""); ?>"> <img class="thumbnail-img fit-image" src="<?php echo $P->{'image_url'}; ?>"> </div>
-                            <?php $i++;
-                            } ?>
-                        </div>
+                <div class=" col-xl-6 col-sm-12 d-flex justify-content-center  ">
+                    <div class="p-2">
                         <?php $i = 1;
                         foreach ($Proimg as $P) { ?>
                             <fieldset id="f<?php echo $i; ?>1" class="<?php echo ($i == 1 ? "active" : ""); ?>">
@@ -31,6 +24,13 @@
                             </fieldset>
                         <?php $i++;
                         } ?>
+                        <div class="d-flex flex-column thumbnails" style="flex-direction: inherit!important;">
+                            <?php $i = 1;
+                            foreach ($Proimg as $P) { ?>
+                                <div id="f<?php echo $i; ?>" class="tb <?php echo ($i == 1 ? "tb-active" : ""); ?>"> <img class="thumbnail-img fit-image" src="<?php echo $P->{'image_url'}; ?>"> </div>
+                            <?php $i++;
+                            } ?>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-6 col-sm-12">
