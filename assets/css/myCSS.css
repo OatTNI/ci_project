@@ -147,3 +147,9 @@ fieldset {
     background: #FFFFFF;
     color: #000;
 }
+
+nav.main-menu {
+    float: left;
+    margin-top: 2px;
+    margin-left: 0;
+}
