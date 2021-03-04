@@ -4,7 +4,8 @@
 
 <head>
     <?php $this->load->view('layout/header-css'); ?>
-    <title>Document</title>
+    <title>KAAIKONG</title>
+    <link rel="icon" href="<?php echo base_url('assets/img') ?>/Shop.png">
 </head>
 
 <body class="main-layout">

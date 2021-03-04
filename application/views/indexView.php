@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>ขายของ</title>
+    <title>KAAIKONG</title>
+    <link rel="icon" href="<?php echo base_url('assets/img') ?>/Shop.png">
     <?php $this->load->view('layout/header-css'); ?>
 </head>
 
@@ -49,7 +50,7 @@
                                     <div class="carousel-caption ">
                                         <h1><strong class="color"><?php echo $P->{'product_name'}; ?></strong></h1>
                                         <p><?php echo $P->{'description'} ?></p>
-                                        <a class="btn btn-lg btn-primary" href="<?php echo base_url("Shop/Product/index/"); ?><?php echo $P->product_id; ?>" role="button">About</a>
+                                        <a class="btn btn-lg btn-primary" href="<?php echo base_url("Shop/Product/index/"); ?><?php echo $P->product_id; ?>" role="button">See</a>
 
                                     </div>
                                 </div>

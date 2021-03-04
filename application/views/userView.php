@@ -3,6 +3,7 @@
 
 <head>
   <title>My Account</title>
+  <link rel="icon" href="<?php echo base_url('assets/img') ?>/Shop.png">
   <?php $this->load->view('layout/header-css'); ?>
 </head>
 

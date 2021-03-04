@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>404 Page Not Found</title>
+	<link rel="icon" href="<?php echo base_url('assets/img') ?>/Shop.png">
 	<link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/bootstrap.min.css">
 	<style> body{ background: url(<?php echo base_url();?>assets/img/404.png); background-size:100%; background-repeat: no-repeat; width: 100%; } </style>
 </head>

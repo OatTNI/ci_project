@@ -9,6 +9,7 @@
     <meta name="author" content="">
 
     <title>KAAIKONG - Login</title>
+    <link rel="icon" href="<?php echo base_url('assets/img') ?>/Shop.png">
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/bootstrap.min.css">
     <link href="<?php echo base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>admin-css.css">
