@@ -73,14 +73,4 @@
         //urldecode(hreff);
         location.replace(hreff);
     }
-    $(function() {
-        var availableTags = [
-            <?php foreach ($Product as $value) { ?> "<?php echo $value->product_name; ?>",
-            <?php } ?>
-        ];
-
-        $("#keyword").autocomplete({
-            source: availableTags
-        });
-    });
 </script>
