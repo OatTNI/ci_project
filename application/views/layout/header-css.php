@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <link href ="<?php echo base_url('assets/'); ?>css/myCSS.css" rel="stylesheet">
+    <script src="<?php echo base_url('assets/') ?>js/jquery.min.js"></script>
+    <script src="<?php echo base_url('assets/') ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url('assets/') ?>js/popper.min.js"></script>
     
 
     <!--[if lt IE 9]>
