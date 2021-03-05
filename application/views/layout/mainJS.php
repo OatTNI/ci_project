@@ -8,17 +8,17 @@
 <script src="<?php echo base_url('assets/') ?>js/custom.js"></script>
 <!-- javascript -->
 <script src="<?php echo base_url('assets/'); ?>js/bootstrap-input-spinner.js"></script>
-<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<!-- <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script> -->
 <script src="<?php echo base_url('assets/') ?>js/jquery.validate.min.js"></script>
 
 
 <script>
     $("input[type='number']").inputSpinner();
     $(document).ready(function() {
-        $(".fancybox").fancybox({
-            openEffect: "none",
-            closeEffect: "none"
-        });
+        // $(".fancybox").fancybox({
+        //     openEffect: "none",
+        //     closeEffect: "none"
+        // });
 
         $(".zoom").hover(function() {
 
