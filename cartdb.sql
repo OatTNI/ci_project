@@ -53,25 +53,25 @@ CREATE TABLE IF NOT EXISTS `cart` (
   CONSTRAINT `FK_cart_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table sc_fs.cart: ~2 rows (approximately)
+-- Dumping data for table sc_fs.cart: ~0 rows (approximately)
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` (`user_id`, `product_id`, `qty`) VALUES
-	(0000000002, 0000000004, 1);
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
 -- Dumping structure for table sc_fs.category
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `category_name` varchar(255) NOT NULL,
+  `c_status` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table sc_fs.category: ~3 rows (approximately)
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` (`category_id`, `category_name`) VALUES
-	(0000000001, 'Electronics'),
-	(0000000002, 'Clothes'),
-	(0000000003, 'Drinks');
+INSERT INTO `category` (`category_id`, `category_name`, `c_status`) VALUES
+	(0000000001, 'Electronics', 0),
+	(0000000002, 'Clothes', 1),
+	(0000000003, 'Drinks', 1),
+	(0000000007, 'Test12', 1);
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
 -- Dumping structure for table sc_fs.order
@@ -173,8 +173,8 @@ INSERT INTO `product` (`product_id`, `product_name`, `vendor_id`, `description`,
 	(0000000001, 'T-shirt', 0000000001, 'Pink T-shirt', 160, 0000000002, 0),
 	(0000000002, 'ESP8266 module', 0000000002, 'ESP8366 module WiFi for Arduino', 30, 0000000001, 0),
 	(0000000003, 'Energy Drinks', 0000000003, 'Lemon flavor energy drinks', 15, 0000000003, 0),
-	(0000000004, 'Milk', 0000000004, 'Plain flavor milk', 200, 0000000003, 1),
-	(0000000005, 'Notebook', 0000000005, 'CPU Core i5 Notebook', 20000, 0000000001, 1),
+	(0000000004, 'Milk', 0000000004, 'Plain flavor milk', 200, 0000000003, 0),
+	(0000000005, 'Notebook', 0000000005, 'CPU Core i5 Notebook', 20000, 0000000001, 0),
 	(0000000006, 'Skinny Fit Jeans', 0000000006, 'Men EZY Ultra Stretch Colour Skinny Fit Jeans', 700, 0000000002, 1);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
