@@ -8,11 +8,11 @@
             <hr>
             <form action="<?php echo base_url("user/register"); ?>" method="post" name="Registerform">
                 <table class="table table-borderless">
-                    <?php if ($this->session->flashdata('error')) { ?>
+                    <?php if ($this->session->flashdata('errorRegis')) { ?>
                         <th id="" colspan="3">
                             <div class="col-xl-12 col-sm-6">
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <div><?= $this->session->flashdata('error') ?></div>
+                                    <div><?= $this->session->flashdata('errorRegis') ?></div>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>

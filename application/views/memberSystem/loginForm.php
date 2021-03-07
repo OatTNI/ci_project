@@ -23,9 +23,9 @@
         </div>
       </form>
       <hr>
-      <?php if ($this->session->flashdata('flash_errors')) { ?>
+      <?php if ($this->session->flashdata('errorlogin')) { ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <?php echo $this->session->flashdata('flash_errors'); ?>
+          <?php echo $this->session->flashdata('errorlogin'); ?>
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

@@ -54,7 +54,7 @@ class login_out extends CI_Controller {
                     //return true;
                     redirect("Home/index"); 
                 }else{
-                    $this->session->set_flashdata('error', 'Not found this email or phone number');
+                    $this->session->set_flashdata('errorlogin', 'Not found this email or phone number');
                     // $this->load->view('indexView',$data);
                    // return $this->login();
                     $data['content']="memberSystem/loginForm";

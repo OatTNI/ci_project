@@ -44,7 +44,7 @@ class register extends CI_Controller {
                     ]);
                     redirect("Home/index");
                 }else{
-                    $this->session->set_flashdata('error', 'your email or phone number is Duplicated');
+                    $this->session->set_flashdata('errorRegis', 'your email or phone number is Duplicated');
                     //$this->load->view('memberSystem/registerForm');
                     $data['content']="memberSystem/registerForm";
                     $this->load->view("memberSystem/msIndex",$data);
