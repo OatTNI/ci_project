@@ -17,7 +17,8 @@ class categoryManagement extends CI_Controller
 
 	public function add()
 	{
-		$this->form_validation->set_rules('catName', 'ชื่อหมวดหมู่', 'required|is_unique[category.category_name]',array('required' => 'กรุณากรอกชื่อหมวดหมู่', 'is_unique'=>'ชื่อหมวดหมู่ซ้ำ กรุณากรอกใหม่'));
+		$this->form_validation->set_rules('catName', 'ชื่อหมวดหมู่', 'required',array(
+			'required' => 'กรุณากรอกชื่อหมวดหมู่'));
 		if($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('flash_errors', validation_errors());
 
@@ -25,11 +26,17 @@ class categoryManagement extends CI_Controller
 		else{
 			
 			$categoryName = $this->input->post('catName');
-			$query=$this->Category_model->getaCategoryByName($category_name);
-			
+			$query=$this->Category_model->getaCategoryByName($categoryName);
+			$query=$query[0];
 			// ! if Category name is in query
 			if($query){
-				$this->Category_model->set_status($query[0]->category_id);
+				if($query->c_status==1){
+
+					$this->session->set_flashdata('flash_errors', "ชื่อหมวดหมู่ซ้ำ กรุณากรอกใหม่");
+				}else{
+					$this->Category_model->set_status($query->category_id);
+				}
+				
 			}else{
 				// ! if Category name is not in query
 				$param['category_name']=$categoryName;

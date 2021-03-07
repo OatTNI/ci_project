@@ -23,11 +23,11 @@ class Category_model extends CI_Model {
 		return $query->row(0);
 	}
 	public function getaCategoryByName($name){
-		$this->db->where('category_name',$name);
-		$this->db->select('category_id');
-				
-		$query = $this->db->get('category');
-		return $query;
+		$sql="
+		select category_id,c_status
+		from category
+		where category_name='$name'";
+		return $this->db->query($sql)->result();
 	}
 	public function set_status($cid){
 		$sql="
