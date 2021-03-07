@@ -11,6 +11,8 @@ class Product_model extends CI_Model {
 	{
 		$this->db->order_by('product_id');
 		$this->db->limit($perpage,$start);
+
+		$this->db->where("status",1);
 		$query = $this->db->get('product_view');
 		return $query->result();
 	}
@@ -23,6 +25,7 @@ class Product_model extends CI_Model {
 		else{
 			$this->db->order_by('product_id');
 		}
+		$this->db->where("status",1);
 		$query = $this->db->get('product_view');
 		return $query->result();
 	}
@@ -37,6 +40,7 @@ class Product_model extends CI_Model {
 			$this->db->where('category.category_id',$cid);		
 		}
 	
+		$this->db->where("status",1);
 		$this->db->from('product_view');
 		return $this->db->count_all_results();
 	
@@ -45,6 +49,7 @@ class Product_model extends CI_Model {
 	public function getaProduct($pid)
 	{
 		$this->db->where('product_id', $pid);
+		$this->db->where("status",1);
 		$query = $this->db->get('product_view');
 
 		return $query->row(0);
@@ -56,6 +61,7 @@ class Product_model extends CI_Model {
 		$this->db->from('product_view');
 		$this->db->join('category', 'product_view.category_id = category.category_id');
 		$this->db->where('category.category_id', $cid);
+		$this->db->where("status",1);
 		$this->db->limit($perpage,$start);
 		$query = $this->db->get();
 
@@ -67,6 +73,7 @@ class Product_model extends CI_Model {
 		$this->db->from('product_view');
 		$this->db->join('category', 'product_view.category_id = category.category_id');
 		$this->db->where('category.category_id', $cid);
+		$this->db->where("status",1);
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -84,6 +91,7 @@ class Product_model extends CI_Model {
 		$this->db->from('product_view');
 		$this->db->like('product_name',$sid,'both');
 		$this->db->limit($perpage,$start);
+		$this->db->where("status",1);
 		$query = $this->db->get();
 		return $query->result();
 		# code...
@@ -93,6 +101,7 @@ class Product_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('product_view');
 		$this->db->like('product_name',$sid,'both');
+		$this->db->where("status",1);
 		$query = $this->db->get();
 		return $query->result();
 		# code...
@@ -130,9 +139,11 @@ class Product_model extends CI_Model {
 		
 	}
 	public function delete($product_id){
+		// status 0 is deactivated
 		$query="
-		delete from product
-		where product_id=$product_id";
+		UPDATE product
+		SET status = 0
+		WHERE product_id=$product_id;";
 		$this->db->query($query);
 	}
 	public function get_list_product($vendor_id){
