@@ -21,19 +21,24 @@ class categoryManagement extends CI_Controller
 		if($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('flash_errors', validation_errors());
 
-			redirect("admin/CategoryManager");
 		}
 		else{
-			$categoryName = $this->input->post('catName');
-
-			$param['category_name']=$categoryName;
-
-			$this->db->insert('category',$param); 
-
-			$this->session->set_flashdata('flash_success', 'เพิ่มข้อมูลเรียบร้อยแล้ว');
 			
-			redirect("admin/CategoryManager");
+			$categoryName = $this->input->post('catName');
+			$query=$this->Category_model->getaCategoryByName($category_name);
+			
+			// ! if Category name is in query
+			if($query){
+				$this->Category_model->set_status($query[0]->category_id);
+			}else{
+				// ! if Category name is not in query
+				$param['category_name']=$categoryName;
+				$this->db->insert('category',$param);
+				$this->session->set_flashdata('flash_success', 'เพิ่มข้อมูลเรียบร้อยแล้ว');
+			}
 		}
+
+			redirect("admin/CategoryManager");
 	}
 
 	public function edit($category_id, $category_name)
@@ -65,10 +70,9 @@ class categoryManagement extends CI_Controller
 		}
 		else
 		{
+			$this->Category_model->delete($category_id);
 			$this->session->set_flashdata('flash_success', 'ลบข้อมูลเรียบร้อยแล้ว');
 
-			$this->db->where('category_id',$category_id);
-			$this->db->delete('category');
 		}
 	}
 }

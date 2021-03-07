@@ -8,7 +8,8 @@ class Category_model extends CI_Model {
 	}
 
 	public function getCategories()
-	{
+	{	
+		$this->db->where('c_status',1);
 		$query = $this->db->get('category');
 
 		return $query->result();
@@ -21,6 +22,20 @@ class Category_model extends CI_Model {
 
 		return $query->row(0);
 	}
+	public function getaCategoryByName($name){
+		$this->db->where('category_name',$name);
+		$this->db->select('category_id');
+				
+		$query = $this->db->get('category');
+		return $query;
+	}
+	public function set_status($cid){
+		$sql="
+		update category
+		set c_status=1
+		where category_id=$cid";
+		$this->db->query($sql);
+	}
 	
 	public function getCategoryBanners($cid)
 	{
@@ -31,5 +46,12 @@ class Category_model extends CI_Model {
 		$query = $this->db->get('');
 
 		return $query->result();	
+	}
+	public function delete($cid){
+		$sql="
+		update category
+		set c_status=0
+		where category_id=$cid";
+		$this->db->query($sql);
 	}
 }
