@@ -148,7 +148,7 @@ class Product_model extends CI_Model {
 	}
 	public function get_list_product($vendor_id){
 		$query="
-		select product_name
+		select product_name,status
 		from product
 		where vendor_id=$vendor_id";
 		return $this->db->query($query)->result();
@@ -162,6 +162,13 @@ class Product_model extends CI_Model {
 		price=$price,
 		category_id=$category_id
 		where product_id=$pro_id";
+		$this->db->query($query);
+	}
+	public function activateProduct($product_id){
+		$query="
+		update product
+		set status=1
+		where product_id=$product_id";
 		$this->db->query($query);
 	}
 }

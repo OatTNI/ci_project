@@ -40,11 +40,11 @@
                     <div class="row d-flex justify-content-center">
                         <?php foreach ($category as $c) { ?>
                             <div class="col-xl-12 col-sm-4 my-2 ml-4">
-                                <h4><a href="<?php echo base_url("Shop/Products/index/$c->category_id") ?>"><?= $c->category_name ?></a></h4>
+                                <h4><a href="<?php echo base_url("shop/Products/index/$c->category_id") ?>"><?= $c->category_name ?></a></h4>
                             </div>
                         <?php } ?>
                         <div class="col-12 my-2 ml-4">
-                            <h4><a href="<?php echo base_url("Shop/index") ?>">See All</a></h4>
+                            <h4><a href="<?php echo base_url("shop/IndexShop") ?>">See All</a></h4>
                         </div>
                     </div>
                 </div>

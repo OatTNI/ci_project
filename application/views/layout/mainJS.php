@@ -55,7 +55,7 @@
     });
 
     function FunctionSearch() {
-        var hreff = "http://localhost/ci_project/Shop/Search/index/" + document.getElementById('keyword').value;
+        var hreff = "<?php echo base_url();?>shop/Search/index/" + document.getElementById('keyword').value;
         //alert(hreff);    
         //urldecode(hreff);
         location.replace(hreff);

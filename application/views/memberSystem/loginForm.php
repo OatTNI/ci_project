@@ -7,7 +7,7 @@
       <div class="text-center">
         <h1 class="h4 text-gray-900 mb-4">Welcome to KAAIKONG!</h1>
       </div>
-      <form id="loginform" name="loginform" method="post" action="<?php echo base_url("user/login_out/index"); ?>">
+      <form id="loginform" name="loginform" method="post" action="<?php echo base_url("user/Login_out/index"); ?>">
         <div class="form-group">
           <input class="form-control" type="text" name="auth" id="auth" placeholder="Email / Phone Number">
           <small class="form-text text-danger"><?php echo form_error('auth'); ?></small>
@@ -31,7 +31,7 @@
           </button>
         </div>
       <?php } ?>
-      <a href="<?php echo base_url('user/register/index/show'); ?>">ยังไม่เป็นสมาชิก? สมัครเลย!</a>
+      <a href="<?php echo base_url('user/Register/index/show'); ?>">ยังไม่เป็นสมาชิก? สมัครเลย!</a>
     </div>
   </div>
 </div>

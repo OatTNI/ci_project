@@ -1,6 +1,6 @@
 <?php
     if(isset($product_detail)){
-        $dest="admins/changeProduct/index";
+        $dest="admins/ChangeProduct/index";
         $p_name=$product_detail->product_name;
         $this->session->set_userdata([
             "product_name"=>$p_name
@@ -11,7 +11,7 @@
         $v_id=$product_detail->vendor_id;
         $c_id=$product_detail->category_id;
     }else{
-        $dest="admins/addProduct";
+        $dest="admins/AddProduct";
         $p_name="";
         $p_price="";
         $description="";
@@ -23,7 +23,7 @@
 ?>
 <div class="row ">
     <div class="col-8">
-        <a href="<?php echo base_url('admin/index'); ?> " class="btn btn-danger">
+        <a href="<?php echo base_url('Admin/index'); ?> " class="btn btn-danger">
             BACK</a>
         <?php echo $this->session->flashdata("error"); ?>
 

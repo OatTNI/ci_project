@@ -1,6 +1,6 @@
 <?php
 
-class categoryManagement extends CI_Controller
+class CategoryManagement extends CI_Controller
 {
 	
 	function __construct()
@@ -12,7 +12,7 @@ class categoryManagement extends CI_Controller
 
 	public function index()
 	{
-		redirect("admin/CategoryManager");
+		redirect("Admin/CategoryManager");
 	}
 
 	public function add()
@@ -45,7 +45,7 @@ class categoryManagement extends CI_Controller
 			}
 		}
 
-			redirect("admin/CategoryManager");
+			redirect("Admin/CategoryManager");
 	}
 
 	public function edit($category_id, $category_name)

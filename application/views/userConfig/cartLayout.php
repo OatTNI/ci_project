@@ -1,4 +1,4 @@
-<form action="<?php echo base_url("cart/checkout/showItems"); ?>" method="post" name="CartForm">
+<form action="<?php echo base_url("cart/Checkout/showItems"); ?>" method="post" name="CartForm">
   <div class="container BGPanel my-2 bg-light">
     <div class="row">
       <div class="col HDText mt-2">
@@ -22,7 +22,7 @@
                 <th>ชื่อสินค้า</th>
                 <th width="150" class="text-center">จำนวน</th>
                 <th class="text-center">ราคารวม</th>
-                <th class="text-center"><a href="<?php echo base_url("myAccount/clearCart"); ?>" class="btn btn-outline-danger">ล้าง</a></th>
+                <th class="text-center"><a href="<?php echo base_url("MyAccount/clearCart"); ?>" class="btn btn-outline-danger">ล้าง</a></th>
               </tr>
               <!--Content-->
               <?php foreach ($cart as $c) {  ?>
@@ -35,9 +35,9 @@
                     </strong>
                   </td>
                   <td class="text-center">
-                    <a href="<?php echo base_url("Shop/Product/index/$c->product_id/");
+                    <a href="<?php echo base_url("shop/Product/index/$c->product_id/");
                               echo $this->session->userdata("user_id"); ?>" class="btn btn-warning" style="width: 75px;">แก้ไข</a>
-                    <a href="<?php echo base_url("cart/delete/deleteCart/");
+                    <a href="<?php echo base_url("cart/Delete/deleteCart/");
                               echo $c->{'product_id'}; ?>" class="btn btn-danger" style="width: 75px;">ลบ</a>
                   </td>
 

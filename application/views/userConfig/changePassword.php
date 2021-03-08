@@ -7,7 +7,7 @@
 <div class="dropdown-divider"></div>
    <div class="row " >
     <div class="col">
-      <form action="<?php echo base_url("user/password"); ?>" method="post" name="ChangePassword">
+      <form action="<?php echo base_url("user/Password"); ?>" method="post" name="ChangePassword">
             <table class="table table-borderless"> 
               <tr>
                     <td><b>Old Password</b> <label style="color:red"> * </label></td>

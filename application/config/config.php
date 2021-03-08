@@ -24,8 +24,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'http://192.168.1.10/ci_project/';
-$config['base_url'] = 'http://localhost/ci_project/';
-$config['javascript_location'] = 'http://localhost/ci_project/assets/js/jquery.min.js';
+$config['base_url'] = 'http://www.databasethai.com/tni/group1/';
+$config['javascript_location'] = 'http://www.databasethai.com/tni/group1/assets/js/jquery.min.js';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -101,7 +101,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = TRUE;
+$config['enable_hooks'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -381,7 +381,8 @@ $config['encryption_key'] = '';
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = NULL;
+// $config['sess_save_path'] = NULL;
+$config['sess_save_path'] = FCPATH . 'application/cache/sessions/';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;

@@ -26,10 +26,10 @@ class Search extends CI_Controller
             $data['Product'] = $product;
             $data['Keyword'] = $key;
             $data['SeeAll'] = '';
-            $data['content'] = 'Shop/Shopmain';
+            $data['content'] = 'Shop/ShopMain';
             $this->load->view('Shop', $data);
         } else {
-            redirect("shop/index");
+            redirect("shop/IndexShop");
         }
     }
 }

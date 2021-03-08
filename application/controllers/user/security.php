@@ -5,7 +5,7 @@
 * return: string
 */
 function sql_prevention($input){
-    $link = mysqli_connect("localhost", "root", "", "SC_FS");
+    $link = mysqli_connect("localhost", "mynamech_group1", "xMeSpttaT", "mynamech_group1");
     $input=trim($input);
     $input=htmlspecialchars($input);
     $input=mysqli_escape_string($link,$input);

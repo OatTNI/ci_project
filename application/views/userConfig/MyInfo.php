@@ -8,7 +8,7 @@
 <div class="dropdown-divider"></div>
    <div class="row" >
     <div class="col">
-            <form action="<?php echo base_url("user/information"); ?>" method="post" name="MyInformationForm">
+            <form action="<?php echo base_url("user/Information"); ?>" method="post" name="MyInformationForm">
                 <table class="table table-borderless"> 
                       <tr>
                         <td><b>Name</b></td>

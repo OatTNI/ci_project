@@ -26,7 +26,7 @@
                                 <div class="carousel-caption">
                                     <h1>Welcome to <strong class="color">Kaaikong</strong></h1>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                                    <a class="btn btn-lg btn-primary" href="<?php echo base_url("Shop/index"); ?>"><i class="fas fa-search"></i><span> Shop </span></a>
+                                    <a class="btn btn-lg btn-primary" href="<?php echo base_url("shop/IndexShop/index"); ?>"><i class="fas fa-search"></i><span> Shop </span></a>
                                     <?php
                                     if (!$this->session->userdata("user_id")) { ?>
                                         <a class="btn btn-lg btn-primary" href="<?php echo base_url("user/login_out/index"); ?>" role="button"><i class="fas fa-sign-in-alt"></i><span> Login</span></a>
@@ -92,7 +92,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                         <div class="sport_product" style="border-radius: 10px;">
                             <figure><img class="rounded" src="<?php echo $P->image_url ?>" alt="img" /></figure>
-                            <h3><a href="<?php echo base_url("Shop/Product/index/$P->product_id"); ?>" class="btn btn-primary">See</a></h3>
+                            <h3><a href="<?php echo base_url("shop/Product/index/$P->product_id"); ?>" class="btn btn-primary">See</a></h3>
                             <h4 class="text-truncate"><?php echo $P->product_name; ?></h4>
                         </div>
                     </div>

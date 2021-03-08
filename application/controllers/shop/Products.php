@@ -29,7 +29,7 @@ class Products extends CI_Controller
         
 
         $data['SeeAll'] = "No";
-        $data['content'] = 'Shop/Shopmain';
+        $data['content'] = 'Shop/ShopMain';
         $this->load->view('Shop', $data);
     }
 }

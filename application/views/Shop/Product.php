@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-xl-6 col-sm-12 border border-3  rounded">
                     <!-- Data -->
-                    <form action="<?php echo base_url("cart/updateCart/addCart/");
+                    <form action="<?php echo base_url("cart/UpdateCart/addCart/");
                                     echo $Product->{'product_id'}; ?>" method="post">
                         <div class="row">
                             <div class="col-12 py-2">
@@ -78,7 +78,7 @@
                     <p class="text-justify">รายละเอียดสินค้า : <?php echo $Product->{'description'}; ?></p>
                 </div>
                 <div class="col-xl-12 text-center mt-3">
-                    <a href="<?php echo base_url("Shop/index"); ?> " class="btn btn-lg btn-danger">Back</a>
+                    <a href="<?php echo base_url("shop/IndexShop"); ?> " class="btn btn-lg btn-danger">Back</a>
                 </div>
             </div>
         </div>
