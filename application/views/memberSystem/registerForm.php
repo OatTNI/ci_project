@@ -2,11 +2,11 @@
     <div class="col-lg-12">
         <div class="p-5">
             <div class="d-flex justify-content-between">
-                <a href="<?php echo base_url('user/login_out/index'); ?> " class="btn btn-danger">Back to login</a>
+                <a href="<?php echo base_url('user/Login_out/index'); ?> " class="btn btn-danger">Back to login</a>
                 <span class="HDtext" style="font-size: 175%; color:Black;">Register at Kaaikong</span>
             </div>
             <hr>
-            <form action="<?php echo base_url("user/register"); ?>" method="post" name="Registerform">
+            <form action="<?php echo base_url("user/Register"); ?>" method="post" name="Registerform">
                 <table class="table table-borderless">
                     <?php if ($this->session->flashdata('errorRegis')) { ?>
                         <th id="" colspan="3">

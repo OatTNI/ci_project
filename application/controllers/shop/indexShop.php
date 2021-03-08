@@ -1,6 +1,6 @@
 <?php
 
-class indexShop extends CI_Controller
+class IndexShop extends CI_Controller
 {
 
     public function __construct()
@@ -15,7 +15,7 @@ class indexShop extends CI_Controller
         // $data['Product'] = $this->Product_model->getProducts();
         // $data['Img'] = $this->Product_model->getProductImages($data['Product']->{'product_id'});
         
-        $config['base_url'] = base_url("shop/indexShop/index");
+        $config['base_url'] = base_url("Shop/indexShop/index");
         $config['total_rows'] = $this->Product_model->count();
         $config['per_page'] = 3;
 
@@ -30,7 +30,7 @@ class indexShop extends CI_Controller
 
         
         $data['SeeAll'] = "Yes";
-        $data['content'] = 'Shop/Shopmain';
+        $data['content'] = 'Shop/ShopMain';
         $this->load->view('Shop', $data);
     }
 }

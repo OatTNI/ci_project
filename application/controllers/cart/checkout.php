@@ -1,5 +1,5 @@
 <?php
-class checkout extends CI_Controller{
+class Checkout extends CI_Controller{
 
     public function __construct()
     {
@@ -40,7 +40,7 @@ class checkout extends CI_Controller{
 		}
 
 		$this->Cart_model->clearCart($id);
-		redirect("myAccount");
+		redirect("MyAccount");
     }
 }
 ?>

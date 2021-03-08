@@ -34,14 +34,14 @@
               <div class="dropdown-divider border-3"></div>
             </li>
             <li class="nav-item MAMenu">
-              <a class="nav-link text-light" href="<?php echo base_url('myAccount/index'); ?>"><i class="fas fa-user-circle"></i> Username</a> <!-- variable of username!!!-->
+              <a class="nav-link text-light" href="<?php echo base_url('MyAccount/index'); ?>"><i class="fas fa-user-circle"></i> Username</a> <!-- variable of username!!!-->
 
             </li>
             <li class="nav-item MAMenu" id="navbtm">
-              <a class="nav-link text-light" href="<?php echo base_url('myAccount/changePassword'); ?>"><i class="fas fa-key"></i> Change Password</a>
+              <a class="nav-link text-light" href="<?php echo base_url('MyAccount/changePassword'); ?>"><i class="fas fa-key"></i> Change Password</a>
             </li>
             <li class="nav-item MAMenu">
-              <a class="nav-link text-light" href="<?php echo base_url("myAccount/History/$userID"); ?>"><i class="fas fa-history"></i> History</a>
+              <a class="nav-link text-light" href="<?php echo base_url("MyAccount/History/$userID"); ?>"><i class="fas fa-history"></i> History</a>
             </li>
 
 

@@ -1,6 +1,18 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.4.17-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             11.2.0.6213
+-- --------------------------------------------------------
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Dumping structure for table sc_fs.banner
+-- Dumping structure for table mynamech_group1.banner
 CREATE TABLE IF NOT EXISTS `banner` (
   `banner_id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `product_id` int(10) unsigned zerofill DEFAULT NULL,
@@ -11,8 +23,7 @@ CREATE TABLE IF NOT EXISTS `banner` (
   CONSTRAINT `FK_banner_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table sc_fs.banner: ~9 rows (approximately)
-DELETE FROM `banner`;
+-- Dumping data for table mynamech_group1.banner: ~9 rows (approximately)
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
 INSERT INTO `banner` (`banner_id`, `product_id`, `img`, `is_active`) VALUES
 	(0000000001, 0000000003, 'https://images.unsplash.com/photo-1560689189-65b6ed6228e7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80', 'Y'),
@@ -26,7 +37,7 @@ INSERT INTO `banner` (`banner_id`, `product_id`, `img`, `is_active`) VALUES
 	(0000000009, NULL, 'https://pbs.twimg.com/media/CBPyNoXVIAAoXoe.png', 'Y');
 /*!40000 ALTER TABLE `banner` ENABLE KEYS */;
 
--- Dumping structure for table sc_fs.cart
+-- Dumping structure for table mynamech_group1.cart
 CREATE TABLE IF NOT EXISTS `cart` (
   `user_id` int(10) unsigned zerofill NOT NULL,
   `product_id` int(10) unsigned zerofill NOT NULL,
@@ -37,12 +48,11 @@ CREATE TABLE IF NOT EXISTS `cart` (
   CONSTRAINT `FK_cart_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table sc_fs.cart: ~0 rows (approximately)
-DELETE FROM `cart`;
+-- Dumping data for table mynamech_group1.cart: ~0 rows (approximately)
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
--- Dumping structure for view sc_fs.cart_product
+-- Dumping structure for view mynamech_group1.cart_product
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `cart_product` (
 	`product_id` INT(10) UNSIGNED ZEROFILL NOT NULL,
@@ -59,7 +69,7 @@ CREATE TABLE `cart_product` (
 	`sum_row` DOUBLE NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view sc_fs.cart_product_sum
+-- Dumping structure for view mynamech_group1.cart_product_sum
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `cart_product_sum` (
 	`user_id` INT(10) UNSIGNED ZEROFILL NOT NULL,
@@ -77,7 +87,7 @@ CREATE TABLE `cart_product_sum` (
 	`sum_total` DOUBLE NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for table sc_fs.category
+-- Dumping structure for table mynamech_group1.category
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `category_name` varchar(255) NOT NULL,
@@ -85,8 +95,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   PRIMARY KEY (`category_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Dumping data for table sc_fs.category: ~4 rows (approximately)
-DELETE FROM `category`;
+-- Dumping data for table mynamech_group1.category: ~4 rows (approximately)
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`category_id`, `category_name`, `c_status`) VALUES
 	(0000000001, 'Electronics', 1),
@@ -95,11 +104,11 @@ INSERT INTO `category` (`category_id`, `category_name`, `c_status`) VALUES
 	(0000000007, 'Test12', 1);
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
--- Dumping structure for table sc_fs.order
+-- Dumping structure for table mynamech_group1.order
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned zerofill NOT NULL,
-  `order_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `status` enum('Paid','Cancelled') NOT NULL DEFAULT 'Paid',
   `total` float unsigned NOT NULL DEFAULT 0,
   PRIMARY KEY (`order_id`),
@@ -107,8 +116,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   CONSTRAINT `FK_order_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
--- Dumping data for table sc_fs.order: ~17 rows (approximately)
-DELETE FROM `order`;
+-- Dumping data for table mynamech_group1.order: ~3 rows (approximately)
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` (`order_id`, `user_id`, `order_date`, `status`, `total`) VALUES
 	(0000000001, 0000000001, '2021-01-06 18:49:11', 'Paid', 300),
@@ -130,7 +138,7 @@ INSERT INTO `order` (`order_id`, `user_id`, `order_date`, `status`, `total`) VAL
 	(0000000017, 0000000006, '2021-02-27 00:22:13', 'Paid', 700);
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
--- Dumping structure for table sc_fs.order_item
+-- Dumping structure for table mynamech_group1.order_item
 CREATE TABLE IF NOT EXISTS `order_item` (
   `order_id` int(10) unsigned zerofill NOT NULL,
   `product_id` int(10) unsigned zerofill NOT NULL,
@@ -142,8 +150,7 @@ CREATE TABLE IF NOT EXISTS `order_item` (
   CONSTRAINT `FK_order_item_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table sc_fs.order_item: ~26 rows (approximately)
-DELETE FROM `order_item`;
+-- Dumping data for table mynamech_group1.order_item: ~26 rows (approximately)
 /*!40000 ALTER TABLE `order_item` DISABLE KEYS */;
 INSERT INTO `order_item` (`order_id`, `product_id`, `item_price`, `item_qty`) VALUES
 	(0000000001, 0000000001, 150, 2),
@@ -174,13 +181,13 @@ INSERT INTO `order_item` (`order_id`, `product_id`, `item_price`, `item_qty`) VA
 	(0000000017, 0000000006, 700, 1);
 /*!40000 ALTER TABLE `order_item` ENABLE KEYS */;
 
--- Dumping structure for view sc_fs.order_view_his
+-- Dumping structure for view mynamech_group1.order_view_his
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `order_view_his` (
 	`product_id` INT(10) UNSIGNED ZEROFILL NOT NULL,
 	`order_id` INT(10) UNSIGNED ZEROFILL NOT NULL,
 	`user_id` INT(10) UNSIGNED ZEROFILL NOT NULL,
-	`order_date` DATETIME NOT NULL,
+	`order_date` TIMESTAMP NOT NULL,
 	`status` ENUM('Paid','Cancelled') NOT NULL COLLATE 'utf8_general_ci',
 	`item_price` FLOAT UNSIGNED NOT NULL,
 	`item_qty` INT(10) UNSIGNED NOT NULL,
@@ -191,7 +198,7 @@ CREATE TABLE `order_view_his` (
 	`category_id` INT(10) UNSIGNED ZEROFILL NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for table sc_fs.product
+-- Dumping structure for table mynamech_group1.product
 CREATE TABLE IF NOT EXISTS `product` (
   `product_id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `product_name` varchar(50) NOT NULL,
@@ -207,8 +214,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `FK_product_vendor` FOREIGN KEY (`vendor_id`) REFERENCES `vendor` (`vendor_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table sc_fs.product: ~6 rows (approximately)
-DELETE FROM `product`;
+-- Dumping data for table mynamech_group1.product: ~6 rows (approximately)
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`product_id`, `product_name`, `vendor_id`, `description`, `price`, `category_id`, `status`) VALUES
 	(0000000001, 'T-shirt', 0000000001, 'Pink T-shirt', 160, 0000000002, 1),
@@ -219,7 +225,7 @@ INSERT INTO `product` (`product_id`, `product_name`, `vendor_id`, `description`,
 	(0000000006, 'Skinny Fit Jeans', 0000000006, 'Men EZY Ultra Stretch Colour Skinny Fit Jeans', 700, 0000000002, 1);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
--- Dumping structure for table sc_fs.product_image
+-- Dumping structure for table mynamech_group1.product_image
 CREATE TABLE IF NOT EXISTS `product_image` (
   `image_id` int(10) NOT NULL AUTO_INCREMENT,
   `product_id` int(10) unsigned zerofill NOT NULL,
@@ -229,8 +235,7 @@ CREATE TABLE IF NOT EXISTS `product_image` (
   CONSTRAINT `FK_product_image_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table sc_fs.product_image: ~18 rows (approximately)
-DELETE FROM `product_image`;
+-- Dumping data for table mynamech_group1.product_image: ~18 rows (approximately)
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
 INSERT INTO `product_image` (`image_id`, `product_id`, `image_url`) VALUES
 	(1, 0000000001, 'http://picture-cdn.wheretoget.it/jt6cmo-i.jpg'),
@@ -253,7 +258,7 @@ INSERT INTO `product_image` (`image_id`, `product_id`, `image_url`) VALUES
 	(3, 0000000006, 'https://img1.g-star.com/product/c_fill,f_auto,h_420,q_80/v1559732763/D06746-6553-A889-F01/g-star-raw-lynn-mid-waist-skinnyjeans-medium-blue-model-front.jpg');
 /*!40000 ALTER TABLE `product_image` ENABLE KEYS */;
 
--- Dumping structure for view sc_fs.product_view
+-- Dumping structure for view mynamech_group1.product_view
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `product_view` (
 	`status` INT(3) NOT NULL,
@@ -269,14 +274,14 @@ CREATE TABLE `product_view` (
 	`image_url` VARCHAR(255) NOT NULL COLLATE 'utf8_general_ci'
 ) ENGINE=MyISAM;
 
--- Dumping structure for view sc_fs.sum_by_user_id
+-- Dumping structure for view mynamech_group1.sum_by_user_id
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `sum_by_user_id` (
 	`user_id` INT(10) UNSIGNED ZEROFILL NOT NULL,
 	`sum_total` DOUBLE NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for table sc_fs.user
+-- Dumping structure for table mynamech_group1.user
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `first_name` varchar(255) NOT NULL,
@@ -287,10 +292,9 @@ CREATE TABLE IF NOT EXISTS `user` (
   `address` text NOT NULL,
   `isAdmin` int(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table sc_fs.user: ~7 rows (approximately)
-DELETE FROM `user`;
+-- Dumping data for table mynamech_group1.user: ~7 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `mobile`, `password`, `address`, `isAdmin`) VALUES
 	(0000000001, 'wendy', 'lee', 'lee_wendy@mmail.com', '0628885643', 'lml', 'Unit 14\r\n3 Edgar Buildings\r\nGeorge Street\r\nBath\r\nEngland\r\nBA1 2FJ\r\n', 0),
@@ -299,18 +303,17 @@ INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `mobile`, `pa
 	(0000000004, 'john', 'fey', 'john_fc@gmail.com', '0236573923', '12345', 'JESSIE SANTANA\r\n4325 W PALM BEACH RD RM 419\r\nSAN FRANCISCO CA 94116', 0),
 	(0000000005, 'michael', 'chess', 'm_michael@gmail.com', '0124572888', 'chess', '1771/1 Pattanakarn Road, Suan Luang, Bangkok 10250', 0),
 	(0000000006, 'wanna', 'ch', 'ming@hotmail.com', '0896688245', '$2y$15$onLBjjxHS9S903Xx/OE2KepWf4icZYEb588vJO59xTKfniz0z1Fpu', '', 0),
-	(0000000007, 'dasdas', 'sadasd', 'oat@gmail.com', '0952519263', '$2y$15$k38D.bAOnS2jbdzl8maBNe7nsGt6PEEWkw1TxnG4rM7ueNeb12RS.', 'asd เธเธฅเธเธฃเธฒเธก เธ”เธญเธเธชเธฑเธ เธชเธธเธฃเธฒเธฉเธเธฃเนเธเธฒเธเธต 84160', 1);
+	(0000000009, 'AdminFirst', 'zzz', 'firstz@hotmail.com', '0865365897', '$2y$15$ad4D5AQ/P5pUXGNrw9BVPuOusfLq4dkI7b29dhj7HIg6oXIeROSL6', '6 Laq à¸šà¸²à¸‡à¸™à¸² à¸šà¸²à¸‡à¸™à¸² à¸à¸£à¸¸à¸‡à¹€à¸—à¸žà¸¡à¸«à¸²à¸™à¸„à¸£ 10260', 1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
--- Dumping structure for table sc_fs.vendor
+-- Dumping structure for table mynamech_group1.vendor
 CREATE TABLE IF NOT EXISTS `vendor` (
   `vendor_id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `vendor_name` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`vendor_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table sc_fs.vendor: ~6 rows (approximately)
-DELETE FROM `vendor`;
+-- Dumping data for table mynamech_group1.vendor: ~6 rows (approximately)
 /*!40000 ALTER TABLE `vendor` DISABLE KEYS */;
 INSERT INTO `vendor` (`vendor_id`, `vendor_name`) VALUES
 	(0000000001, 'xie lhin'),
@@ -321,27 +324,27 @@ INSERT INTO `vendor` (`vendor_id`, `vendor_name`) VALUES
 	(0000000006, 'UNQ');
 /*!40000 ALTER TABLE `vendor` ENABLE KEYS */;
 
--- Dumping structure for view sc_fs.cart_product
+-- Dumping structure for view mynamech_group1.cart_product
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `cart_product`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `cart_product` AS SELECT `cart`.`product_id` AS `product_id`, `product_view`.`category_name` AS `category_name`, `product_view`.`vendor_name` AS `vendor_name`, `product_view`.`image_url` AS `image_url`, `cart`.`user_id` AS `user_id`, `cart`.`qty` AS `qty`, `product_view`.`product_name` AS `product_name`, `product_view`.`vendor_id` AS `vendor_id`, `product_view`.`description` AS `description`, `product_view`.`price` AS `price`, `product_view`.`category_id` AS `category_id`, `product_view`.`price`* `cart`.`qty` AS `sum_row` FROM (`cart` join `product_view` on(`cart`.`product_id` = `product_view`.`product_id`)) ;
 
--- Dumping structure for view sc_fs.cart_product_sum
+-- Dumping structure for view mynamech_group1.cart_product_sum
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `cart_product_sum`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `cart_product_sum` AS SELECT `cart_product`.`user_id` AS `user_id`, `cart_product`.`product_id` AS `product_id`, `cart_product`.`category_name` AS `category_name`, `cart_product`.`vendor_name` AS `vendor_name`, `cart_product`.`image_url` AS `image_url`, `cart_product`.`qty` AS `qty`, `cart_product`.`product_name` AS `product_name`, `cart_product`.`vendor_id` AS `vendor_id`, `cart_product`.`description` AS `description`, `cart_product`.`price` AS `price`, `cart_product`.`category_id` AS `category_id`, `cart_product`.`sum_row` AS `sum_row`, `sum_by_user_id`.`sum_total` AS `sum_total` FROM (`cart_product` join `sum_by_user_id` on(`cart_product`.`user_id` = `sum_by_user_id`.`user_id`)) ;
 
--- Dumping structure for view sc_fs.order_view_his
+-- Dumping structure for view mynamech_group1.order_view_his
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `order_view_his`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `order_view_his` AS SELECT `order_item`.`product_id` AS `product_id`, `order`.`order_id` AS `order_id`, `order`.`user_id` AS `user_id`, `order`.`order_date` AS `order_date`, `order`.`status` AS `status`, `order_item`.`item_price` AS `item_price`, `order_item`.`item_qty` AS `item_qty`, `product`.`product_name` AS `product_name`, `product`.`vendor_id` AS `vendor_id`, `product`.`description` AS `description`, `product`.`price` AS `price`, `product`.`category_id` AS `category_id` FROM ((`order` join `order_item` on(`order`.`order_id` = `order_item`.`order_id`)) join `product` on(`order_item`.`product_id` = `product`.`product_id`)) ;
 
--- Dumping structure for view sc_fs.product_view
+-- Dumping structure for view mynamech_group1.product_view
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `product_view`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `product_view` AS SELECT `product`.`status`,`product`.`product_id` AS `product_id`, `product`.`vendor_id` AS `vendor_id`, `product`.`category_id` AS `category_id`, `product`.`product_name` AS `product_name`, `product`.`description` AS `description`, `product`.`price` AS `price`, `category`.`category_name` AS `category_name`, `vendor`.`vendor_name` AS `vendor_name`, `product_image`.`image_id` AS `image_id`, `product_image`.`image_url` AS `image_url` FROM (((`product` join `category` on(`product`.`category_id` = `category`.`category_id`)) join `vendor` on(`product`.`vendor_id` = `vendor`.`vendor_id`)) join `product_image` on(`product`.`product_id` = `product_image`.`product_id`)) WHERE `product_image`.`image_id` = 1 ;
 
--- Dumping structure for view sc_fs.sum_by_user_id
+-- Dumping structure for view mynamech_group1.sum_by_user_id
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `sum_by_user_id`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `sum_by_user_id` AS SELECT `cart_product`.`user_id` AS `user_id`, sum(`cart_product`.`sum_row`) AS `sum_total` FROM `cart_product` GROUP BY `cart_product`.`user_id` ;

@@ -1,6 +1,6 @@
 <?php
 
-class cartHome extends CI_Controller
+class CartHome extends CI_Controller
 {
 
     public function __construct()

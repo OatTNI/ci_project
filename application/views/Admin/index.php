@@ -78,10 +78,10 @@
 				var catID = id.split("_");
 				$("#deleteConfirm" + catID[1]).click(function() {
 					$.ajax({
-						url: "<?php echo base_url("admins/categoryManagement/delete/"); ?>" + catID[1],
+						url: "<?php echo base_url("admins/CategoryManagement/delete/"); ?>" + catID[1],
 						type: "GET",
 						success: function() {
-							window.location = "<?php echo base_url("admin/CategoryManager"); ?>";
+							window.location = "<?php echo base_url("Admin/CategoryManager"); ?>";
 						}
 					});
 				});
@@ -104,10 +104,10 @@
 
 					if ($("#editInput" + catID[1]).val() != '' && $("#editInput" + catID[1]).val() != $("#editText" + catID[1]).html()) {
 						$.ajax({
-							url: "<?php echo base_url("admins/categoryManagement/edit/"); ?>" + catID[1] + "/" + edit,
+							url: "<?php echo base_url("admins/CategoryManagement/edit/"); ?>" + catID[1] + "/" + edit,
 							type: "GET",
 							success: function() {
-								window.location = "<?php echo base_url("admin/CategoryManager"); ?>";
+								window.location = "<?php echo base_url("Admin/CategoryManager"); ?>";
 							}
 						});
 					} else {

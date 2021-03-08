@@ -22,7 +22,7 @@
 
 <div class="row ">
     <div class="col-8">
-        <a href="<?php echo base_url('admin/index'); ?> " class="btn btn-danger">BACK</a>
+        <a href="<?php echo base_url('Admin/index'); ?> " class="btn btn-danger">BACK</a>
     </div>
     <div class="col-4">
         <h2 style="text-align: right; color:black;">จัดการหมวดหมู่</h2>
@@ -31,7 +31,7 @@
 <div class="dropdown-divider"></div>
 <div class="row">
     <div class="col mb-2">
-        <form action="<?= base_url("admins/categoryManagement/add") ?>" method="post" name="AddCategoryForm" id="AddCategoryForm">
+        <form action="<?= base_url("admins/CategoryManagement/add") ?>" method="post" name="AddCategoryForm" id="AddCategoryForm">
             <span class="HDText">Add Category</span>
             <div class="row">
                 <div class="col-9"><input class="form-control" type="text" name="catName" id="catName" placeholder="Category Name"></div>

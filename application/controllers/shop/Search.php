@@ -15,7 +15,7 @@ class Search extends CI_Controller
     {
         if (strlen($key) > 0) {
             $key = urldecode($key);
-            $config['base_url'] = base_url("shop/Search/index/$key/");
+            $config['base_url'] = base_url("Shop/Search/index/$key/");
             $config['total_rows'] = $this->Product_model->count($key, 0);
             $config['per_page'] = 3;
             $this->pagination->initialize($config);
@@ -26,10 +26,10 @@ class Search extends CI_Controller
             $data['Product'] = $product;
             $data['Keyword'] = $key;
             $data['SeeAll'] = '';
-            $data['content'] = 'Shop/Shopmain';
+            $data['content'] = 'Shop/ShopMain';
             $this->load->view('Shop', $data);
         } else {
-            redirect("shop/indexShop");
+            redirect("Shop/indexShop");
         }
     }
 }

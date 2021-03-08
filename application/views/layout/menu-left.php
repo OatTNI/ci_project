@@ -17,7 +17,7 @@
                 Configuration
             </div>
             <li class="nav-item active">
-                <a class="nav-link"  href="<?php echo base_url("user/information");?>">
+                <a class="nav-link"  href="<?php echo base_url("user/Information");?>">
                     <i class="fas fa-user fa-sm fa-fw " ></i>
                     <span style=" font-size:110%">Change Profile</span>
                 </a>

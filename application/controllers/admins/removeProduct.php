@@ -1,7 +1,7 @@
 <?php
 
 
-class removeProduct extends CI_Controller {
+class RemoveProduct extends CI_Controller {
 
     public function __construct()
     {
@@ -22,7 +22,7 @@ class removeProduct extends CI_Controller {
         if($product_id!=""){
             $this->Cart_model->delete_product($product_id);
             $this->Product_model->delete($product_id);
-            redirect("admin/index");
+            redirect("Admin/index");
         }else{
             redirect("My404/index");
         }

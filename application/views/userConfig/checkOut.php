@@ -3,7 +3,7 @@
     <h1>Checkout!!</h1>
   </div>
   <div class="card-body">
-    <form action="<?= base_url("cart/checkout/makeanOrder"); ?>" method="post" id="makeorderform">
+    <form action="<?= base_url("cart/Checkout/makeanOrder"); ?>" method="post" id="makeorderform">
       <table class="table table-striped">
         <!--Header-->
         <tr>
@@ -32,7 +32,7 @@
     <div style="float:right;">
       <div class="row no-gutters">
         <div class="col mr-2">
-          <a class="btn btn-lg btn-danger" href="<?= base_url("cart/cartHome"); ?>">ปิด</a>
+          <a class="btn btn-lg btn-danger" href="<?= base_url("cart/CartHome"); ?>">ปิด</a>
         </div>
         <div class="col">
           <button type="submit" form="makeorderform" class="btn btn-lg btn-success">ชำระเงิน</button>

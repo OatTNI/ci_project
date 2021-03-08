@@ -23,7 +23,7 @@ class Home extends CI_Controller
         $data['Product'] = $this->Product_model->getProducts();
 
         $data['SeeAll'] = "Yes";
-        $data['content'] = 'Shop/Shopmain';
+        $data['content'] = 'Shop/ShopMain';
 
         $this->load->view('indexView', $data);
     }

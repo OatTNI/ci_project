@@ -24,7 +24,7 @@
                                         <!-- Search -->
                                         <input class="form-control form-control-sm rounded-left border" type="text" id="keyword" name="keyword" placeholder="What are you looking for?" aria-label="Search">
                                         <button class="rounded-right bg-white mr-1" onclick="FunctionSearch()" style="width: 50px;"><i class="fas fa-search"></i></button>
-                                        <a class="btn btn-lg btn-primary" href="<?php echo base_url("cart/cartHome"); ?>" role="button"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="btn btn-lg btn-primary" href="<?php echo base_url("cart/CartHome"); ?>" role="button"><i class="fas fa-shopping-cart"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -35,22 +35,22 @@
                                     <nav class="main-menu">
                                         <ul class="menu-area-main">
                                             <li> <a href="<?php echo base_url("Home/index"); ?>"><i class="fas fa-home"></i> Home</a> </li>
-                                            <li> <a href="<?php echo base_url("shop/indexShop/index"); ?>"><i class="fas fa-store"></i> Shop</a></li>
+                                            <li> <a href="<?php echo base_url("shop/IndexShop/index"); ?>"><i class="fas fa-store"></i> Shop</a></li>
                                             <?php
                                             if (!$this->session->userdata("user_id")) { ?>
                                                 <!-- <li> 
                                             <a class="text-dark" id="loginbutton" data-toggle="modal" data-target="#LoginModal"><i class="fas fa-sign-in-alt"></i> Login</a>
                                             
                                          </li> -->
-                                                <li> <a href="<?php echo base_url("user/login_out/index"); ?>"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                                                <li> <a href="<?php echo base_url("user/Login_out/index"); ?>"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                                                 <?php } else {
 
                                                 if ($this->session->userdata("user_status") == 1) { ?>
-                                                    <li> <a href="<?php echo base_url("admin/index"); ?>"><i class="fas fa-toolbox"></i> ไปสู่แสงสว่าง</a></li>
+                                                    <li> <a href="<?php echo base_url("Admin/index"); ?>"><i class="fas fa-toolbox"></i> ไปสู่แสงสว่าง</a></li>
                                                 <?php } else { ?>
-                                                    <li> <a href="<?php echo base_url("myAccount/index"); ?>"><i class="fas fa-user-circle"></i> <?php echo $this->session->userdata("user_fname"); ?></a></li>
+                                                    <li> <a href="<?php echo base_url("MyAccount/index"); ?>"><i class="fas fa-user-circle"></i> <?php echo $this->session->userdata("user_fname"); ?></a></li>
                                                 <?php } ?>
-                                                <li> <a href="<?php echo base_url("user/login_out/index"); ?>"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                                <li> <a href="<?php echo base_url("user/Login_out/index"); ?>"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                                             <?php } ?>
                                         </ul>
                                     </nav>

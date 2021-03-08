@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class changeProduct extends CI_Controller {
+class ChangeProduct extends CI_Controller {
 
     
     public function __construct()
@@ -49,7 +49,7 @@ class changeProduct extends CI_Controller {
                         $this->Product_model->updateProduct($input_id,$product[0],$product[2],$product[5],
                             $product[1],$product[3]);
                         $this->updateImage($product[4],$input_id);
-                        redirect("admin/index");
+                        redirect("Admin/index");
                     }else{
                         $this->session->set_flashdata("error","product is Duplicated");
                     }

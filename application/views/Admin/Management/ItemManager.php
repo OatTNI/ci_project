@@ -1,8 +1,8 @@
 <div class="row ">
 
 	<div class="col-8">
-		<a href="<?php echo base_url('admin/ItemAddPanel'); ?>" class="btn btn-outline-success">+ เพิ่มสินค้า</a>&nbsp;
-		<a href="<?php echo base_url('admin/CategoryManager'); ?>" class="btn btn-outline-success">จัดการหมวดหมู่</a>
+		<a href="<?php echo base_url('Admin/ItemAddPanel'); ?>" class="btn btn-outline-success">+ เพิ่มสินค้า</a>&nbsp;
+		<a href="<?php echo base_url('Admin/CategoryManager'); ?>" class="btn btn-outline-success">จัดการหมวดหมู่</a>
 	</div>
 	<div class="col-4">
 		<h2 style="text-align: right; color:black;">จัดการสินค้า</h2>
@@ -21,10 +21,10 @@
 					<p class="card-text text-truncate"><?php echo $P->vendor_name; ?></p>
 					<div class="row">
 						<div class="col">
-							<a href="<?php echo base_url("admins/changeProduct/index/show/") . ($P->product_id); ?>" class="btn btn-warning">แก้ไข</a>
+							<a href="<?php echo base_url("admins/ChangeProduct/index/show/") . ($P->product_id); ?>" class="btn btn-warning">แก้ไข</a>
 						</div>
 						<div class="col">
-							<a href="<?php echo base_url("admins/removeProduct/index/") . ($P->product_id); ?>" class="btn btn-danger">ลบ</a>
+							<a href="<?php echo base_url("admins/RemoveProduct/index/") . ($P->product_id); ?>" class="btn btn-danger">ลบ</a>
 						</div>
 					</div>
 					</div>
