@@ -29,7 +29,7 @@ class Search extends CI_Controller
             $data['content'] = 'Shop/Shopmain';
             $this->load->view('Shop', $data);
         } else {
-            redirect("shop/index");
+            redirect("shop/indexShop");
         }
     }
 }

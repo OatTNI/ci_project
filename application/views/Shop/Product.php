@@ -78,7 +78,7 @@
                     <p class="text-justify">รายละเอียดสินค้า : <?php echo $Product->{'description'}; ?></p>
                 </div>
                 <div class="col-xl-12 text-center mt-3">
-                    <a href="<?php echo base_url("Shop/index"); ?> " class="btn btn-lg btn-danger">Back</a>
+                    <a href="<?php echo base_url("Shop/indexShop"); ?> " class="btn btn-lg btn-danger">Back</a>
                 </div>
             </div>
         </div>

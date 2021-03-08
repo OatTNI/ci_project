@@ -44,7 +44,7 @@
                             </div>
                         <?php } ?>
                         <div class="col-12 my-2 ml-4">
-                            <h4><a href="<?php echo base_url("Shop/index") ?>">See All</a></h4>
+                            <h4><a href="<?php echo base_url("Shop/indexShop") ?>">See All</a></h4>
                         </div>
                     </div>
                 </div>

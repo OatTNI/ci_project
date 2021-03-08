@@ -1,21 +1,4 @@
--- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Server version:               10.4.17-MariaDB - mariadb.org binary distribution
--- Server OS:                    Win64
--- HeidiSQL Version:             11.2.0.6213
--- --------------------------------------------------------
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
--- Dumping database structure for sc_fs
-CREATE DATABASE IF NOT EXISTS `sc_fs` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `sc_fs`;
 
 -- Dumping structure for table sc_fs.banner
 CREATE TABLE IF NOT EXISTS `banner` (
@@ -316,7 +299,7 @@ INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `mobile`, `pa
 	(0000000004, 'john', 'fey', 'john_fc@gmail.com', '0236573923', '12345', 'JESSIE SANTANA\r\n4325 W PALM BEACH RD RM 419\r\nSAN FRANCISCO CA 94116', 0),
 	(0000000005, 'michael', 'chess', 'm_michael@gmail.com', '0124572888', 'chess', '1771/1 Pattanakarn Road, Suan Luang, Bangkok 10250', 0),
 	(0000000006, 'wanna', 'ch', 'ming@hotmail.com', '0896688245', '$2y$15$onLBjjxHS9S903Xx/OE2KepWf4icZYEb588vJO59xTKfniz0z1Fpu', '', 0),
-	(0000000007, 'dasdas', 'sadasd', 'oat@gmail.com', '0952519263', '$2y$15$k38D.bAOnS2jbdzl8maBNe7nsGt6PEEWkw1TxnG4rM7ueNeb12RS.', 'asd ชลคราม ดอนสัก สุราษฎร์ธานี 84160', 1);
+	(0000000007, 'dasdas', 'sadasd', 'oat@gmail.com', '0952519263', '$2y$15$k38D.bAOnS2jbdzl8maBNe7nsGt6PEEWkw1TxnG4rM7ueNeb12RS.', 'asd เธเธฅเธเธฃเธฒเธก เธ”เธญเธเธชเธฑเธ เธชเธธเธฃเธฒเธฉเธเธฃเนเธเธฒเธเธต 84160', 1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 -- Dumping structure for table sc_fs.vendor

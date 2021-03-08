@@ -11,7 +11,7 @@ class unauth_user
         
         // ! class allowed for user doesn't login 
         $allowed_class=[
-            "Home","Product","Products","Search","index","register","login_out"
+            "Home","Product","Products","Search","indexShop","register","login_out"
         ];
         $is_allow=false;
         foreach($allowed_class as $class){

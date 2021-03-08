@@ -44,6 +44,7 @@ class addProduct extends CI_Controller {
                         redirect("admin/index");
                     }else{
                         $this->session->set_flashdata("error","The Product is Duplicated"); 
+                        
                     }
                     
                 }else{

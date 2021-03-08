@@ -35,7 +35,7 @@
                                     <nav class="main-menu">
                                         <ul class="menu-area-main">
                                             <li> <a href="<?php echo base_url("Home/index"); ?>"><i class="fas fa-home"></i> Home</a> </li>
-                                            <li> <a href="<?php echo base_url("Shop/index"); ?>"><i class="fas fa-store"></i> Shop</a></li>
+                                            <li> <a href="<?php echo base_url("shop/indexShop/index"); ?>"><i class="fas fa-store"></i> Shop</a></li>
                                             <?php
                                             if (!$this->session->userdata("user_id")) { ?>
                                                 <!-- <li> 
@@ -50,7 +50,7 @@
                                                 <?php } else { ?>
                                                     <li> <a href="<?php echo base_url("myAccount/index"); ?>"><i class="fas fa-user-circle"></i> <?php echo $this->session->userdata("user_fname"); ?></a></li>
                                                 <?php } ?>
-                                                <li> <a href="<?php echo base_url("user/login_out/index/"); ?>"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                                <li> <a href="<?php echo base_url("user/login_out/index"); ?>"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                                             <?php } ?>
                                         </ul>
                                     </nav>
