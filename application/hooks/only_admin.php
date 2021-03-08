@@ -11,7 +11,7 @@ class only_admin
         
         // ! class allowed for user doesn't login 
         $allowed_class=[
-           "admin","addProduct","categoryManagement"
+           "Admin","AddProduct","CategoryManagement"
         ];
         $is_allow=false;
         foreach($allowed_class as $class){
