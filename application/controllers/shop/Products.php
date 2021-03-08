@@ -13,7 +13,7 @@ class Products extends CI_Controller
     {
         // $data['Product'] = $this->Product_model->getProductsbyCategory($ID);
 
-        $config['base_url'] = base_url("Shop/Products/index/$ID/");
+        $config['base_url'] = base_url("shop/Products/index/$ID/");
         $config['total_rows'] = $this->Product_model->count('',$ID);
         $config['per_page'] = 3;
 

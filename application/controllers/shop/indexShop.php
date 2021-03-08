@@ -15,7 +15,7 @@ class IndexShop extends CI_Controller
         // $data['Product'] = $this->Product_model->getProducts();
         // $data['Img'] = $this->Product_model->getProductImages($data['Product']->{'product_id'});
         
-        $config['base_url'] = base_url("Shop/indexShop/index");
+        $config['base_url'] = base_url("shop/IndexShop/index");
         $config['total_rows'] = $this->Product_model->count();
         $config['per_page'] = 3;
 
