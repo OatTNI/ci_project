@@ -19,7 +19,7 @@
         <div class="d-flex justify-content-between">
           <button class="btn btn-success" style="width:160px;" type="submit" name="btn-login">LOGIN</button>
           &nbsp;
-          <a class="btn btn-danger" style="width:160px;" href="<?php echo base_url('Home/index'); ?>">CANCLE</a>
+          <a class="btn btn-danger" style="width:160px;" href="<?php echo base_url('Home/index'); ?>">CANCEL</a>
         </div>
       </form>
       <hr>
