@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class AddProduct extends CI_Controller {
+class addProduct extends CI_Controller {
 
     public function __construct()
     {
@@ -35,15 +35,29 @@ class AddProduct extends CI_Controller {
                 // ! 4 image_url
                 // ! 5 description
                 $product=$this->get_all_post_data();
+                $temp=$this->isDuplicate($product[2],$product[0]);
                 if($this->isImage($product[4])){
-                    if(!$this->isDuplicate($product[2],$product[0])){
+                    if($temp===false){
                         $this->add_product(
                             $product[0],$product[1],$product[2],$product[3],
                             $product[4],$product[5]
                         );
-                        redirect("admin/index");
+                        redirect("Admin/index");
                     }else{
-                        $this->session->set_flashdata("error","The Product is Duplicated"); 
+                        if($temp==0){
+                            // ! get product id
+                            $temp2=$this->Product_model->get_id($product[0],$product[2]);
+                            $temp2=$temp2->product_id;
+                            $this->Product_model->activateProduct($temp2);
+                            
+                            $this->Product_model->updateProduct(
+                                $temp2,$product[0],$product[2],$product[5],$product[1],$product[3]
+                            );
+                            redirect("Admin/index");
+                        }else{
+                            $this->session->set_flashdata("error","The Product is Duplicated"); 
+                        }
+                        
                         
                     }
                     
@@ -172,7 +186,7 @@ class AddProduct extends CI_Controller {
         $temp=$this->Product_model->get_list_product($vendor_id);
         foreach($temp as $row){
             if($product==$row->product_name){
-                return true;
+                return $row->status;
             }
         }
         return false;
